@@ -165,7 +165,7 @@ code {
 
 @media (min-width: 1024px) and (max-width: 1140px) {
   .hero-card-top {
-    top: 11rem !important;
+    top: 11.5rem !important;
   }
 }
 

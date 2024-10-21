@@ -40,26 +40,26 @@ const Hero = () => {
                             <img
                                 src={mobile}
                                 alt="Phone showing testimonials"
-                                className="w-64 "
+                                className="md:w-64  w-48"
                             />
 
-                            <div className="absolute bg-base-color top-28 right-28 text-white px-3 py-3 text-xs w-[17rem] md:top-28 md:right-96 md:text-sm shadow-md lg:text-base hero-card-top  lg:top-[7rem] lg:right-64" style={{ borderRadius: '35px 35px 0 35px' }}>
+                            <div className="absolute bg-base-color top-[5.3rem] right-48 max-[375px]:right-32 text-white px-2 py-2 text-xs md:w-[17rem] w-48 md:top-28 md:right-96 md:text-sm shadow-md lg:text-base hero-card-top  lg:top-[7.5rem] lg:right-64" style={{ borderRadius: '25px 25px 0 25px' }}>
                                 <div className="flex items-center space-x-3 mb-2">
-                                    <img src={samson} alt="Samson"></img>
-                                    <span className="base-font-heading text-sm ">Simon Thompson</span>
+                                    <img src={samson} alt="Samson" className=" md:w-8 w-6"></img>
+                                    <span className="base-font-heading md:text-sm text-[9.968px]" >Simon Thompson</span>
                                 </div>
-                                <p className="base-font text-xs leading-[17px]">
+                                <p className="base-font md:text-xs text-[8.544px] md:leading-[17px] leading-3">
                                     Its been an awesome experience working on spreadz, got leads sooner than I expected
                                 </p>
                             </div>
 
-                            <div className="absolute  right-0 bg-base-color text-white px-2 py-3 md:right-32  text-xs md:text-sm shadow-md h-[94px] w-[17rem] lg:text-base hero-card-bottom bottom-[6.5rem] lg:right-0" style={{ borderRadius: '35px 35px 35px 0' }}>
+                            <div className="absolute  right-0 bg-base-color text-white px-2 py-2 md:right-32  text-xs md:text-sm shadow-md   md:w-[17rem] w-48  lg:text-base hero-card-bottom md:bottom-[6.6rem] bottom-[4.8rem] lg:right-0" style={{ borderRadius: '25px 25px 25px 0' }}>
 
                                 <div className="flex items-center space-x-3 mb-2">
-                                    <img src={kathy} alt="Kathy"></img>
-                                    <span className="base-font-heading text-sm">Kathy Pusberg</span>
+                                    <img src={kathy} alt="Kathy" className="md:w-8 w-6"></img>
+                                    <span className="base-font-heading md:text-sm text-[9.968px]  ">Kathy Pusberg</span>
                                 </div>
-                                <p className="base-font text-xs leading-[17px]">
+                                <p className="base-font md:text-xs text-[8.544px] md:leading-[17px] leading-3">
                                     Its been an awesome experience working on spreadz, got leads sooner than I expected
                                 </p>
                             </div>
