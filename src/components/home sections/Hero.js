@@ -19,7 +19,7 @@ const Hero = () => {
                     <div className="flex flex-col-reverse lg:flex-row lg:justify-between lg:gap-16 pt-16 ">
 
                         <div className="lg:m-0 mt-8 lg:text-left lg:w-[694px]">
-                            <h1 className="base-font-heading text-[40px] leading-[58.4px]  text-gray-900 ">
+                            <h1 className="base-font-heading md:text-[40px] md:leading-[58.4px] text-2xl leading-none  text-gray-900 ">
                                 Get Recommended Digitally and win more <span className="text-orange-500">Leads</span>
                             </h1>
                             <div className="hidden lg:block w-24 h-24"></div>
@@ -43,7 +43,7 @@ const Hero = () => {
                                 className="md:w-64  w-48"
                             />
 
-                            <div className="absolute bg-base-color top-[5.3rem] right-48 max-[375px]:right-32 text-white px-2 py-2 text-xs md:w-[17rem] w-48 md:top-28 md:right-96 md:text-sm shadow-md lg:text-base hero-card-top  lg:top-[7.5rem] lg:right-64" style={{ borderRadius: '25px 25px 0 25px' }}>
+                            <div className="absolute bg-base-color top-[5.3rem] right-48 max-[375px]:right-32 text-white lg:px-3 px-2 py-2 text-xs md:w-[17rem] w-48 md:top-[7.4rem] md:right-96 md:text-sm shadow-md lg:text-base hero-card-top  lg:top-[7.5rem] lg:right-64" style={{ borderRadius: '25px 25px 0 25px' }}>
                                 <div className="flex items-center space-x-3 mb-2">
                                     <img src={samson} alt="Samson" className=" md:w-8 w-6"></img>
                                     <span className="base-font-heading md:text-sm text-[9.968px]" >Simon Thompson</span>
@@ -53,7 +53,7 @@ const Hero = () => {
                                 </p>
                             </div>
 
-                            <div className="absolute  right-0 bg-base-color text-white px-2 py-2 md:right-32  text-xs md:text-sm shadow-md   md:w-[17rem] w-48  lg:text-base hero-card-bottom md:bottom-[6.6rem] bottom-[4.8rem] lg:right-0" style={{ borderRadius: '25px 25px 25px 0' }}>
+                            <div className="absolute  right-0 bg-base-color text-white lg:px-3 px-2 py-2 md:right-32  text-xs md:text-sm shadow-md   md:w-[17rem] w-48  lg:text-base hero-card-bottom md:bottom-[6.6rem] bottom-[4.8rem] lg:right-0" style={{ borderRadius: '25px 25px 25px 0' }}>
 
                                 <div className="flex items-center space-x-3 mb-2">
                                     <img src={kathy} alt="Kathy" className="md:w-8 w-6"></img>
