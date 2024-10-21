@@ -36,14 +36,14 @@ const Hero = () => {
                             </Button>
                         </div>
 
-                        <div className="relative flex  justify-center lg:justify-start items-center lg:w-96 lg:shrink-0">
+                        <div className="relative flex  justify-center lg:justify-start lg-flex-center items-center lg:w-96 lg:shrink-0">
                             <img
                                 src={mobile}
                                 alt="Phone showing testimonials"
                                 className="w-64 "
                             />
 
-                            <div className="absolute bg-base-color w-[263px] top-[6.5rem] right-36  text-white px-1 py-3 text-xs md:w-64 md:top-[6.5rem] md:right-96 md:text-sm shadow-md lg:text-base hero-card-top lg:w-64 lg:top-[7rem] lg:right-64" style={{ borderRadius: '35px 35px 0 35px' }}>
+                            <div className="absolute bg-base-color top-28 right-28 text-white px-3 py-3 text-xs w-[17rem] md:top-28 md:right-96 md:text-sm shadow-md lg:text-base hero-card-top  lg:top-[7rem] lg:right-64" style={{ borderRadius: '35px 35px 0 35px' }}>
                                 <div className="flex items-center space-x-3 mb-2">
                                     <img src={samson} alt="Samson"></img>
                                     <span className="base-font-heading text-sm ">Simon Thompson</span>
@@ -53,7 +53,7 @@ const Hero = () => {
                                 </p>
                             </div>
 
-                            <div className="absolute  right-0 bg-base-color text-white px-1 py-3 md:right-32  text-xs md:text-sm shadow-md h-[94px] w-[263px] lg:text-base hero-card-bottom bottom-[6.5rem] lg:right-4" style={{ borderRadius: '35px 35px 35px 0' }}>
+                            <div className="absolute  right-0 bg-base-color text-white px-2 py-3 md:right-32  text-xs md:text-sm shadow-md h-[94px] w-[17rem] lg:text-base hero-card-bottom bottom-[6.5rem] lg:right-0" style={{ borderRadius: '35px 35px 35px 0' }}>
 
                                 <div className="flex items-center space-x-3 mb-2">
                                     <img src={kathy} alt="Kathy"></img>

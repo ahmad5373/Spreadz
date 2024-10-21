@@ -165,13 +165,19 @@ code {
 
 @media (min-width: 1024px) and (max-width: 1140px) {
   .hero-card-top {
-    top: 15rem !important;
+    top: 11rem !important;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1140px) {
+  .lg-flex-center {
+   justify-content: center;
   }
 }
 
 @media (min-width: 1024px) and (max-width: 1140px) {
   .hero-card-bottom {
-    bottom: 14.4rem !important;
+    bottom: 10.4rem !important;
   }
 }
 
