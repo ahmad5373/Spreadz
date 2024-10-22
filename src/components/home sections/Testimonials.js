@@ -15,7 +15,7 @@ const Testimonial = () => {
                     <h2 className="text-center base-font-heading text-2xl lg:text-[40px] leading-[58.4px] text-gray-900 lg:pb-16">
                         What clients say about us
                     </h2>
-                    <div className="mt-8 flex custom-col flex-row sm:gap-6 lg:gap-8 justify-between gap-4 mb-8">
+                    <div className="mt-8 flex custom-col flex-row  lg:gap-6 justify-center  gap-4 mb-8">
                         <div className="rounded-lg  p-6 sm:p-8">
                             <div className="flex flex-col items-center">
                                 <div className="flex flex-col text-center text-gray-700 lg:w-[352px]">
