@@ -145,6 +145,18 @@ code {
   }
 }
 
+@media (min-width: 1024px) and (max-width: 1140px) {
+  .nav-icon-md{
+    width: 7rem;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1140px) {
+  .custom-nav-style{
+    font-size: small;
+  }
+}
+
 @media (min-width: 1140px) {
   .custom-bottom-xl1 {
     bottom: 660px;

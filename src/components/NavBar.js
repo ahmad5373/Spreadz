@@ -23,10 +23,10 @@ const NavBar = () => {
   return ( 
     <nav className="bg-white w-full z-10 fixed top-0 start-0 border-b border-gray-200 dark:border-gray-600">
       <Container className='px-4 lg:px-10 xl1:px-20'>
-      <div className="flex items-center justify-between py-2 space-x-4 lg:space-x-8 flex-wrap lg:flex-nowrap">
+      <div className="flex items-center justify-between custom-nav-style py-2 space-x-4 lg:space-x-8 flex-wrap lg:flex-nowrap">
 
         <Link to="/" className="hidden md:flex items-center space-x-3">
-          <img src={Logo} className="h-8 w-36" alt="Logo" />
+          <img src={Logo} className="h-8 nav-icon-md w-36" alt="Logo" />
         </Link>
 
         <div className="hidden lg:flex space-x-6">
@@ -38,7 +38,7 @@ const NavBar = () => {
           <Link to="/social-media" className="text-gray-900 hover:text-orange-500 font-medium">Social Media</Link>
         </div>
 
-        <div className="hidden lg:flex items-center space-x-6">
+        <div className="hidden lg:flex items-center space-x-4">
           <div className="flex items-center space-x-2">
             <img src={GE} className="h-3 w-5" alt="GE" />
             <button className="px-2 py-1">
