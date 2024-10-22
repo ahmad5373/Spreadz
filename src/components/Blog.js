@@ -231,7 +231,6 @@ const Blogs = () => {
 
                         <div className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
                             {postData.slice(0, 3).map((post) => (
-                                console.log("post =>", post),
                                 <PostCard key={post.id} post={post} />
                             ))}
                         </div>
