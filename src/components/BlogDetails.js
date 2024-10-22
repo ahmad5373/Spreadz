@@ -35,11 +35,12 @@ const BlogDetails = () => {
     }
 
     return (
-        <div className="flex flex-col bg-gray-100  pt-12 w-full">
-            <Container className='px-4 md:px-8 lg:px-10 xl1:px-20'>
+        <div className="bg-gray-100  pt-12 w-full">
+        <Container className='px-4 md:px-8 lg:px-10 xl1:px-20'>
             <div className="h-12 bg-gray-100"></div>
+                <div className="flex flex-col">
 
-            <div className="flex custom-col lg:flex-row justify-between lg:space-x-20 bg-gray-100">
+            <div className="flex custom-col flex-row justify-between lg:space-x-16 bg-gray-100">
                 <div className="flex flex-col space-y-2 lg:w-[900px]">
                     <div><p className="base-font-heading text-3xl leading-10">How to Spend the Perfect Day on Croatia’s Most Magical Island</p></div>
                     <div className="">
@@ -438,9 +439,9 @@ const BlogDetails = () => {
                     </Button>
                 </div>
             </div>
+         </div>
             </Container>
-        </div>
-
+            </div>
     );
 };
 

@@ -17,8 +17,9 @@ const Blogs = () => {
     }
 
     return (
-        <div className="flex flex-col bg-gray-100  pt-12 w-full">
-            <Container className='px-4 md:px-8 lg:px-10 xl1:px-20'>
+        <div className="bg-gray-100  pt-12 w-full">
+        <Container className='px-4 md:px-8 lg:px-10 xl1:px-20'>
+        <div className="flex flex-col">
             <div className="h-12 bg-gray-100"></div>
 
             <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
@@ -643,9 +644,9 @@ const Blogs = () => {
                 </div>
             </div>
 
-</Container>
         </div>
-
+</Container>
+</div>
     );
 };
 
