@@ -146,14 +146,21 @@ code {
 }
 
 @media (min-width: 1024px) and (max-width: 1140px) {
-  .nav-icon-md{
-    width: 7rem;
+  .custom-our-story-quote {
+    margin-left: 0 !important;
   }
 }
 
+@media (min-width: 1150px) and (max-width: 1400) {
+  .custom-quote {
+    margin-left: 22rem !important;
+  }
+}
+
+
 @media (min-width: 1024px) and (max-width: 1140px) {
-  .custom-nav-style{
-    font-size: small;
+  .nav-icon-md{
+    width: 7rem;
   }
 }
 

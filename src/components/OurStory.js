@@ -16,11 +16,11 @@ const OurStory = () => {
                     <div className="flex flex-col-reverse lg:flex-row justify-between">
                         <div className="flex flex-col justify-center">
                             <img src={quotes1} alt="quotes" className="h-12 w-12"></img>
-                            <h2 className="base-font lg:text-3xl text-lg lg:leading-10	lg:w-[900px] custom-w-our-story text-white">But what does the web app have to do with "spreading" anyway? The logo also gives it away. The "S" has an arrow at the top and bottom. "It stands for multiplying, sharing and distributing, and that's exactly what I want to achieve with this app." Sonderegger also wants to offer companies the opportunity to establish themselves and draw attention to themselves.</h2>
-                            <img src={quotes2} alt="quotes 2" className="h-12 xl1:ml-[26rem] ml-1 "></img>
+                            <h2 className="base-font lg:text-3xl text-lg lg:leading-10	lg:w-[900px]  custom-w-our-story text-white">But what does the web app have to do with "spreading" anyway? The logo also gives it away. The "S" has an arrow at the top and bottom. "It stands for multiplying, sharing and distributing, and that's exactly what I want to achieve with this app." Sonderegger also wants to offer companies the opportunity to establish themselves and draw attention to themselves.</h2>
+                            <img src={quotes2} alt="quotes 2" className="h-12 xl1:ml-[26rem] lg:ml-[22rem]  custom-our-story-quote md:-ml-64 -ml-20 "></img>
                             <h4 className="base-font  text-xl  mt-8 text-white">Nidwaldner Zeitung, 05 October 2023 (Source: CH Media)</h4>
                         </div>
-                        <div className="justify-center items-center"><img src={chrisStory} alt="Chris"></img></div>
+                        <div className=" flex justify-center items-center"><img src={chrisStory} alt="Chris" className=" h-[424px]"></img></div>
                     </div>
                     </Container>
                 </div>
@@ -31,7 +31,7 @@ const OurStory = () => {
                     <div className="pt-16 pb-6 base-font-heading lg:text-3xl">
                         Chris tells us.
                     </div>
-                    <div className="base-font lg:text-3xl text-lg leading-10">
+                    <div className="base-font lg:text-2xl text-lg leading-10">
                         <p>During my 17-year career in sales, I was always looking for new ways to get new customers. Deviating from the usual methods such as telemarketing, online leads and billboard advertising, I dedicated myself to referral management early on. In the beginning, I was personally recommended by customers, then I used flyers with QR codes and finally
                         </p>
                         <p>Online forms that I had my clients fill out. However, I always felt limited with these solutions. I kept experimenting until I finally got closer to the idea of Spreadz.</p>

@@ -23,19 +23,19 @@ const NavBar = () => {
   return ( 
     <nav className="bg-white w-full z-10 fixed top-0 start-0 border-b border-gray-200 dark:border-gray-600">
       <Container className='px-4 lg:px-10 xl1:px-20'>
-      <div className="flex items-center justify-between custom-nav-style py-2 space-x-4 lg:space-x-8 flex-wrap lg:flex-nowrap">
+      <div className="flex items-center justify-between text-sm py-2 lg:space-x-8 flex-wrap lg:flex-nowrap">
 
         <Link to="/" className="hidden md:flex items-center space-x-3">
-          <img src={Logo} className="h-8 nav-icon-md w-36" alt="Logo" />
+          <img src={Logo} className=" " alt="Logo" />
         </Link>
 
-        <div className="hidden lg:flex space-x-6">
-          <Link to="/about-us" className="text-gray-900 hover:text-orange-500 font-medium" onClick={handleLinkClick} >About Us</Link>
-          <Link to="/our-story" className="text-gray-900 hover:text-orange-500 font-medium">Our Story</Link>
-          <Link to="/pricing" className="text-gray-900 hover:text-orange-500 font-medium">Plan & Pricing</Link>
-          <Link to="/blogs" className="text-gray-900 hover:text-orange-500 font-medium">Blogs</Link>
-          <Link to="/contact-us" className="text-gray-900 hover:text-orange-500 font-medium">Contact Us</Link>
-          <Link to="/social-media" className="text-gray-900 hover:text-orange-500 font-medium">Social Media</Link>
+        <div className="hidden lg:flex space-x-4">
+          <Link to="/about-us" className="text-gray-900 hover:text-orange-500 base-font xl1:text-sm lg:text-xs" onClick={handleLinkClick} >About Us</Link>
+          <Link to="/our-story" className="text-gray-900 hover:text-orange-500 base-font xl1:text-sm lg:text-xs">Our Story</Link>
+          <Link to="/pricing" className="text-gray-900 hover:text-orange-500 base-font xl1:text-sm lg:text-xs">Plan & Pricing</Link>
+          <Link to="/blogs" className="text-gray-900 hover:text-orange-500 base-font xl1:text-sm lg:text-xs">Blogs</Link>
+          <Link to="/contact-us" className="text-gray-900 hover:text-orange-500 base-font xl1:text-sm lg:text-xs">Contact Us</Link>
+          <Link to="/social-media" className="text-gray-900 hover:text-orange-500 base-font xl1:text-sm lg:text-xs">Social Media</Link>
         </div>
 
         <div className="hidden lg:flex items-center space-x-4">
@@ -55,9 +55,9 @@ const NavBar = () => {
           />
         </div>
 
-        <div className="flex items-center justify-between w-full lg:hidden">
+        <div className="m-0 flex items-center justify-between w-full lg:hidden">
           <button
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none"
+            className="inline-flex items-center w-10 h-10 justify-center text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-controls="navbar-sticky"
             aria-expanded={isMenuOpen}

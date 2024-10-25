@@ -4,7 +4,7 @@ import broadMessage from "../../assets/broadMessage.svg";
 import TimeTrack from "../../assets/usermanagement.svg";
 import Dashboard from "../../assets/dashboard.svg";
 import userProfile from "../../assets/profile.svg";
-import Google from "../../assets/Frame.svg";
+import Google from "../../assets/GoogleImage.png";
 import Container from "../../customComponents/Container.";
 const Features = () =>{
 

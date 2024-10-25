@@ -106,8 +106,8 @@ const Blogs = () => {
                 <div className="flex flex-col">
                     <div className="h-12 bg-gray-100"></div>
 
-                    <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
-                        <div className="flex items-center w-full lg:w-[595px] h-[65px] bg-white rounded-lg text-base">
+                    <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                        <div className="flex items-center w-full lg:w-[595px] md:w-[500px] h-[65px] bg-white rounded-lg text-base">
                             <img src={searchIcon} alt="search icon" className="w-6 h-6 mx-4" />
                             <input
                                 className="flex-grow h-[56px] focus:outline-none"
@@ -201,7 +201,7 @@ const Blogs = () => {
 
                     </div>
 
-                    <div className="flex flex-col mt-20 mb-8">
+                    <div className="flex flex-col mt-8 mb-8">
                         <h1 className="base-font-heading text-3xl leading-10">New Posts</h1>
 
                         <div className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
@@ -226,7 +226,7 @@ const Blogs = () => {
 
 
 
-                    <div className="flex flex-col mt-20 mb-8">
+                    <div className="flex flex-col mt-4 mb-8">
                         <h1 className="base-font-heading text-3xl leading-10">Trending Posts</h1>
 
                         <div className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
@@ -249,7 +249,7 @@ const Blogs = () => {
                         </div>
                     </div>
 
-                    <div className="flex flex-col py-20 mb-8">
+                    <div className="flex flex-col  mb-8">
                         <h1 className="base-font-heading text-3xl leading-10">Other Posts</h1>
 
                         <div className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">

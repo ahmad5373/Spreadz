@@ -1,5 +1,5 @@
 import fb from "../assets/fb.svg";
-import instagram from "../assets/Oval Copy.svg";
+import instagram from "../assets/insta.svg";
 import twitter from "../assets/twitter.svg";
 import arrowRight from "../assets/arrow-right.svg";
 import Button from "./button/Button";
@@ -18,7 +18,7 @@ const ContactUs = () => {
 
             <Container className='px-4 lg:px-20 xl1:px-44'>
             <div className="lg:h-36 flex justify-between mt-4 lg:mt-0">
-                <div><h1 className="base-font-heading lg:text-5xl text-xl lg:w-[823.771px]">Get in touch with us. We're here to assist you.</h1></div>
+                <div><h1 className="base-font-heading lg:text-5xl md:text-3xl text-xl lg:w-[823.771px] lg:mr-4  mr-12">Get in touch with us. We're here to assist you.</h1></div>
                 <div className="space-y-4">
                     <img src={fb} alt="Facebook logo"></img>
                     <img src={instagram} alt="Instagram logo"></img>
@@ -27,22 +27,22 @@ const ContactUs = () => {
             </div>
           
 
-            <div className=" mt-8 pb-20 flex flex-col space-y-8">
+            <div className="pb-20 flex flex-col space-y-8 mt-2">
                 <div className="flex flex-col text-black md:flex-row md:space-x-4 space-y-4 md:space-y-0 items-start">
                     <input
                         type="text"
                         placeholder="Your Name"
-                        className="p-2 bg-gray-100  border-b-2 border-gray-200 base-font text-lg placeholder-black w-full md:w-1/3"
+                        className="p-2 bg-gray-100  border-b-2 border-gray-200 base-font lg:text-lg text-md placeholder-black w-full md:w-1/3"
                     />
                     <input
                         type="email"
                         placeholder="Email Address"
-                        className="p-2 bg-gray-100   border-b-2 border-gray-200 base-font text-lg placeholder-black w-full md:w-1/3"
+                        className="p-2 bg-gray-100   border-b-2 border-gray-200 base-font lg:text-lg text-md placeholder-black w-full md:w-1/3"
                     />
                     <input
                         type="tel"
                         placeholder="Phone Number (optional)"
-                        className="p-2 bg-gray-100 text-black border-b-2 border-gray-200 base-font text-lg placeholder-black w-full md:w-1/3"
+                        className="p-2 bg-gray-100 text-black border-b-2 border-gray-200 base-font lg:text-lg text-md placeholder-black w-full md:w-1/3"
                     />
                 </div>
 
@@ -50,7 +50,7 @@ const ContactUs = () => {
                     <input
                         type="text"
                         placeholder="Message"
-                        className="p-2 bg-gray-100 border-b-2 border-gray-200 base-font text-lg placeholder-black w-full"
+                        className="p-2 bg-gray-100 border-b-2 border-gray-200 base-font lg:text-lg text-md placeholder-black w-full"
                     />
                 </div>
 
@@ -65,17 +65,17 @@ const ContactUs = () => {
                 </Button>
             </div>
             </Container>
-            <div className="bg-base-color px-4 lg:px-20 lg:py-6">
+            <div className="bg-base-color lg:py-6">
             <Container className='px-4 lg:px-10 xl1:px-20'>
-                    <div className="flex flex-col-reverse  lg:flex-row justify-between">
-                        <div className="flex flex-col justify-center items-start space-y-6 lg:pb-36">
-                            <h6 className="base-font lg:text-2xl text-base  text-white">Contact Info</h6>
-                            <h1 className="base-font-heading lg:text-5xl text-xl text-white lg:w-[575px]">We are always happy to assist you</h1>
+                    <div className="flex flex-col lg:flex-row justify-between">
+                        <div className="flex flex-col justify-center items-start space-y-6 lg:pb-36 p-6">
+                            <h6 className="base-font lg:text-2xl text-xl  text-white">Contact Info</h6>
+                            <h1 className="base-font-heading lg:text-5xl text-2xl text-white ">We are always happy to assist you</h1>
                         </div>
                         
                     <div className="flex custom-col flex-row justify-between lg:w-[575px]">
                         <div className="flex flex-col space-y-6 p-6 ">
-                            <h6 className="base-font-heading text-xl leading-10 text-white">Email Address</h6>
+                            <h6 className="base-font-heading lg:text-xl leading-10 text-lg text-white">Email Address</h6>
                             <div className="h-1 w-6 bg-white"></div>
                             <h6 className="base-font lg:text-2xl text-base underline text-white ">info@spreadz.ch</h6>
                             <h6 className="base-font lg:text-lg leading-[29px] text-base text-white lg:w-56"><p>Assistance hours:</p> 

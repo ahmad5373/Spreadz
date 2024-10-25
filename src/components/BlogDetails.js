@@ -40,8 +40,8 @@ const BlogDetails = () => {
             <div className="h-12 bg-gray-100"></div>
                 <div className="flex flex-col">
 
-            <div className="flex custom-col flex-row justify-between lg:space-x-16 bg-gray-100">
-                <div className="flex flex-col space-y-2 lg:w-[900px]">
+            <div className="flex flex-wrap flex-row justify-between lg:space-x-16 bg-gray-100">
+                <div className="flex flex-col space-y-2 xl1:w-[900px] lg:w-[850px] md:w-[700px]">
                     <div><p className="base-font-heading text-3xl leading-10">How to Spend the Perfect Day on Croatia’s Most Magical Island</p></div>
                     <div className="">
                         <img src={waterBoat} alt="Boat in Water" className="h-[504.805px] rounded-lg" />
@@ -155,7 +155,7 @@ const BlogDetails = () => {
                             <h2 className="base-font-heading text-base">Add A Comment</h2>
                         </div>
 
-                        <form className="flex flex-col lg:flex-row justify-between space-x-5">
+                        <form className="flex flex-col lg:flex-row justify-between lg:space-x-5">
                             <div className="flex flex-col space-y-4 lg:w-[440px] ">
                                 <label className="base-font-heading text-sm" htmlFor="name">Name</label>
                                 <input
@@ -179,16 +179,16 @@ const BlogDetails = () => {
                                 />
                             </div>
 
-                            <div className="flex flex-col space-y-4 w-full lg:w-[440px] ">
+                            <div className="flex flex-col space-y-4 w-full lg:w-[440px] mt-4 ">
                                 <h1 className="base-font-heading text-base">Comments</h1>
                                 <textarea
                                     placeholder="Write your comment"
-                                    className="bg-white w-full  h-[212.727px] rounded-lg px-2 text-xs focus:outline-orange-300"
+                                    className="bg-white w-full  h-[212.727px] rounded-lg p-4 text-xs focus:outline-orange-300"
                                 ></textarea>
                             </div>
                         </form>
 
-                        <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0  lg:space-x-4">
+                        <div className="flex justify-center items-center flex-col lg:flex-row space-y-4 lg:space-y-0  lg:space-x-4">
                             <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0  lg:space-x-4 lg:w-[650px]">
                                 <div>
                                 <h2 className="base-font-heading text-base">Rate the usefulness of the article</h2>
@@ -205,7 +205,7 @@ const BlogDetails = () => {
                                 </div>
                             </div>
 
-                            <button className="flex items-center py-2 px-4 space-x-2 rounded-xl bg-base-color">
+                            <button className="flex justify-center items-center py-2 px-4 space-x-2 rounded-xl bg-base-color lg:w-48 w-1/2">
                                 <FontAwesomeIcon icon={faCommentDots} size="xs" style={{ color: "#fff" }} />
                                 <p className="text-white text-base ">Send Comments</p>
                             </button>

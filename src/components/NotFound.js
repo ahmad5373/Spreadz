@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const NotFound = () => {
   return (
-    <div className="bg-gray-100 pt-12  pb-6 flex flex-col justify-center items-center">
+    <div className="bg-gray-100 lg:pt-16 md:pt-32 pt-16  pb-6 flex flex-col justify-center items-center">
       <svg
         className="emoji-404"
         enableBackground="new 0 0 226 249.135"
