@@ -7,18 +7,88 @@ import mobileFram from "../../assets/mobileFram.png";
 import ellipse from "../../assets/Ellipse 2.svg";
 import videoImage from "../../assets/videoImage.png";
 import Container from "../../customComponents/Container.";
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Autoplay } from 'swiper/modules';
 const SpreadsWork = () => {
 
   return (
     <>
       <section className="bg-gray-100 py-8 md:py-12 lg:py-10 lg:bg-white">
-        <h2 className="flex justify-center base-font-heading text-3xl lg:text-[40px] lg:leading-[58.4px] ">
+        <h2 className="flex justify-center base-font-heading text-3xl lg:text-[40px] lg:leading-[58.4px]">
           How <span className="base-color mx-2">Spreadz</span> Works?
         </h2>
 
-        <Container className='px-4 lg:px-10 xl1:px-20'>
-          <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start text-center gap-12 lg:gap-20 pt-16">
+        <Container className="px-0 md:px-4 lg:px-10 xl1:px-20">
 
+          <div className="lg:hidden block mt-8">
+            <Swiper
+              className="space-x-4 flex justify-start"
+              modules={[Autoplay]}
+              spaceBetween={20}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+              }}
+              speed={800}
+              loop={true}
+              loopFillGroupWithBlank={true} 
+              breakpoints={{
+                0: {
+                  slidesPerView: 2,
+                  spaceBetween: 10,
+                },
+                768: {
+                  slidesPerView: 3,
+                  spaceBetween: 20,
+                },
+              }}
+            >
+              <SwiperSlide>
+                <div className="flex flex-col items-center w-48 space-y-3">
+                  <div className="bg-base-color rounded-full w-6 h-6 flex items-center justify-center text-white">
+                    1
+                  </div>
+                  <div className="flex flex-col justify-end items-center gap-12 w-36 px-5 pt-9 pb-7 bg-gray-100 rounded-sm">
+                    <img src={qrScanner} alt="QR Code Scanner" className="w-36 h-36" />
+                    <img src={Ellipse} alt="Ellipse" className="w-6 h-6" />
+                  </div>
+                  <p className="base-font leading-5 text-sm lg:text-xl text-center">
+                    Your customer scans the <span className="base-color">QR code</span> to open your referral campaign.
+                  </p>
+                </div>
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <div className="flex flex-col items-center w-48 space-y-3">
+                  <div className="bg-base-color rounded-full w-6 h-6 flex items-center justify-center text-white">
+                    2
+                  </div>
+                  <img src={mobileFram} alt="Form submission" className="w-36 h-72" />
+                  <p className="base-font leading-5 text-xs lg:text-xl text-center">
+                    Your customer reaches your <span className="base-color">self-created referral campaign.</span>
+                  </p>
+                </div>
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <div className="flex flex-col items-center w-48 space-y-3">
+                  <div className="bg-base-color rounded-full w-6 h-6 flex items-center justify-center text-white">
+                    3
+                  </div>
+                  <img src={mobileFrame} alt="Form submission" className="w-36 h-72" />
+                  <p className="base-font leading-5 text-xs lg:text-xl text-center">
+                    Your customer enters their <span className="base-color">details</span> so that you know who has just recommended you.
+                  </p>
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          </div>
+
+
+          <div className="hidden lg:flex lg:flex-row justify-between items-center lg:items-start text-center gap-12 lg:gap-20 pt-16">
             <div className="flex flex-col items-center w-[316px]">
               <div className="flex flex-col items-center gap-4">
                 <div className="bg-base-color rounded-full w-12 h-12 flex items-center justify-center text-white ">
@@ -28,7 +98,7 @@ const SpreadsWork = () => {
                   <img src={qrScanner} alt="QR Code Scanner" className="w-36 h-36" />
                   <img src={Ellipse} alt="Ellipse" className="w-16 h-16" />
                 </div>
-                <p className="base-font leading-[31px] lg:text-[20px] text-md">
+                <p className="base-font leading-[31px] lg:text-lg text-md">
                   Your customer scans the <span className="text-orange-500">QR code</span> to open your referral campaign.
                 </p>
               </div>
@@ -64,8 +134,7 @@ const SpreadsWork = () => {
 
       <section className="bg-gray-100 py-8 md:py-12 lg:py-10 lg:bg-white">
         <div className="flex justify-center items-center px-4  bg-gray-100 ">
-          {/* <div class="lg:h-20 bg-gray-100"></div> */}
-          <h2 className="base-font-heading text-2xl lg:text-[40px] leading-[58.4px] pt-20 pb-8 ">
+          <h2 className="base-font-heading text-2xl lg:text-[40px] leading-[58.4px] lg:pt-20 pt-4 pb-8 ">
             <span className="base-color mr-2">Spreadz</span> Explained in Videos
           </h2>
         </div>
@@ -106,7 +175,7 @@ const SpreadsWork = () => {
 
       <section className="bg-gray-100  lg:bg-white">
         <div className="flex justify-center lg:items-center px-4  bg-gray-100">
-          <h2 className="base-font-heading text-xl lg:text-[40px] leading-[58.4px] pt-20 pb-8">
+          <h2 className="base-font-heading text-xl lg:text-[40px] leading-[58.4px] lg:pt-20 pt-4 pb-8">
             How does <span className="base-color lg:mx-2">Spreadz</span> advance your business?
           </h2>
         </div>

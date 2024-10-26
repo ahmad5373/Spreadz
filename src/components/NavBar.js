@@ -30,12 +30,12 @@ const NavBar = () => {
         </Link>
 
         <div className="hidden lg:flex space-x-4">
-          <Link to="/about-us" className="text-gray-900 hover:text-orange-500 base-font xl1:text-sm lg:text-xs" onClick={handleLinkClick} >About Us</Link>
-          <Link to="/our-story" className="text-gray-900 hover:text-orange-500 base-font xl1:text-sm lg:text-xs">Our Story</Link>
-          <Link to="/pricing" className="text-gray-900 hover:text-orange-500 base-font xl1:text-sm lg:text-xs">Plan & Pricing</Link>
-          <Link to="/blogs" className="text-gray-900 hover:text-orange-500 base-font xl1:text-sm lg:text-xs">Blogs</Link>
-          <Link to="/contact-us" className="text-gray-900 hover:text-orange-500 base-font xl1:text-sm lg:text-xs">Contact Us</Link>
-          <Link to="/social-media" className="text-gray-900 hover:text-orange-500 base-font xl1:text-sm lg:text-xs">Social Media</Link>
+        <Link to="/about-us" className=" hover:text-orange-500 base-font  xl1:text-sm lg:text-xs " onClick={handleLinkClick} >About Us</Link>
+          <Link to="/our-story" className=" hover:text-orange-500 base-font xl1:text-sm lg:text-xs ">Our Story</Link>
+          <Link to="/pricing" className=" hover:text-orange-500 base-font xl1:text-sm lg:text-xs ">Plan & Pricing</Link>
+          <Link to="/blogs" className=" hover:text-orange-500 base-font xl1:text-sm lg:text-xs ">Blogs</Link>
+          <Link to="/contact-us" className=" hover:text-orange-500 base-font xl1:text-sm lg:text-xs ">Contact Us</Link>
+          <Link to="/social-media" className=" hover:text-orange-500 base-font xl1:text-sm lg:text-xs ">Social Media</Link>
         </div>
 
         <div className="hidden lg:flex items-center space-x-4">
