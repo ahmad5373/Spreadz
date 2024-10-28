@@ -140,7 +140,7 @@ const SpreadsWork = () => {
         </div>
 
         <Container className='px-4 lg:px-10 xl1:px-20'>
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1   gap-6 mt-2 lg:mt-10">
+          <div className="grid lg:grid-cols-3 max-[425px]:grid-cols-1 grid-cols-2   gap-6 mt-2 lg:mt-10">
 
             <div className="flex flex-col ">
               <img
