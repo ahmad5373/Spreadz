@@ -179,11 +179,11 @@ const BlogDetails = () => {
                                 />
                             </div>
 
-                            <div className="flex flex-col space-y-4 w-full lg:w-[440px] mt-4 ">
+                            <div className="flex flex-col space-y-4 w-full lg:w-[440px] ">
                                 <h1 className="base-font-heading text-base">Comments</h1>
                                 <textarea
                                     placeholder="Write your comment"
-                                    className="bg-white w-full  h-[212.727px] rounded-lg p-4 text-xs focus:outline-orange-300"
+                                    className="bg-white w-full  h-56 rounded-lg p-4 text-xs focus:outline-orange-300"
                                 ></textarea>
                             </div>
                         </form>
