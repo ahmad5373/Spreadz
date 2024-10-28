@@ -140,13 +140,13 @@ const SpreadsWork = () => {
         </div>
 
         <Container className='px-4 lg:px-10 xl1:px-20'>
-          <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-6 lg:gap-12 mt-8">
+          <div className="flex flex-col lg:flex-row justify-between gap-6 mt-8">
 
             <div className="flex flex-col items-start lg:w-[418px] ">
               <img
                 src={videoImage}
                 alt="How Spreadz Works?"
-                className="w-full lg:w-72 h-[267px] rounded-lg "
+                className="w-full h-[267px] rounded-lg "
               />
               <p className="base-font-heading lg:text-lg text-base mt-2">How Spreadz Works?</p>
             </div>
@@ -155,7 +155,7 @@ const SpreadsWork = () => {
               <img
                 src={videoImage}
                 alt="How to create account on Spreadz?"
-                className="w-full lg:w-72 h-[267px] "
+                className="w-full   h-[267px] "
               />
               <p className="base-font-heading lg:text-lg mt-2">How to create account on Spreadz?</p>
             </div>
@@ -164,7 +164,7 @@ const SpreadsWork = () => {
               <img
                 src={videoImage}
                 alt="Creating campaign on Spreadz."
-                className="w-full lg:w-72 h-[267px]"
+                className="w-full   h-[267px]"
               />
               <p className="base-font-heading lg:text-lg mt-2">Creating campaign on Spreadz.</p>
             </div>

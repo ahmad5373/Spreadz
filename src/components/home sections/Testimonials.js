@@ -11,12 +11,12 @@ const Testimonial = () => {
         <section className="bg-gray-100 lg:bg-white">
             <Container className='px-4 lg:px-10 xl1:px-20'>
 
-                <div className="pt-12 sm:px-6">
+                <div className="pt-12 ">
                     <h2 className="text-center base-font-heading text-2xl lg:text-[40px] leading-[58.4px] text-gray-900 lg:pb-16">
                         What clients say about us
                     </h2>
-                    <div className="mt-8 flex custom-col flex-row  lg:gap-6 justify-center  gap-4 mb-8">
-                        <div className="rounded-lg  p-6 sm:p-8">
+                    <div className="mt-8 flex custom-col flex-row  lg:gap-6 justify-between  gap- mb-8">
+                        <div className="rounded-lg ">
                             <div className="flex flex-col items-center">
                                 <div className="flex flex-col text-center text-gray-700 lg:w-[352px]">
                                     <p className="mb-6 text-base base-font  leading-[33px] lg:text-2xl">
@@ -47,7 +47,7 @@ const Testimonial = () => {
                             <hr className="h-0.5 w-full mt-16"></hr>
                         </div>
 
-                        <div className="rounded-lg p-6  sm:p-8">
+                        <div className="rounded-lg">
                             <div className="flex flex-col items-center">
                                 <div className="flex flex-col text-center text-gray-700 lg:w-[352px]">
                                     <p className="mb-6 text-base base-font  leading-[33px] lg:text-2xl">
@@ -79,7 +79,7 @@ const Testimonial = () => {
                         </div>
 
 
-                        <div className="rounded-lg p-6 sm:p-8">
+                        <div className="rounded-lg">
                             <div className="flex flex-col items-center">
                                 <div className="flex flex-col text-center text-gray-700 lg:w-[352px]">
                                     <p className="mb-6 text-base base-font leading-[33px] lg:text-2xl">
