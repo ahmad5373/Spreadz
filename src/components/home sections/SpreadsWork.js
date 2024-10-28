@@ -134,37 +134,37 @@ const SpreadsWork = () => {
 
       <section className="bg-gray-100 py-8 md:py-12 lg:py-10 lg:bg-white">
         <div className="flex justify-center items-center px-4  bg-gray-100 ">
-          <h2 className="base-font-heading text-2xl lg:text-[40px] leading-[58.4px] lg:pt-20 pt-4 pb-8 ">
+          <h2 className="base-font-heading  text-2xl lg:text-[40px] md:leading-[58.4px] lg:pt-20 pt-4 pb-8 ">
             <span className="text-orange-150 mr-2">Spreadz</span> Explained in Videos
           </h2>
         </div>
 
         <Container className='px-4 lg:px-10 xl1:px-20'>
-          <div className="flex flex-col lg:flex-row justify-between gap-6 mt-8">
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1   gap-6 mt-2 lg:mt-10">
 
-            <div className="flex flex-col items-start lg:w-[418px] ">
+            <div className="flex flex-col ">
               <img
                 src={videoImage}
                 alt="How Spreadz Works?"
-                className="w-full h-[267px] rounded-lg "
+                className=" h-[267px] rounded-lg "
               />
               <p className="base-font-heading lg:text-lg text-base mt-2">How Spreadz Works?</p>
             </div>
 
-            <div className="flex flex-col items-start lg:w-[418px]">
+            <div className="flex flex-col ">
               <img
                 src={videoImage}
                 alt="How to create account on Spreadz?"
-                className="w-full   h-[267px] "
+                className="  h-[267px] "
               />
               <p className="base-font-heading lg:text-lg mt-2">How to create account on Spreadz?</p>
             </div>
 
-            <div className="flex flex-col items-start lg:w-[418px]">
+            <div className="flex flex-col ">
               <img
                 src={videoImage}
                 alt="Creating campaign on Spreadz."
-                className="w-full   h-[267px]"
+                className=" h-[267px]"
               />
               <p className="base-font-heading lg:text-lg mt-2">Creating campaign on Spreadz.</p>
             </div>

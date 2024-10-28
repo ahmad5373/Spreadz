@@ -13,7 +13,7 @@ const Features = () =>{
         <section className="bg-gray-100 py-8 md:py-12 lg:py-10 lg:bg-white">
         <div className="flex justify-center base-font-heading text-[40px] leading-[58.4px]">Features</div>
       <Container className='px-4 lg:px-10 xl1:px-20'>
-        <div className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8 lg:bg-white">
+        <div className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-x-24 gap-y-9 lg:bg-white">
           <div className="bg-white  rounded-lg lg:bg-gray-200">
             <div className="flex flex-col items-start  custom-w-16 lg:w-[278px] pt-6 pb-5  pl-6 space-y-6">
               <img src={TimeTrack} alt="Real Time Tracking" className="w-18 h-18" />

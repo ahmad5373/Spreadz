@@ -205,7 +205,7 @@ const BlogDetails = () => {
                                 </div>
                             </div>
 
-                            <button className="flex justify-center items-center py-2 px-4 space-x-2 rounded-xl bg-orange-150 lg:w-48 w-1/2">
+                            <button className="flex justify-center items-center py-2 px-4 space-x-2 rounded-xl bg-orange-150 lg:w-48 w-1/2 max-[375px]:w-full">
                                 <FontAwesomeIcon icon={faCommentDots} size="xs" style={{ color: "#fff" }} />
                                 <p className="text-white text-base ">Send Comments</p>
                             </button>

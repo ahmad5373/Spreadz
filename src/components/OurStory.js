@@ -18,7 +18,7 @@ const OurStory = () => {
                             <img src={quotes1} alt="quotes" className="h-12 w-12"></img>
                             <h2 className="base-font lg:text-3xl text-lg lg:leading-10	lg:w-[900px]  custom-w-our-story text-white">But what does the web app have to do with "spreading" anyway? The logo also gives it away. The "S" has an arrow at the top and bottom. "It stands for multiplying, sharing and distributing, and that's exactly what I want to achieve with this app." Sonderegger also wants to offer companies the opportunity to establish themselves and draw attention to themselves.</h2>
                             <img src={quotes2} alt="quotes 2" className="h-12 xl1:ml-[26rem] lg:ml-[22rem]  custom-our-story-quote md:-ml-64 -ml-20 "></img>
-                            <h4 className="base-font  text-xl  mt-8 text-white">Nidwaldner Zeitung, 05 October 2023 (Source: CH Media)</h4>
+                            <h4 className="base-font  text-xl mb-6 lg:mb-2 mt-8 text-white">Nidwaldner Zeitung, 05 October 2023 (Source: CH Media)</h4>
                         </div>
                         <div className=" flex justify-center items-center"><img src={chrisStory} alt="Chris" className=" h-[424px]"></img></div>
                     </div>

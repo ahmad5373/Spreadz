@@ -13,7 +13,7 @@ const Faqs = () => {
                 <div className="mt-4 px-2 border-2 border-orange-200 shadow-md rounded-md bg-white">
                     <div className="grid divide-y divide-neutral-200">
                         <details className="group py-5">
-                            <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
+                            <summary className="flex justify-between  font-medium cursor-pointer list-none">
                                 <span className="base-font-heading text-xl ">What is Spreadz?</span>
                                 <span className="transition-transform group-open:rotate-180">
                                     <img src={arrowDown} alt="arrow down"></img>
@@ -30,7 +30,7 @@ const Faqs = () => {
                 <div className="mt-4 px-2 border-2 border-orange-200 shadow-md rounded-md bg-white">
                     <div className="grid divide-y divide-neutral-200">
                         <details className="group py-5">
-                            <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
+                            <summary className="flex justify-between  font-medium cursor-pointer list-none">
                                 <span className="base-font-heading text-xl ">How does Spreadz Work?</span>
                                 <span className="transition-transform group-open:rotate-180">
                                     <img src={arrowDown} alt="arrow down"></img>
@@ -47,7 +47,7 @@ const Faqs = () => {
                 <div className="mt-4 px-2 border-2 border-orange-200 shadow-md rounded-md bg-white">
                     <div className="grid divide-y divide-neutral-200">
                         <details className="group py-5">
-                            <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
+                            <summary className="flex justify-between font-medium cursor-pointer list-none">
                                 <span className="base-font-heading text-xl ">What subscriptions does Spreadz offer?</span>
                                 <span className="transition-transform group-open:rotate-180">
                                     <img src={arrowDown} alt="arrow down"></img>
@@ -64,7 +64,7 @@ const Faqs = () => {
                 <div className="mt-4 px-2 border-2 border-orange-200 shadow-md rounded-md bg-white">
                     <div className="grid divide-y divide-neutral-200">
                         <details className="group py-5">
-                            <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
+                            <summary className="flex justify-between  font-medium cursor-pointer list-none">
                                 <span className="base-font-heading text-xl ">How can I create a referral campaign?</span>
                                 <span className="transition-transform group-open:rotate-180">
                                     <img src={arrowDown} alt="arrow down"></img>
@@ -81,7 +81,7 @@ const Faqs = () => {
                 <div className="mt-4 px-2 border-2 border-orange-200 shadow-md rounded-md bg-white">
                     <div className="grid divide-y divide-neutral-200">
                         <details className="group py-5">
-                            <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
+                            <summary className="flex justify-between font-medium cursor-pointer list-none">
                                 <span className="base-font-heading text-xl ">Is it possible to embed videos in my referral campaigns?</span>
                                 <span className="transition-transform group-open:rotate-180">
                                     <img src={arrowDown} alt="arrow down"></img>
@@ -99,7 +99,7 @@ const Faqs = () => {
                 <div className="mt-4 px-2 border-2 border-orange-200 shadow-md rounded-md bg-white">
                     <div className="grid divide-y divide-neutral-200">
                         <details className="group py-5">
-                            <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
+                            <summary className="flex justify-between  font-medium cursor-pointer list-none">
                                 <span className="base-font-heading text-xl ">Can I cancel my subscription at any time?</span>
                                 <span className="transition-transform group-open:rotate-180">
                                     <img src={arrowDown} alt="arrow down"></img>
@@ -117,7 +117,7 @@ const Faqs = () => {
                 <div className="mt-4 px-2 border-2 border-orange-200 shadow-md rounded-md bg-white">
                     <div className="grid divide-y divide-neutral-200">
                         <details className="group py-5">
-                            <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
+                            <summary className="flex justify-between  font-medium cursor-pointer list-none">
                                 <span className="base-font-heading text-xl ">What is the advantage of Spreadz?</span>
                                 <span className="transition-transform group-open:rotate-180">
                                     <img src={arrowDown} alt="arrow down"></img>
@@ -135,7 +135,7 @@ const Faqs = () => {
                 <div className="mt-4 px-2 border-2 border-orange-200 shadow-md rounded-md bg-white">
                     <div className="grid divide-y divide-neutral-200">
                         <details className="group py-5">
-                            <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
+                            <summary className="flex justify-between  font-medium cursor-pointer list-none">
                                 <span className="base-font-heading text-xl ">What does Spreadz cost?</span>
                                 <span className="transition-transform group-open:rotate-180">
                                     <img src={arrowDown} alt="arrow down"></img>
@@ -152,7 +152,7 @@ const Faqs = () => {
                 <div className="mt-4 px-2 border-2 border-orange-200 shadow-md rounded-md bg-white">
                     <div className="grid divide-y divide-neutral-200">
                         <details className="group py-5">
-                            <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
+                            <summary className="flex justify-between  font-medium cursor-pointer list-none">
                                 <span className="base-font-heading text-xl ">How do I set up my account?</span>
                                 <span className="transition-transform group-open:rotate-180">
                                     <img src={arrowDown} alt="arrow down"></img>
@@ -169,7 +169,7 @@ const Faqs = () => {
                 <div className="my-4 px-2 border-2 border-orange-200 shadow-md rounded-md bg-white">
                     <div className="grid divide-y divide-neutral-200">
                         <details className="group py-5">
-                            <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
+                            <summary className="flex justify-between font-medium cursor-pointer list-none">
                                 <span className="base-font-heading text-xl ">How can I reach Spreadz support?</span>
                                 <span className="transition-transform group-open:rotate-180">
                                     <img src={arrowDown} alt="arrow down"></img>

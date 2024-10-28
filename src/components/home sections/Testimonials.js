@@ -19,10 +19,10 @@ const Testimonial = () => {
                         <div className="rounded-lg ">
                             <div className="flex flex-col items-center">
                                 <div className="flex flex-col text-center text-gray-700 lg:w-[352px]">
-                                    <p className="mb-6 text-base base-font  leading-[33px] lg:text-2xl">
+                                    <p className="lg:mb-6 mb-0 text-base base-font  leading-[33px] lg:text-2xl">
                                         Collaborating with DIVADSGN was an absolute delight!
-                                        <br />
-                                        <br />
+                                      </p>
+                                      <p className="mb-6 text-base base-font  leading-[33px] lg:text-2xl">
                                         Their team's boundless creativity and meticulousness went above and beyond our wildest expectations.
                                     </p>
                                 </div>
@@ -50,10 +50,10 @@ const Testimonial = () => {
                         <div className="rounded-lg">
                             <div className="flex flex-col items-center">
                                 <div className="flex flex-col text-center text-gray-700 lg:w-[352px]">
-                                    <p className="mb-6 text-base base-font  leading-[33px] lg:text-2xl">
+                                    <p className="lg:mb-6 mb-0 text-base base-font  leading-[33px] lg:text-2xl">
                                         Absolutely mind-blowing skills and absolute professionalism!
-                                        <br />
-                                        <br />
+                                      </p>
+                                      <p className="mb-6 text-base base-font  leading-[33px] lg:text-2xl">
                                         They absolutely skyrocketed our project with their groundbreaking ideas and impeccable implementation.
                                     </p>
                                 </div>
@@ -82,10 +82,10 @@ const Testimonial = () => {
                         <div className="rounded-lg">
                             <div className="flex flex-col items-center">
                                 <div className="flex flex-col text-center text-gray-700 lg:w-[352px]">
-                                    <p className="mb-6 text-base base-font leading-[33px] lg:text-2xl">
+                                    <p className="lg:mb-6 mb-0 text-base base-font leading-[33px] lg:text-2xl">
                                         Kudos to the design agency for their outstanding work!
-                                        <br />
-                                        <br />
+                                       </p>
+                                       <p className="mb-6 text-base base-font  leading-[33px] lg:text-2xl" >
                                         Their dedication to excellence and innovation was evident from the very first brainstorming session to the final masterpiece.
                                     </p>
                                 </div>
