@@ -31,7 +31,7 @@ const Footer = () => {
               <ul className="space-y-1 text-base text-black base-font">
                 <li><Link to="/" className="text-base text-black base-font ">Home</Link></li>
                 <li><Link to="/about-us" className="text-base text-black base-font">About Us</Link></li>
-                <li><Link to="/contact" className="text-base text-black base-font">Contact Us</Link></li>
+                <li><Link to="/contact-us" className="text-base text-black base-font">Contact Us</Link></li>
                 <li><Link to="/blogs" className="text-base text-black base-font">Blogs</Link></li>
                 <li><Link to="/tutorials" className="text-base text-black base-font">Tutorials</Link></li>
                 <li><Link to="/resource-library" className="text-base text-black base-font">Resource Library</Link></li>

@@ -77,7 +77,7 @@ const NavBar = () => {
         </div>
 
         <div className={`${isMenuOpen ? 'block' : 'hidden'} lg:hidden w-full`} id="navbar-sticky">
-          <ul className="flex flex-col p-4 m t-4 border border-gray-100 rounded-lg bg-gray-50 dark:bg-gray-800">
+          <ul className="flex flex-col p-4 m t-4 border border-gray-100 rounded-lg bg-gray-50 ">
             <li><Link to="/" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100" onClick={handleLinkClick}>Home</Link></li>
             <li><Link to="/about-us" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100" onClick={handleLinkClick}>About Us</Link></li>
             <li><Link to="/our-story" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100" onClick={handleLinkClick}>Our Story</Link></li>
