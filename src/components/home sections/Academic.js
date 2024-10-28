@@ -12,7 +12,7 @@ const Academic = () => {
         console.log("Seat is reserving......");
     }
     return (
-        <section className="bg-base-color ">
+        <section className="bg-orange-150 ">
             <Container className='px-4 lg:px-10 xl1:px-20'>
                 <div className="lg:py-8">
                     <div className="flex flex-col sm:gap-6 lg:flex-row lg:gap-8 justify-between gap-4 mb-8">
@@ -27,7 +27,7 @@ const Academic = () => {
                             </p>
 
                             <Button
-                                className={`w-1/2 py-2 bg-white base-font-heading text-sm  rounded-lg base-color`}
+                                className={`w-1/2 py-2 bg-white base-font-heading text-sm  rounded-lg text-orange-150`}
                                 onClick={ReserveSeat}
                                 label="Reserve Seat"
                             ></Button>
@@ -46,7 +46,7 @@ const Academic = () => {
                             </p>
 
                             <Button
-                                className={`w-10/12 py-2 bg-white base-font-heading text-sm  rounded-lg base-color`}
+                                className={`w-10/12 py-2 bg-white base-font-heading text-sm  rounded-lg text-orange-150`}
                                 onClick={ReserveSeat}
                                 label="Go to Tutorials"
                             ></Button>
@@ -65,7 +65,7 @@ const Academic = () => {
                             </p>
 
                             <Button
-                                className={`w-1/2 py-2 bg-white base-font-heading text-sm  rounded-lg base-color`}
+                                className={`w-1/2 py-2 bg-white base-font-heading text-sm  rounded-lg text-orange-150`}
                                 onClick={ReserveSeat}
                                 label="Explore Blogs"
                             ></Button>

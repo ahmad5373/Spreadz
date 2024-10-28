@@ -48,9 +48,9 @@ const BlogDetails = () => {
                     </div>
                     <div className="flex items-center">
                         <FontAwesomeIcon icon={faCalendar} size="sm" style={{ color: "#b2b2b3", paddingLeft: "4px" }} />
-                        <p className="base-font text-base text-color-dark ml-2 mr-16 ">July 14 , 2022</p>
+                        <p className="base-font text-base text-gray-250 ml-2 mr-16 ">July 14 , 2022</p>
                         <FontAwesomeIcon icon={faCommentDots} size="sm" style={{ color: "#bfbfc0" }} />
-                        <p className="base-font text-base text-color-dark ml-2">comments : 35</p>
+                        <p className="base-font text-base text-gray-250 ml-2">comments : 35</p>
                     </div>
 
                     <div className="py-8">
@@ -69,7 +69,7 @@ const BlogDetails = () => {
                     </div>
 
                     <div className="flex justify-start items-center space-x-2 pb-5">
-                        <div className="h-2 w-1 bg-dot-comment" ></div>
+                        <div className="h-2 w-1 bg-red-150" ></div>
                         <h2 className="base-font-heading text-base">Comments</h2>
                     </div>
 
@@ -80,14 +80,14 @@ const BlogDetails = () => {
                                 <h1 className="base-font-heading text-sm">Jon Kantner</h1>
                                 <div className="flex  justify-between items-center">
                                     <FontAwesomeIcon icon={faCalendar} size="sm" style={{ color: "#b2b2b3", }} />
-                                    <p className="base-font text-base text-color-dark ml-2 mr-16 ">2022 04 July</p>
+                                    <p className="base-font text-base text-gray-250 ml-2 mr-16 ">2022 04 July</p>
                                 </div>
                             </div>
                         </div>
 
                         <button className="flex justify-end items-center py-2 pr-5 pl-4 space-x-2 bg-gray-200 rounded-xl">
                             <FontAwesomeIcon icon={faShare} size="sm" style={{ color: "#b5b5b5", }} />
-                            <p className="base-font-heading text-base text-color-dark ">Reply</p>
+                            <p className="base-font-heading text-base text-gray-250 ">Reply</p>
                         </button>
                     </div>
 
@@ -105,7 +105,7 @@ const BlogDetails = () => {
                                     <h1 className="base-font-heading text-sm">Cassie Evans</h1>
                                     <div className="flex  justify-between items-center">
                                         <FontAwesomeIcon icon={faCalendar} size="sm" style={{ color: "#b2b2b3", }} />
-                                        <p className="base-font text-base text-color-dark ml-2 mr-16 ">2022 04 July</p>
+                                        <p className="base-font text-base text-gray-250 ml-2 mr-16 ">2022 04 July</p>
                                     </div>
                                 </div>
                             </div>
@@ -117,7 +117,7 @@ const BlogDetails = () => {
                                     <h1 className="base-font-heading text-sm">behzad pashaei</h1>
                                     <div className="flex  justify-between items-center">
                                         <FontAwesomeIcon icon={faCalendar} size="sm" style={{ color: "#b2b2b3", }} />
-                                        <p className="base-font text-base text-color-dark ml-2 mr-16 ">2022 04 July</p>
+                                        <p className="base-font text-base text-gray-250 ml-2 mr-16 ">2022 04 July</p>
                                     </div>
                                 </div>
                             </div>
@@ -134,14 +134,14 @@ const BlogDetails = () => {
                                 <h1 className="base-font-heading text-sm">Patricia</h1>
                                 <div className="flex  justify-between items-center">
                                     <FontAwesomeIcon icon={faCalendar} size="sm" style={{ color: "#b2b2b3", }} />
-                                    <p className="base-font text-base text-color-dark ml-2 mr-16 ">2022 04 July</p>
+                                    <p className="base-font text-base text-gray-250 ml-2 mr-16 ">2022 04 July</p>
                                 </div>
                             </div>
                         </div>
 
                         <button className="flex justify-end items-center py-2 pr-5 pl-4 space-x-2 bg-gray-200 rounded-xl">
                             <FontAwesomeIcon icon={faShare} size="sm" style={{ color: "#b5b5b5", }} />
-                            <p className="base-font-heading text-base text-color-dark ">Reply</p>
+                            <p className="base-font-heading text-base text-gray-250 ">Reply</p>
                         </button>
                     </div>
 
@@ -151,7 +151,7 @@ const BlogDetails = () => {
 
                     <div className="flex flex-col justify-between space-y-5 p-5">
                         <div className="flex justify-start items-center space-x-2 pb-5">
-                            <div className="h-2 w-1 bg-dot-comment"></div>
+                            <div className="h-2 w-1 bg-red-150"></div>
                             <h2 className="base-font-heading text-base">Add A Comment</h2>
                         </div>
 
@@ -198,14 +198,14 @@ const BlogDetails = () => {
                                     <FontAwesomeIcon icon={faFaceMeh} style={{ color: "#FA8231" }} />
                                     <FontAwesomeIcon icon={faFaceGrinWide} style={{ color: "#F7B731" }} />
                                     <FontAwesomeIcon icon={faFaceGrinHearts} style={{ color: "#45AAF2" }} />
-                                <button className="flex justify-center items-center py-2 px-4 space-x-2 bg-dot-green rounded-xl w-[125px]">
+                                <button className="flex justify-center items-center py-2 px-4 space-x-2 bg-green-150 rounded-xl w-[125px]">
                                     <FontAwesomeIcon icon={faFaceGrinStars} style={{ color: "#FFF" }} />
                                     <p className="text-white text-base">Good</p>
                                 </button>
                                 </div>
                             </div>
 
-                            <button className="flex justify-center items-center py-2 px-4 space-x-2 rounded-xl bg-base-color lg:w-48 w-1/2">
+                            <button className="flex justify-center items-center py-2 px-4 space-x-2 rounded-xl bg-orange-150 lg:w-48 w-1/2">
                                 <FontAwesomeIcon icon={faCommentDots} size="xs" style={{ color: "#fff" }} />
                                 <p className="text-white text-base ">Send Comments</p>
                             </button>
@@ -219,17 +219,17 @@ const BlogDetails = () => {
                     <div className="flex justify-between ">
                         <div className="flex justify-between items-center space-x-2">
                             <FontAwesomeIcon icon={faPaperPlane} size="sm" style={{ color: "#b5b5b5", }} />
-                            <p className="base-font text-sm text-color-dark">Share</p>
+                            <p className="base-font text-sm text-gray-250">Share</p>
                         </div>
 
                         <div className="flex justify-between items-center space-x-2">
                             <FontAwesomeIcon icon={faBookmark} size="sm" style={{ color: "#b5b5b5", }} />
-                            <p className="base-font text-sm text-color-dark">Marking</p>
+                            <p className="base-font text-sm text-gray-250">Marking</p>
                         </div>
 
                         <div className="flex justify-between items-center space-x-2">
                             <FontAwesomeIcon icon={faCommentDots} size="sm" style={{ color: "#bfbfc0" }} />
-                            <p className="base-font text-sm text-color-dark">Comment</p>
+                            <p className="base-font text-sm text-gray-250">Comment</p>
                         </div>
                     </div>
 
@@ -241,7 +241,7 @@ const BlogDetails = () => {
                         <div className="flex flex-col space-y-4">
                             <p className="base-font-heading text-sm">Louis Hoebregts</p>
                             <Button
-                                className="py-2 pl-2  pr-3 base-font-heading text-base flex items-center justify-center bg-base-color text-white rounded-lg border border-orange-300"
+                                className="py-2 pl-2  pr-3 base-font-heading text-base flex items-center justify-center bg-orange-150 text-white rounded-lg border border-orange-300"
                                 onClick={Follow}
                                 icon={PlusIcon}
                                 imgStyle="w-4 h-4 bg-white"
@@ -252,7 +252,7 @@ const BlogDetails = () => {
                             </Button>
                         </div>
 
-                        <div><p className="base-font text-sm text-color-dark ml-6">27 post</p></div>
+                        <div><p className="base-font text-sm text-gray-250 ml-6">27 post</p></div>
                     </div>
 
                     <div className="flex flex-col justify-start space-y-5">
@@ -261,14 +261,14 @@ const BlogDetails = () => {
                             <h2 className="base-font-heading text-base">Tag</h2>
                         </div>
                         <div className="flex space-x-3">
-                            <p className="base-font text-sm text-color-dark">Montenegro</p>
-                            <p className="base-font text-sm text-color-dark">Visit Croatia</p>
-                            <p className="base-font text-sm text-color-dark">Luxury Travel</p>
+                            <p className="base-font text-sm text-gray-250">Montenegro</p>
+                            <p className="base-font text-sm text-gray-250">Visit Croatia</p>
+                            <p className="base-font text-sm text-gray-250">Luxury Travel</p>
                         </div>
                         <div className="flex space-x-3">
-                            <p className="base-font text-sm text-color-dark">Travel Log</p>
-                            <p className="base-font text-sm text-color-dark">Paradise Island</p>
-                            <p className="base-font text-sm text-color-dark">Travel Info</p>
+                            <p className="base-font text-sm text-gray-250">Travel Log</p>
+                            <p className="base-font text-sm text-gray-250">Paradise Island</p>
+                            <p className="base-font text-sm text-gray-250">Travel Info</p>
                         </div>
                     </div>
 
@@ -342,21 +342,21 @@ const BlogDetails = () => {
                                     </div>
                                     <div className="flex items-center">
                                         <div className="h-[0.723px] w-[26px] bg-black mr-2"></div>
-                                        <p className="base-font text-xs gray-text">June 28, 2018</p>
+                                        <p className="base-font text-xs text-gray-150">June 28, 2018</p>
                                     </div>
                                     <ul>
                                         <li className="flex items-center custom-bullet space-x-2">
                                             <img src={share} alt="share icon" className="w-4 h-4" />
-                                            <p className="text-xs gray-text">1K shares</p>
+                                            <p className="text-xs text-gray-150">1K shares</p>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
-                            <div><p className="base-font text-base leading-7 gray-text-descrption mb-4">Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat justo enim. Venenatis eget adipiscing luctus lorem. </p></div>
-                            <Link to="blog-details " className="base-font-heading text-base base-color">
+                            <div><p className="base-font text-base leading-7 text-gray-350 mb-4">Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat justo enim. Venenatis eget adipiscing luctus lorem. </p></div>
+                            <Link to="blog-details " className="base-font-heading text-base text-orange-150">
                                 View Post
                             </Link>
-                            <div className="w-[78.032px] h-[0.723px] bg-base-color"></div>
+                            <div className="w-[78.032px] h-[0.723px] bg-orange-150"></div>
                         </div>
                     </div>
 
@@ -372,21 +372,21 @@ const BlogDetails = () => {
                                     </div>
                                     <div className="flex items-center">
                                         <div className="h-[0.723px] w-[26px] bg-black mr-2"></div>
-                                        <p className="base-font text-xs gray-text">June 28, 2018</p>
+                                        <p className="base-font text-xs text-gray-150">June 28, 2018</p>
                                     </div>
                                     <ul>
                                         <li className="flex items-center custom-bullet space-x-2">
                                             <img src={share} alt="share icon" className="w-4 h-4" />
-                                            <p className="text-xs gray-text">1K shares</p>
+                                            <p className="text-xs text-gray-150">1K shares</p>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
-                            <div><p className="base-font text-base leading-7 gray-text-descrption mb-4">Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat justo enim. Venenatis eget adipiscing luctus lorem. </p></div>
-                            <Link to="blog-details " className="base-font-heading text-base base-color">
+                            <div><p className="base-font text-base leading-7 text-gray-350 mb-4">Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat justo enim. Venenatis eget adipiscing luctus lorem. </p></div>
+                            <Link to="blog-details " className="base-font-heading text-base text-orange-150">
                                 View Post
                             </Link>
-                            <div className="w-[78.032px] h-[0.723px] bg-base-color"></div>
+                            <div className="w-[78.032px] h-[0.723px] bg-orange-150"></div>
                         </div>
                     </div>
 
@@ -403,21 +403,21 @@ const BlogDetails = () => {
                                     </div>
                                     <div className="flex items-center">
                                         <div className="h-[0.723px] w-[26px] bg-black mr-2"></div>
-                                        <p className="base-font text-xs gray-text">June 28, 2018</p>
+                                        <p className="base-font text-xs text-gray-150">June 28, 2018</p>
                                     </div>
                                     <ul>
                                         <li className="flex items-center custom-bullet space-x-2">
                                             <img src={share} alt="share icon" className="w-4 h-4" />
-                                            <p className="text-xs gray-text">1K shares</p>
+                                            <p className="text-xs text-gray-150">1K shares</p>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
-                            <div><p className="base-font text-base leading-7 gray-text-descrption mb-4">Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat justo enim. Venenatis eget adipiscing luctus lorem. </p></div>
-                            <Link to="blog-details " className="base-font-heading text-base base-color">
+                            <div><p className="base-font text-base leading-7 text-gray-350 mb-4">Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat justo enim. Venenatis eget adipiscing luctus lorem. </p></div>
+                            <Link to="blog-details " className="base-font-heading text-base text-orange-150">
                                 View Post
                             </Link>
-                            <div className="w-[78.032px] h-[0.723px] bg-base-color"></div>
+                            <div className="w-[78.032px] h-[0.723px] bg-orange-150"></div>
                         </div>
 
                     </div>
@@ -427,7 +427,7 @@ const BlogDetails = () => {
                 <div className="flex justify-center items-center">
 
                     <Button
-                        className="py-2 px-6 mt-10 base-font-heading text-base flex items-center justify-center bg-white base-color rounded-lg border border-orange-300"
+                        className="py-2 px-6 mt-10 base-font-heading text-base flex items-center justify-center bg-white text-orange-150 rounded-lg border border-orange-300"
                         onClick={AllPost}
                         icon={arrowRight}
                         imgStyle="w-5 h-5"

@@ -28,61 +28,6 @@ code {
   font-weight: 600;
 }
 
-.base-color {
-  color: #f49217;
-}
-
-.text-color-dark {
-  color: var(--Black-75, rgba(62, 50, 50, 0.75));
-}
-
-.bg-base-color {
-  background-color: #f49217;
-}
-
-.gray-text {
-  color: #9d9d9d;
-}
-
-.gray-text-light {
-  color: #d5d5d5;
-}
-
-.gray-text-descrption {
-  color: #6c757d;
-}
-
-.h-86 {
-  height: 441px;
-}
-
-.w-78 {
-  width: 313px !important;
-}
-.w-112 {
-  width: 765px;
-}
-
-.placeholder-base-color::placeholder {
-  color: #f49217;
-}
-
-.bg-our-team {
-  background: #f4921726;
-}
-
-
-.bg-subscription-features {
-  background: rgba(244, 146, 23, 0.15);
-}
-
-.bg-dot-comment {
-  background-color: #f81539;
-}
-
-.bg-dot-green {
-  background-color: #26de81;
-}
 
 .bg-left {
   background-image: url("../src//assets/Rectangle3131.png");
@@ -121,13 +66,6 @@ code {
 
 .bg-blog-advertise2 {
   background-image: url("../src//assets/advertise2.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.bg-union {
-  background-image: url("../src//assets/Union.svg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

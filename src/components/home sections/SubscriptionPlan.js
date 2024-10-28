@@ -37,7 +37,7 @@ const SubscriptionPlans = () => {
                 "With Spreadz branding",
                 "Create teams to collaborate on designs",
             ],
-            buttonColor: "bg-base-color text-white hover:bg-orange-400",
+            buttonColor: "bg-orange-150 text-white hover:bg-orange-400",
             textColor: "text-gray-800",
             backgroundColor: "bg-gray-100",
         },
@@ -58,7 +58,7 @@ const SubscriptionPlans = () => {
             ],
             buttonColor: "bg-white text-orange-500 hover:bg-white",
             textColor: "text-white",
-            backgroundColor: "bg-base-color",
+            backgroundColor: "bg-orange-150",
         },
         {
             title: "Excellence",
@@ -73,7 +73,7 @@ const SubscriptionPlans = () => {
                 "Video Upload Feature",
                 "Telephone support  +Video Call Support + Without Spreadz branding +  Color Scheme Customization",
             ],
-            buttonColor: "bg-base-color text-white over:bg-orange-400",
+            buttonColor: "bg-orange-150 text-white over:bg-orange-400",
             textColor: "text-gray-800",
             backgroundColor: "bg-gray-100",
         },
@@ -134,11 +134,11 @@ const SubscriptionPlans = () => {
                                 </div>
                             </div>
 
-                            <h2 className={`base-font ${plan.title === "Pro" ? "text-white" : "gray-text"} xl1:text-base lg:text-sm leading-7 mb-4`}>{plan.description}</h2>
+                            <h2 className={`base-font ${plan.title === "Pro" ? "text-white" : "text-gray-150"} xl1:text-base lg:text-sm leading-7 mb-4`}>{plan.description}</h2>
 
                             <div className="flex items-center gap-2 mb-4">
                                 <div className="base-font-heading xl1:text-5xl lg:text-3xl">{plan.monthlyPrice}</div>
-                                <span className={`base-font text-base  ${plan.title === "Pro" ? "text-white" : "}gray-text"} space-x-4`}>/Month</span>
+                                <span className={`base-font text-base  ${plan.title === "Pro" ? "text-white" : "}text-gray-150"} space-x-4`}>/Month</span>
 
                             </div>
                             {plan.recommended && (
@@ -153,7 +153,7 @@ const SubscriptionPlans = () => {
                                             className={`p-0.5 w-5 h-5 rounded-full flex items-center justify-center  shrink-0
                                        ${plan.title === "Pro"
                                                     ? "bg-white"
-                                                    : "bg-subscription-features"
+                                                    : "bg-orange-250"
                                                 }`}
                                         >
                                             {proFeatures.includes(feature) || excellenceFeatures.includes(feature) ? (

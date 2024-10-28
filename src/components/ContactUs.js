@@ -55,7 +55,7 @@ const ContactUs = () => {
                 </div>
 
                 <Button
-                    className={`md:w-64 py-4 flex items-center justify-center text-white bg-base-color base-font-heading text-base rounded-lg`}
+                    className={`md:w-64 py-4 flex items-center justify-center text-white bg-orange-150 base-font-heading text-base rounded-lg`}
                     onClick={LeaveMessage}
                     label="Leave us a Message"
                     icon={arrowRight}
@@ -65,7 +65,7 @@ const ContactUs = () => {
                 </Button>
             </div>
             </Container>
-            <div className="bg-base-color lg:py-6">
+            <div className="bg-orange-150 lg:py-6">
             <Container className='px-4 lg:px-10 xl1:px-20'>
                     <div className="flex flex-col lg:flex-row justify-between">
                         <div className="flex flex-col justify-center items-start space-y-6 lg:pb-36 p-6">
@@ -100,13 +100,13 @@ const ContactUs = () => {
                 <div className="flex flex-col justify-center items-center">
                     <div className="flex flex-col lg:w-[680px] ">
                     <h1 className="mb-4 base-font-heading text-[40px] leading-[58.4px] text-center "> Subcribe to our Newsletter</h1>
-                    <div className="mb-10 base-font text-xl leading-10	gray-text text-center"> Subscribe for Updates: Stay informed about the latest investor updates, financial results, and announcements by subscribing to our newsletter.  </div>
+                    <div className="mb-10 base-font text-xl leading-10	text-gray-150 text-center"> Subscribe for Updates: Stay informed about the latest investor updates, financial results, and announcements by subscribing to our newsletter.  </div>
                     </div>
                     <div className="flex w-full">
-                        <input type="email" placeholder="Enter Your Email "  className="flex-grow py-[20px] px-6 bg-white rounded-l-2xl w-full placeholder-base-color text-base-color focus:outline-none"
+                        <input type="email" placeholder="Enter Your Email "  className="flex-grow py-[20px] px-6 bg-white rounded-l-2xl w-full placeholder-text-orange-150 text-text-orange-150 focus:outline-none"
                         />
                         <Button
-                         className={`h-20  py-4  px-6 flex items-center justify-center text-white bg-base-color base-font-heading text-base rounded-r-2xl`}
+                         className={`h-20  py-4  px-6 flex items-center justify-center text-white bg-orange-150 base-font-heading text-base rounded-r-2xl`}
                          label="Subscribe"
 
                         >

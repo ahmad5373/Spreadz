@@ -59,7 +59,7 @@ const NotFound = () => {
       </div>
       <Link
         to="/"
-        className="bg-base-color base-font-heading text-white text-xl bg-gray-200 px-6 py-1 rounded-md mt-6 hover:shadow-md"
+        className="bg-orange-150 base-font-heading text-white text-xl px-6 py-1 rounded-md mt-6 hover:shadow-md"
       >
         Go back
       </Link>

@@ -81,7 +81,7 @@ const Features = () =>{
         </div>
         </Container>
         <div className="flex justify-center base-font-heading text-4xl ">
-          <button className="base-font-heading bg-base-color text-xl text-white mt-6 px-11 py-2.5 rounded-lg transition duration-300 md:w-auto">
+          <button className="base-font-heading bg-orange-150 text-xl text-white mt-6 px-11 py-2.5 rounded-lg transition duration-300 md:w-auto">
             Get Started Now
           </button></div>
       </section>

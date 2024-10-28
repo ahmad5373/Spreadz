@@ -47,9 +47,9 @@ const NavBar = () => {
             <img src={ENG} className="h-3 w-5" alt="EN" />
           </div>
 
-          <Link to="/login" className="base-color hover:text-orange-600 font-medium">Login</Link>
+          <Link to="/login" className="text-orange-150 hover:text-orange-600 font-medium">Login</Link>
           <Button
-            className="text-white bg-base-color hover:bg-orange-400 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2"
+            className="text-white bg-orange-150 hover:bg-orange-400 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2"
             onClick={registerSubmit}
             label="Register"
           />
@@ -57,7 +57,7 @@ const NavBar = () => {
 
         <div className="m-0 flex items-center justify-between w-full lg:hidden">
           <button
-            className="inline-flex items-center w-10 h-10 justify-center text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none"
+            className="inline-flex items-center w-10 h-10  text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-controls="navbar-sticky"
             aria-expanded={isMenuOpen}
@@ -70,7 +70,7 @@ const NavBar = () => {
 
           <Link
             to="/login"
-            className="text-sm font-medium text-white bg-base-color hover:bg-orange-400 px-4 py-2 rounded-lg"
+            className="text-sm font-medium text-white bg-orange-150 hover:bg-orange-400 px-4 py-2 rounded-lg"
           >
             Login
           </Link>

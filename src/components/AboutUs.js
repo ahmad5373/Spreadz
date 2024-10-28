@@ -15,7 +15,7 @@ const AboutUs = () => {
   return (
     <div className="flex flex-col pt-12 w-full">
       <div className="h-16 bg-gray-100"></div>
-      <div className="bg-base-color ">
+      <div className="bg-orange-150">
         <Container className='px-4 lg:px-10 xl1:px-20'>
 
           <div className="flex flex-col-reverse lg:flex-row justify-between items-center">
@@ -60,7 +60,7 @@ const AboutUs = () => {
           <div className="flex custom-col flex-row space-x-6 justify-center items-center py-8">
 
             <div className="flex flex-col  space-y-6">
-              <h1 className="base-font text-3xl leading-[41.3px] base-color">Online marketing without IT knowledge: </h1>
+              <h1 className="base-font text-3xl leading-[41.3px] text-orange-150">Online marketing without IT knowledge: </h1>
               <p className="lg:w-[878px] base-font text-2xl leading-[39px]">Spreadz was developed as a tool for everyone and is therefore easy to use for everyone. The account can be set up and designed individually on a smartphone or PC. All texts and messages to potential customers can be written by the user in their own words.</p>
               <p className="lg:w-[878px] base-font text-2xl leading-[39px]">The user can create their own recommendation campaigns. The tool automatically generates a QR code for each campaign, which the recommenders can use to go directly to the campaign. The recommendations and the statistics of the campaign are displayed in the respective campaign.It is child's play and no IT knowledge is required to use Spreadz.</p>
             </div>
@@ -75,7 +75,7 @@ const AboutUs = () => {
 
           </div>
 
-          <h1 className="base-font text-3xl leading-[41.3px] base-color">Google star collector as a Spreadz side effect</h1>
+          <h1 className="base-font text-3xl leading-[41.3px] text-orange-150">Google star collector as a Spreadz side effect</h1>
           <p className="base-font text-2xl leading-[39px]  mt-8">During the recommendation process, future recommenders are asked to leave a review on Google. Spreadz links to the user's company's Google profile. Experience has shown that companies that had fewer Google reviews suddenly received more reviews on Google. It was also noticeable that the Google reviews that came about through Spreadz were generally good. This is because the customer makes the review on the spot and only if they were satisfied with the service. </p>
 
           <hr className="h-0.5 w-full mt-8"></hr>
@@ -91,19 +91,19 @@ const AboutUs = () => {
             </div>
 
             <div className="flex flex-col  space-y-6 ">
-              <h1 className="base-font text-3xl leading-[41.3px] base-color">Guaranteed success with Spreadz</h1>
+              <h1 className="base-font text-3xl leading-[41.3px] text-orange-150">Guaranteed success with Spreadz</h1>
               <p className="lg:w-[850px] base-font text-2xl leading-[39px]">Even if it is ultimately the user who determines the success of an advertising tool, it is almost impossible for Spreadz to fail to be successful. This can only really happen if you withhold the QR coder or the link from the customer. Because once the customer immerses themselves in the world of Spreadz and shares it with their WhatsApp contacts, the response is guaranteed. If you use the tool consistently, it is pure logic that the customer base will grow. For example, one customer becomes three, three become nine, and so on. This is infinitely scalable.</p>
             </div>
 
           </div>
 
-          <h1 className="base-font text-3xl leading-[41.3px] base-color  mt-12">Your customers become advertising media</h1>
+          <h1 className="base-font text-3xl leading-[41.3px] text-orange-150  mt-12">Your customers become advertising media</h1>
           <p className="base-font text-2xl leading-[39px]  mt-12">With Spreadz you turn your customers into advertising media. Completely automatically. They will recommend you again and again and you will always be confronted with new inquiries. The leads can be viewed live at any time and are waiting to be processed. This means that the appointment or closing rate is extremely high and you can work efficiently and without wastage.</p>
           <br />
           <p className="base-font text-2xl leading-[39px] pb-8">Grow with Spreadz and let us become a part of your success story!</p>
         </Container>
       </div>
-      <div className="bg-gray-150">
+      <div className="bg-orange-250">
   <div className="flex flex-col justify-between">
     <div className="flex flex-col space-y-4 justify-center items-center mt-4 mb-40">
       <h1 className="base-font-heading text-5xl">Our Team</h1>

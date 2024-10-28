@@ -5,7 +5,7 @@ import Container from "../../customComponents/Container.";
 const Founder = () => {
 
     return (
-  <section className="hidden lg:block bg-base-color">
+  <section className="hidden lg:block bg-orange-150">
      <Container className='px-4 lg:px-10 xl1:px-20'>
 
   <div className="h-52">

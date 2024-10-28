@@ -81,21 +81,21 @@ const Blogs = () => {
                         </div>
                         <div className="flex items-center">
                             <div className="h-[0.723px] w-[26px] bg-black mr-2"></div>
-                            <p className="base-font text-xs gray-text">{post.postDate}</p>
+                            <p className="base-font text-xs text-gray-150">{post.postDate}</p>
                         </div>
                         <ul>
                             <li className="flex items-center custom-bullet space-x-2">
                                 <img src={share} alt="share icon" className="w-4 h-4" />
-                                <p className="text-xs gray-text">{post.postShare}</p>
+                                <p className="text-xs text-gray-150">{post.postShare}</p>
                             </li>
                         </ul>
                     </div>
                 </div>
-                <div><p className="base-font text-base leading-7 gray-text-descrption mb-4">{post.postContent} </p></div>
-                <Link to="/blogs/blog-details " className="base-font-heading text-base base-color">
+                <div><p className="base-font text-base leading-7 text-gray-350 mb-4">{post.postContent} </p></div>
+                <Link to="/blogs/blog-details " className="base-font-heading text-base text-orange-150">
                     View Post
                 </Link>
-                <div className="w-[78.032px] h-[0.723px] bg-base-color"></div>
+                <div className="w-[78.032px] h-[0.723px] bg-orange-150"></div>
             </div>
         </div>
     );
@@ -116,7 +116,7 @@ const Blogs = () => {
                         </div>
 
                         <Button
-                            className="py-4 px-6 flex items-center justify-center text-white bg-base-color rounded-lg"
+                            className="py-4 px-6 flex items-center justify-center text-white bg-orange-150 rounded-lg"
                             onClick={Filter}
                             icon={candle}
                             imgStyle="w-4 h-4"
@@ -139,12 +139,12 @@ const Blogs = () => {
                                     </div>
                                     <div className="flex items-center">
                                         <div className="h-[0.723px] w-[26px] bg-white mr-2"></div>
-                                        <p className="base-font text-xs gray-text-light">June 28, 2018</p>
+                                        <p className="base-font text-xs text-gray-75">June 28, 2018</p>
                                     </div>
                                     <ul>
                                         <li className="flex items-center custom-bullet space-x-2">
                                             <img src={share} alt="share icon" className="w-4 h-4" />
-                                            <p className="text-xs gray-text-light">1K shares</p>
+                                            <p className="text-xs text-gray-75">1K shares</p>
                                         </li>
                                     </ul>
                                 </div>
@@ -162,11 +162,11 @@ const Blogs = () => {
                                             <h4 className="base-font-heading text-sm">Joanna Wellick</h4>
                                             <div className="h-[0.723px] w-[26px] bg-white ml-2"></div>
                                         </div>
-                                        <p className="base-font text-xs gray-text-light ">June 28, 2018</p>
+                                        <p className="base-font text-xs text-gray-75 ">June 28, 2018</p>
                                         <ul>
                                             <li className="flex items-center custom-bullet space-x-2">
                                                 <img src={share} alt="share icon" className="w-4 h-4" />
-                                                <p className="text-xs gray-text-light">1K shares</p>
+                                                <p className="text-xs text-gray-75">1K shares</p>
                                             </li>
                                         </ul>
                                     </div>
@@ -184,11 +184,11 @@ const Blogs = () => {
                                             <h4 className="text-sm base-font-heading">Joanna Wellick</h4>
                                             <div className="h-[0.723px] w-[26px] bg-white ml-2"></div>
                                         </div>
-                                        <p className="text-xs base-font gray-text-light">June 28, 2018</p>
+                                        <p className="text-xs base-font text-gray-75">June 28, 2018</p>
                                         <ul>
                                             <li className="flex items-center custom-bullet space-x-2">
                                                 <img src={share} alt="share icon" className="w-4 h-4" />
-                                                <p className="text-xs gray-text-light">1K shares</p>
+                                                <p className="text-xs text-gray-75">1K shares</p>
                                             </li>
                                         </ul>
                                     </div>
@@ -212,7 +212,7 @@ const Blogs = () => {
 
                         <div className="flex justify-center items-center">
                             <Button
-                                className="py-2 px-6 mt-10 base-font-heading text-base flex items-center justify-center bg-white base-color rounded-lg border border-orange-300"
+                                className="py-2 px-6 mt-10 base-font-heading text-base flex items-center justify-center bg-white text-orange-150 rounded-lg border border-orange-300"
                                 onClick={AllPost}
                                 icon={arrowRight}
                                 imgStyle="w-5 h-5"
@@ -237,7 +237,7 @@ const Blogs = () => {
 
                         <div className="flex justify-center items-center">
                             <Button
-                                className="py-2 px-6 mt-10 base-font-heading text-base flex items-center justify-center bg-white base-color rounded-lg border border-orange-300"
+                                className="py-2 px-6 mt-10 base-font-heading text-base flex items-center justify-center bg-white text-orange-150 rounded-lg border border-orange-300"
                                 onClick={AllPost}
                                 icon={arrowRight}
                                 imgStyle="w-5 h-5"
@@ -261,7 +261,7 @@ const Blogs = () => {
                         <div className="flex justify-center items-center">
 
                             <Button
-                                className="py-2 px-6 mt-10 base-font-heading text-base flex items-center justify-center bg-white base-color rounded-lg border border-orange-300"
+                                className="py-2 px-6 mt-10 base-font-heading text-base flex items-center justify-center bg-white text-orange-150 rounded-lg border border-orange-300"
                                 onClick={AllPost}
                                 icon={arrowRight}
                                 imgStyle="w-5 h-5"

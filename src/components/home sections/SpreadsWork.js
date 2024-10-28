@@ -18,7 +18,7 @@ const SpreadsWork = () => {
     <>
       <section className="bg-gray-100 py-8 md:py-12 lg:py-10 lg:bg-white">
         <h2 className="flex justify-center base-font-heading text-3xl lg:text-[40px] lg:leading-[58.4px]">
-          How <span className="base-color mx-2">Spreadz</span> Works?
+          How <span className="text-orange-150 mx-2">Spreadz</span> Works?
         </h2>
 
         <Container className="px-0 md:px-4 lg:px-10 xl1:px-20">
@@ -48,7 +48,7 @@ const SpreadsWork = () => {
             >
               <SwiperSlide>
                 <div className="flex flex-col items-center w-48 space-y-3">
-                  <div className="bg-base-color rounded-full w-6 h-6 flex items-center justify-center text-white">
+                  <div className="bg-orange-150 rounded-full w-6 h-6 flex items-center justify-center text-white">
                     1
                   </div>
                   <div className="flex flex-col justify-end items-center gap-12 w-36 px-5 pt-9 pb-7 bg-gray-100 rounded-sm">
@@ -56,31 +56,31 @@ const SpreadsWork = () => {
                     <img src={Ellipse} alt="Ellipse" className="w-6 h-6" />
                   </div>
                   <p className="base-font leading-5 text-sm lg:text-xl text-center">
-                    Your customer scans the <span className="base-color">QR code</span> to open your referral campaign.
+                    Your customer scans the <span className="text-orange-150">QR code</span> to open your referral campaign.
                   </p>
                 </div>
               </SwiperSlide>
 
               <SwiperSlide>
                 <div className="flex flex-col items-center w-48 space-y-3">
-                  <div className="bg-base-color rounded-full w-6 h-6 flex items-center justify-center text-white">
+                  <div className="bg-orange-150 rounded-full w-6 h-6 flex items-center justify-center text-white">
                     2
                   </div>
                   <img src={mobileFram} alt="Form submission" className="w-36 h-72" />
                   <p className="base-font leading-5 text-xs lg:text-xl text-center">
-                    Your customer reaches your <span className="base-color">self-created referral campaign.</span>
+                    Your customer reaches your <span className="text-orange-150">self-created referral campaign.</span>
                   </p>
                 </div>
               </SwiperSlide>
 
               <SwiperSlide>
                 <div className="flex flex-col items-center w-48 space-y-3">
-                  <div className="bg-base-color rounded-full w-6 h-6 flex items-center justify-center text-white">
+                  <div className="bg-orange-150 rounded-full w-6 h-6 flex items-center justify-center text-white">
                     3
                   </div>
                   <img src={mobileFrame} alt="Form submission" className="w-36 h-72" />
                   <p className="base-font leading-5 text-xs lg:text-xl text-center">
-                    Your customer enters their <span className="base-color">details</span> so that you know who has just recommended you.
+                    Your customer enters their <span className="text-orange-150">details</span> so that you know who has just recommended you.
                   </p>
                 </div>
               </SwiperSlide>
@@ -91,7 +91,7 @@ const SpreadsWork = () => {
           <div className="hidden lg:flex lg:flex-row justify-between items-center lg:items-start text-center gap-12 lg:gap-20 pt-16">
             <div className="flex flex-col items-center w-[316px]">
               <div className="flex flex-col items-center gap-4">
-                <div className="bg-base-color rounded-full w-12 h-12 flex items-center justify-center text-white ">
+                <div className="bg-orange-150 rounded-full w-12 h-12 flex items-center justify-center text-white ">
                   1
                 </div>
                 <div className="flex flex-col justify-end items-center gap-[132px] width-[226px] px-12 pt-16 pb-12 bg-gray-100 rounded-sm">
@@ -106,7 +106,7 @@ const SpreadsWork = () => {
 
             <div className="flex flex-col items-center w-[316px]">
               <div className="flex flex-col items-center gap-4">
-                <div className="bg-base-color rounded-full w-12 h-12 flex items-center justify-center text-white ">
+                <div className="bg-orange-150 rounded-full w-12 h-12 flex items-center justify-center text-white ">
                   2
                 </div>
                 <img src={mobileFram} alt="Form submission" className=" h-[446px] w-[226px]" />
@@ -118,12 +118,12 @@ const SpreadsWork = () => {
 
             <div className="flex flex-col items-center w-[316px]">
               <div className="flex flex-col items-center gap-4">
-                <div className="bg-base-color rounded-full w-12 h-12 flex items-center justify-center text-white ">
+                <div className="bg-orange-150 rounded-full w-12 h-12 flex items-center justify-center text-white ">
                   3
                 </div>
                 <img src={mobileFrame} alt="Form submission" className="h-[446px] w-[226px]" />
                 <p className="base-font leading-[31px] lg:text-lg text-md">
-                  Your customer enters their <span className="base-color">details</span> so that you know who has just recommended you.
+                  Your customer enters their <span className="text-orange-150">details</span> so that you know who has just recommended you.
                 </p>
               </div>
             </div>
@@ -135,7 +135,7 @@ const SpreadsWork = () => {
       <section className="bg-gray-100 py-8 md:py-12 lg:py-10 lg:bg-white">
         <div className="flex justify-center items-center px-4  bg-gray-100 ">
           <h2 className="base-font-heading text-2xl lg:text-[40px] leading-[58.4px] lg:pt-20 pt-4 pb-8 ">
-            <span className="base-color mr-2">Spreadz</span> Explained in Videos
+            <span className="text-orange-150 mr-2">Spreadz</span> Explained in Videos
           </h2>
         </div>
 
@@ -176,14 +176,14 @@ const SpreadsWork = () => {
       <section className="bg-gray-100  lg:bg-white">
         <div className="flex justify-center lg:items-center px-4  bg-gray-100">
           <h2 className="base-font-heading text-xl lg:text-[40px] leading-[58.4px] lg:pt-20 pt-4 pb-8">
-            How does <span className="base-color lg:mx-2">Spreadz</span> advance your business?
+            How does <span className="text-orange-150 lg:mx-2">Spreadz</span> advance your business?
           </h2>
         </div>
 
         <Container className='px-4 lg:px-10 xl1:px-20'>
           <div className="flex flex-col lg:flex-row justify-between py-6 ">
             <div className="flex flex-col items-start gap-[32px] lg:w-[841px]">
-              <h1 className="base-font-heading lg:text-3xl text-lg leading-10 base-color">
+              <h1 className="base-font-heading lg:text-3xl text-lg leading-10 text-orange-150">
                 More new customers
               </h1>
               <p className="base-font lg:text-xl text-lg leading-[31px] lg:w-10/12">
@@ -202,7 +202,7 @@ const SpreadsWork = () => {
           </div>
         </Container>
         <div className="flex justify-center base-font-heading text-4xl cursor-pointer mb-5">
-          <div className="bg-base-color h-2.4 w-4 rounded full"></div>
+          <div className="bg-orange-150 h-2.4 w-4 rounded full"></div>
           <img src={ellipse} alt="Ellipse" className="mx-1"></img>
           <img src={ellipse} alt="Ellipse" className="mr-2"></img>
           <img src={ellipse} alt="Ellipse"></img>

@@ -10,7 +10,7 @@ const OurStory = () => {
     return (
         <div className="flex flex-col pt-12 w-full">
             <div className="h-16 bg-gray-100"></div>
-                <div className="bg-base-color ">
+                <div className="bg-orange-150 ">
         <Container className='px-4 lg:px-10 xl1:px-20'>
 
                     <div className="flex flex-col-reverse lg:flex-row justify-between">
