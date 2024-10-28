@@ -85,7 +85,7 @@ const BlogDetails = () => {
                             </div>
                         </div>
 
-                        <button className="flex justify-end items-center py-2 pr-5 pl-4 space-x-2 bg-gray-200 rounded-xl">
+                        <button className="flex justify-end items-center py-2 pr-4 pl-4 space-x-2 bg-gray-200 rounded-xl">
                             <FontAwesomeIcon icon={faShare} size="sm" style={{ color: "#b5b5b5", }} />
                             <p className="base-font-heading text-base text-gray-250 ">Reply</p>
                         </button>
