@@ -81,7 +81,7 @@ const Testimonial = () => {
 
                         <div className="rounded-lg">
                             <div className="flex flex-col items-center">
-                                <div className="flex flex-col text-center text-gray-700 lg:w-[352px]">
+                                <div className="flex flex-col text-center text-gray-700 lg:w-[372px]">
                                     <p className="lg:mb-6 mb-0 text-base base-font leading-[33px] lg:text-2xl">
                                         Kudos to the design agency for their outstanding work!
                                        </p>
