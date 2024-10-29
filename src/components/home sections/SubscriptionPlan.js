@@ -101,11 +101,11 @@ const SubscriptionPlans = () => {
             </div>
 
             <Container className="px-4 lg:px-10 xl1:px-20">
-                <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-12 lg:gap-20 py-6">
+                <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-8 xl1:gap-20 lg:gap-8 py-6">
                     {plans.map((plan, index) => (
                         <div
                             key={index}
-                            className={`lg:relative lg:w-[362.67px] px-4 py-8 
+                            className={`lg:relative  lg:w-[362.67px] px-4 py-8 
           rounded-lg shadow-lg hover:shadow-xl transition-shadow
           ${plan.backgroundColor} ${plan.textColor} 
           ${plan.title === "Pro" ? "lg:h-auto" : "lg:h-auto"}`}
