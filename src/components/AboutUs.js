@@ -103,7 +103,7 @@ const AboutUs = () => {
           <p className="base-font text-2xl leading-[39px] pb-8">Grow with Spreadz and let us become a part of your success story!</p>
         </Container>
       </div>
-      <div className="bg-orange-250">
+      {/* <div className="bg-orange-250">
   <div className="flex flex-col justify-between">
     <div className="flex flex-col space-y-4 justify-center items-center mt-4 mb-40">
       <h1 className="base-font-heading text-5xl">Our Team</h1>
@@ -139,7 +139,7 @@ const AboutUs = () => {
   </div>
 </div>
 
-      <div className="lg:h-16 bg-gray-100 "></div>
+      <div className="lg:h-16 bg-gray-100 "></div> */}
     </div>
   );
 };
