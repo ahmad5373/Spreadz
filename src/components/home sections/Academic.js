@@ -32,7 +32,7 @@ const Academic = () => {
                         <div className="flex flex-col items-center text-center gap-6 lg:w-60">
                             <img src={tutorial} alt="tutorial" className="h-24 w-20" />
                             <h2 className="base-font-heading text-3xl leading-[41.3px] text-white">Tutorials</h2>
-                            <p className="base-font text-sm leading-7 text-white  mb-14">
+                            <p className="base-font text-sm leading-7 text-white  mb-10 mt-4">
                                 In numerous tutorials, you can quickly integrate Spreadz into your everyday work for free.
                             </p>
                             <Button
