@@ -19,7 +19,7 @@ const Academic = () => {
                         <div className="flex flex-col items-center text-center gap-6 lg:w-72">
                             <img src={academy} alt="academic" className="h-24 w-20" />
                             <h2 className="base-font-heading text-3xl leading-[41.3px] text-white">Academy</h2>
-                            <p className="base-font text-sm leading-7 text-white">
+                            <p className="base-font text-sm leading-7 text-white mb-7">
                                 In our academy, you will get to know the functions of Spreadz and we will show you how to design promotions efficiently and integrate them into your business.
                             </p>
                             <Button
@@ -32,7 +32,7 @@ const Academic = () => {
                         <div className="flex flex-col items-center text-center gap-6 lg:w-60">
                             <img src={tutorial} alt="tutorial" className="h-24 w-20" />
                             <h2 className="base-font-heading text-3xl leading-[41.3px] text-white">Tutorials</h2>
-                            <p className="base-font text-sm leading-7 text-white  mb-7">
+                            <p className="base-font text-sm leading-7 text-white  mb-14">
                                 In numerous tutorials, you can quickly integrate Spreadz into your everyday work for free.
                             </p>
                             <Button

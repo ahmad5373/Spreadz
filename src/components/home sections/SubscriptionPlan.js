@@ -146,7 +146,7 @@ const SubscriptionPlans = () => {
                             </h2>
 
                             <div className="flex items-center gap-2 mb-4">
-                                <div className="base-font-heading xl1:text-5xl lg:text-3xl">
+                                <div className="base-font-heading xl1:text-[40px] lg:text-4xl text-3xl">
                                     {plan.monthlyPrice}
                                 </div>
                                 <span
