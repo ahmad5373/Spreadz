@@ -34,7 +34,7 @@ const SpreadsWork = () => {
               }}
               speed={800}
               loop={true}
-              loopFillGroupWithBlank={true} 
+              loopFillGroupWithBlank={true}
               breakpoints={{
                 0: {
                   slidesPerView: 2,
@@ -143,29 +143,36 @@ const SpreadsWork = () => {
           <div className="grid lg:grid-cols-3 max-[425px]:grid-cols-1 grid-cols-2   gap-6 mt-2 lg:mt-10">
 
             <div className="flex flex-col ">
-              <img
+              <iframe className="h-[267px] rounded-lg" src="https://www.youtube.com/embed/T5s1ZA-ihsQ?autoplay=1&mute=1">
+              </iframe>
+
+              {/* <img
                 src={videoImage}
                 alt="How Spreadz Works?"
                 className=" h-[267px] rounded-lg "
-              />
+                /> */}
               <p className="base-font-heading lg:text-lg text-base mt-2">How Spreadz Works?</p>
             </div>
 
             <div className="flex flex-col ">
-              <img
+              <iframe className="h-[267px] rounded-lg" src="https://www.youtube.com/embed/T5s1ZA-ihsQ?autoplay=1&mute=1">
+              </iframe>
+              {/* <img
                 src={videoImage}
                 alt="How to create account on Spreadz?"
                 className="  h-[267px] "
-              />
+              /> */}
               <p className="base-font-heading lg:text-lg mt-2">How to create account on Spreadz?</p>
             </div>
 
             <div className="flex flex-col ">
-              <img
+              <iframe className="h-[267px] rounded-lg" src="https://www.youtube.com/embed/T5s1ZA-ihsQ?autoplay=1&mute=1">
+              </iframe>
+              {/* <img
                 src={videoImage}
                 alt="Creating campaign on Spreadz."
                 className=" h-[267px]"
-              />
+              /> */}
               <p className="base-font-heading lg:text-lg mt-2">Creating campaign on Spreadz.</p>
             </div>
           </div>

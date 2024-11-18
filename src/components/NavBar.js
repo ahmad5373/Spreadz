@@ -35,7 +35,7 @@ const NavBar = () => {
           <Link to="/pricing" className=" hover:text-orange-500 base-font xl1:text-sm lg:text-xs ">Plan & Pricing</Link>
           <Link to="/blogs" className=" hover:text-orange-500 base-font xl1:text-sm lg:text-xs ">Blogs</Link>
           <Link to="/contact-us" className=" hover:text-orange-500 base-font xl1:text-sm lg:text-xs ">Contact Us</Link>
-          <Link to="/social-media" className=" hover:text-orange-500 base-font xl1:text-sm lg:text-xs ">Social Media</Link>
+          {/* <Link to="/social-media" className=" hover:text-orange-500 base-font xl1:text-sm lg:text-xs ">Social Media</Link> */}
         </div>
 
         <div className="hidden lg:flex items-center space-x-4">
@@ -84,7 +84,7 @@ const NavBar = () => {
             <li><Link to="/pricing" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100" onClick={handleLinkClick}>Plan & Pricing</Link></li>
             <li><Link to="/blogs" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100" onClick={handleLinkClick}>Blogs</Link></li>
             <li><Link to="/contact-us" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100" onClick={handleLinkClick}>Contact Us</Link></li>
-            <li><Link to="/social-media" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100" onClick={handleLinkClick}>Social Media</Link></li>
+            {/* <li><Link to="/social-media" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100" onClick={handleLinkClick}>Social Media</Link></li> */}
           </ul>
         </div>
       </div>
