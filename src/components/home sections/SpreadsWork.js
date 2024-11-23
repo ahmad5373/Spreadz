@@ -31,7 +31,6 @@ const SpreadsWork = () => {
     fetchYoutubeVideo();
   }, []);
   
-  console.log("video =>", video);
   return (
     <>
       <section className="bg-gray-100 py-8 md:py-12 lg:py-10 lg:bg-white">

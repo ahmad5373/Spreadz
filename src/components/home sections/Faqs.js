@@ -17,7 +17,6 @@ const Faqs = () => {
     useEffect(() => {
         fetchFaqs();
     }, [])
-    console.log("faqs =>", faqs);
 
     return (
         <div class="pt-12 bg-gray-100">
