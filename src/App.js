@@ -10,6 +10,9 @@ import ContactUs from './components/ContactUs';
 import AboutUs from './components/AboutUs';
 import Blogs from './components/Blog';
 import BlogDetails from './components/BlogDetails';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+
 
 const App = () => {
 
@@ -29,6 +32,7 @@ const App = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
+      <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} />
       <Footer />
     </div>
   );

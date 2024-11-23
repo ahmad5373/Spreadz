@@ -12,8 +12,26 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Autoplay } from 'swiper/modules';
+import { useEffect, useState } from "react";
+import { getallVideo } from "../../apiUtils/YoutubeVideoApi";
 const SpreadsWork = () => {
+  const [video, setVideo] = useState([]);
+  
+  const fetchYoutubeVideo = async () => {
+    try {
+      const videoData = await getallVideo();
+      setVideo(videoData?.data?.data);
+    } catch (error) {
+      console.log("error =>", error);
 
+    }
+  }
+  
+  useEffect(() => {
+    fetchYoutubeVideo();
+  }, []);
+  
+  console.log("video =>", video);
   return (
     <>
       <section className="bg-gray-100 py-8 md:py-12 lg:py-10 lg:bg-white">
@@ -142,39 +160,18 @@ const SpreadsWork = () => {
         <Container className='px-4 lg:px-10 xl1:px-20'>
           <div className="grid lg:grid-cols-3 max-[425px]:grid-cols-1 grid-cols-2   gap-6 mt-2 lg:mt-10">
 
-            <div className="flex flex-col ">
-              <iframe className="h-[267px] rounded-lg" src="https://www.youtube.com/embed/T5s1ZA-ihsQ?autoplay=1&mute=1">
+            {video.map((data, id)=> {
+              const videoId = new URL(data?.url).searchParams.get("v")
+              const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1`
+              return (
+                <div key={id} className="flex flex-col ">
+              <iframe className="h-[267px] rounded-lg" src={embedUrl}>
               </iframe>
-
-              {/* <img
-                src={videoImage}
-                alt="How Spreadz Works?"
-                className=" h-[267px] rounded-lg "
-                /> */}
-              <p className="base-font-heading lg:text-lg text-base mt-2">How Spreadz Works?</p>
+              <p className="base-font-heading lg:text-lg text-base mt-2">{data.title}</p>
             </div>
-
-            <div className="flex flex-col ">
-              <iframe className="h-[267px] rounded-lg" src="https://www.youtube.com/embed/T5s1ZA-ihsQ?autoplay=1&mute=1">
-              </iframe>
-              {/* <img
-                src={videoImage}
-                alt="How to create account on Spreadz?"
-                className="  h-[267px] "
-              /> */}
-              <p className="base-font-heading lg:text-lg mt-2">How to create account on Spreadz?</p>
-            </div>
-
-            <div className="flex flex-col ">
-              <iframe className="h-[267px] rounded-lg" src="https://www.youtube.com/embed/T5s1ZA-ihsQ?autoplay=1&mute=1">
-              </iframe>
-              {/* <img
-                src={videoImage}
-                alt="Creating campaign on Spreadz."
-                className=" h-[267px]"
-              /> */}
-              <p className="base-font-heading lg:text-lg mt-2">Creating campaign on Spreadz.</p>
-            </div>
+          
+            );
+          })}
           </div>
         </Container>
       </section>
