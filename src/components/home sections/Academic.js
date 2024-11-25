@@ -7,10 +7,10 @@ import Container from "../../customComponents/Container.";
 
 const Academic = () => {
 
-
     const ReserveSeat = () => {
         console.log("Seat is reserving......");
     }
+    
     return (
         <section className="bg-orange-150 ">
             <Container className="px-4 lg:px-10 xl1:px-20">

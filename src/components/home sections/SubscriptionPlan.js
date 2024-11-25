@@ -4,21 +4,38 @@ import group from "../../assets/Group.svg";
 import PlusIcon from "../../assets/tabler_plus.svg";
 import TickIcon from "../../assets/TickIcon.svg";
 import Container from "../../customComponents/Container.";
-
+import { loadStripe } from "@stripe/stripe-js";
+import axios from "axios";
+import { ClipLoader } from 'react-spinners';
+const stripePromise = loadStripe("pk_test_51QP5XOAMrpg8m0TRpXQwt1jClRiin4Jyt7bHTQGz1qvMMjGNiOUSfAl6vJBc509ilciTrwbEGCX5H9eXeTYFNGsO008sjMXVrp");
 
 const SubscriptionPlans = () => {
-    const [billingCycles, setBillingCycles] = useState(
-        new Array(3).fill("yearly")
-    );
+    const [loading, setLoading] = useState(null);
+    const [billingCycles, setBillingCycles] = useState(new Array(3).fill("monthly"));
 
-
-    const SelectPlan = () => {
-        console.log("Register button clicked");
-    }
+    const SelectPlan = async (planTitle, billingCycle, index) => {
+        setLoading(index);
+        try {
+            const response = await axios.post("http://localhost:8080/subscriptions/create-checkout-session", {
+                planTitle,
+                billingCycle,
+            });
+            const { url } = response.data;
+            console.log("url =>", url);
+            if (url) {
+                window.location.href = url; // Redirect to the Stripe Checkout page
+            }
+        } catch (error) {
+            console.error("Error creating checkout session:", error);
+            alert("Something went wrong please try again.")
+        } finally {
+            setLoading(null);
+        }
+    };
 
     const toggleBilling = (index) => {
         setBillingCycles((prev) =>
-            prev.map((cycle, i) => (i === index ? (cycle === "yearly" ? "monthly" : "yearly") : cycle))
+            prev.map((cycle, i) => (i === index ? (cycle === "monthly" ? "yearly" : "monthly") : cycle))
         );
     };
 
@@ -26,6 +43,7 @@ const SubscriptionPlans = () => {
         {
             title: "Basic",
             monthlyPrice: "CHF 69.0",
+            yearlyPrice: "CHF 690",
             description: "Ideal for individuals who need quick access to basic features.",
             features: [
                 "Can be cancelled at any time on a monthly basis",
@@ -44,6 +62,7 @@ const SubscriptionPlans = () => {
         {
             title: "Pro",
             monthlyPrice: "CHF 99.0",
+            yearlyPrice: "CHF 990",
             recommended: true,
             description: "Ideal for individuals who need quick access to basic features.",
 
@@ -63,6 +82,7 @@ const SubscriptionPlans = () => {
         {
             title: "Excellence",
             monthlyPrice: "CHF 169.0",
+            yearlyPrice: "CHF 1690",
             description: "Ideal for individuals who need quick access to basic features.",
             features: [
                 "Can be cancelled at any time on a monthly basis",
@@ -92,7 +112,6 @@ const SubscriptionPlans = () => {
     ];
 
 
-
     return (
         <div className="bg-gray-100 lg:bg-white mt-4">
             <div className="text-center my-8">
@@ -106,9 +125,9 @@ const SubscriptionPlans = () => {
                         <div
                             key={index}
                             className={`lg:relative  lg:w-[362.67px] px-4 py-8 
-          rounded-lg shadow-lg hover:shadow-xl transition-shadow
-          ${plan.backgroundColor} ${plan.textColor} 
-          ${plan.title === "Pro" ? "lg:h-auto" : "lg:h-auto"}`}
+                        rounded-lg shadow-lg hover:shadow-xl transition-shadow
+                        ${plan.backgroundColor} ${plan.textColor} 
+                        ${plan.title === "Pro" ? "lg:h-auto" : "lg:h-auto"}`}
                         >
                             {plan.title === "Pro" && (
                                 <div className="hidden lg:block absolute custom-bottom-lg custom-bottom-xl1 right-[-44px]">
@@ -127,12 +146,12 @@ const SubscriptionPlans = () => {
                                     <span className="base-font-heading text-sm">Yearly</span>
                                     <div
                                         className={`w-8 h-4 rounded-full cursor-pointer relative transition-colors duration-300 
-                ${plan.title === "Pro" ? "bg-white" : "bg-gray-200"}`}
+                           ${plan.title === "Pro" ? "bg-white" : "bg-gray-200"}`}
                                         onClick={() => toggleBilling(index)}
                                     >
                                         <div
                                             className={`absolute top-0.7 left-0.4 w-4 h-4 bg-gray-300 rounded-full shadow-md transition-all duration-300 
-                  ${billingCycles[index] === "yearly" ? "translate-x-5" : "translate-x-0.6"}`}
+                          ${billingCycles[index] === "yearly" ? "translate-x-5" : "translate-x-0.6"}`}
                                         ></div>
                                     </div>
                                 </div>
@@ -140,19 +159,17 @@ const SubscriptionPlans = () => {
 
                             <h2
                                 className={`base-font xl1:text-base lg:text-sm leading-7 mb-4 
-            ${plan.title === "Pro" ? "text-white" : "text-gray-150"}`}
+                         ${plan.title === "Pro" ? "text-white" : "text-gray-150"}`}
                             >
                                 {plan.description}
                             </h2>
 
                             <div className="flex items-center gap-2 mb-4">
                                 <div className="base-font-heading xl1:text-[40px] lg:text-4xl text-3xl">
-                                    {plan.monthlyPrice}
+                                    {billingCycles[index] === "yearly" ? plan.yearlyPrice : plan.monthlyPrice}
                                 </div>
-                                <span
-                                    className={`base-font text-base ${plan.title === "Pro" ? "text-white" : "text-gray-150"}`}
-                                >
-                                    /Month
+                                <span className={`base-font text-base ${plan.title === "Pro" ? "text-white" : "text-gray-150"}`}>
+                                    /{billingCycles[index]}
                                 </span>
                             </div>
 
@@ -179,11 +196,23 @@ const SubscriptionPlans = () => {
                                     </li>
                                 ))}
                             </ul>
-
                             <Button
                                 className={`w-full py-2 base-font-heading text-base rounded-lg ${plan.buttonColor}`}
-                                onClick={SelectPlan}
-                                label="Select"
+                                onClick={() => !loading && SelectPlan(plan.title, billingCycles[index], index)}
+                                disabled={loading}
+                                aria-live="polite"
+                                label={
+                                    loading === index ? (
+                                        <ClipLoader
+                                            loading={loading === index}
+                                            size={30}
+                                            aria-label="Loading Spinner"
+                                            color={index === 1 ? "orange" : "white"}
+                                        />
+                                    ) : (
+                                        "Select"
+                                    )
+                                }
                             />
                         </div>
                     ))}

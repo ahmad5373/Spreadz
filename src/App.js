@@ -12,6 +12,8 @@ import Blogs from './components/Blog';
 import BlogDetails from './components/BlogDetails';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import SuccessPage from './components/SuccessPage';
+import FailedPage from './components/FailedPage';
 
 
 const App = () => {
@@ -28,6 +30,8 @@ const App = () => {
           <Route path="/blogs" exact element={<Blogs />} />
           <Route path="/blogs/blog-details" exact element={<BlogDetails />} />
           <Route path="/contact-us" exact element={<ContactUs />} />
+          <Route path="/success" exact element={<SuccessPage />} />
+          <Route path="/cancel" exact element={<FailedPage />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>
