@@ -16,7 +16,7 @@ const SubscriptionPlans = () => {
     const SelectPlan = async (planTitle, billingCycle, index) => {
         setLoading(index);
         try {
-            const response = await axios.post("http://localhost:8080/subscriptions/create-checkout-session", {
+            const response = await axios.post("https://spreadz-backend.vercel.app/subscriptions/create-checkout-session", {
                 planTitle,
                 billingCycle,
             });
