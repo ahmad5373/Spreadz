@@ -6,59 +6,31 @@ import arrowRight from "../assets/arrowRight.svg";
 import Button from "./button/Button";
 import { Link } from "react-router-dom";
 import Container from "../customComponents/Container.";
+import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
+import { getallBlog } from "../apiUtils/BlogApi";
+import BlogDetails from "./BlogDetails";
 
 const Blogs = () => {
+    const [blogs, setBlogs] = useState([]);
+    const [loading, setLoading] = useState(false);
 
-    const postData = [
-        {
-            id: 1,
-            postHeading: "Aenean eleifend ante maecenas",
-            postOwner: "Joanna Wellick",
-            postDate: "June 28, 2018",
-            postShare: "1K shares",
-            postContent: "Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat justo enim. Venenatis eget adipiscing luctus lorem.",
-        },
-        {
-            id: 2,
-            postHeading: "Aenean eleifend ante maecenas",
-            postOwner: "Joanna Wellick",
-            postDate: "June 28, 2018",
-            postShare: "1K shares",
-            postContent: "Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat justo enim. Venenatis eget adipiscing luctus lorem.",
-        },
-        {
-            id: 3,
-            postHeading: "Aenean eleifend ante maecenas",
-            postOwner: "Joanna Wellick",
-            postDate: "June 28, 2018",
-            postShare: "1K shares",
-            postContent: "Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat justo enim. Venenatis eget adipiscing luctus lorem.",
-        },
-        {
-            id: 1,
-            postHeading: "Aenean eleifend ante maecenas",
-            postOwner: "Joanna Wellick",
-            postDate: "June 28, 2018",
-            postShare: "1K shares",
-            postContent: "Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat justo enim. Venenatis eget adipiscing luctus lorem.",
-        },
-        {
-            id: 2,
-            postHeading: "Aenean eleifend ante maecenas",
-            postOwner: "Joanna Wellick",
-            postDate: "June 28, 2018",
-            postShare: "1K shares",
-            postContent: "Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat justo enim. Venenatis eget adipiscing luctus lorem.",
-        },
-        {
-            id: 3,
-            postHeading: "Aenean eleifend ante maecenas",
-            postOwner: "Joanna Wellick",
-            postDate: "June 28, 2018",
-            postShare: "1K shares",
-            postContent: "Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat justo enim. Venenatis eget adipiscing luctus lorem.",
+    const fetchBlogs = async () => {
+        setLoading(true);
+        try {
+            const { data } = await getallBlog();
+            setBlogs(data?.data?.length ? data.data : []);
+            setLoading(false);
+        } catch (error) {
+            toast.error(error?.response?.data?.message || 'Something Went Wrong. Try Again');
+        } finally {
+            setLoading(false);
         }
-    ]
+    };
+
+    useEffect(() => {
+        fetchBlogs();
+    }, []);
 
     const Filter = () => {
         console.log("Here is  Filtering the Post --->");
@@ -71,28 +43,30 @@ const Blogs = () => {
     const PostCard = ({ post }) => (
         <div className="flex justify-between">
             <div className="lg:w-[404px] flex flex-col">
-                <div className="bg-post h-[303.457px] rounded-xl"></div>
-                <div><p className="base-font-heading md:text-2xl text-base my-4">{post.postHeading}</p></div>
+                <div className=" h-[303.457px] rounded-xl"><img src={post?.imageUrl} alt="post image" /></div>
+                <div><p className="base-font-heading md:text-2xl text-base my-4">{post?.title}</p></div>
                 <div>
                     <div className="flex items-center justify-between mt-2">
                         <div className="flex items-center space-x-2">
                             <img src={ellipse62} alt="profile circle" className="w-8 h-8" />
-                            <h4 className="font-base-heading md:text-base text-sm ">{post.postOwner}</h4>
+                            <h4 className="font-base-heading md:text-base text-sm ">{post?.postOwner}</h4>
                         </div>
                         <div className="flex items-center">
                             <div className="h-[0.723px] w-[26px] bg-black mr-2"></div>
-                            <p className="base-font text-xs text-gray-150">{post.postDate}</p>
+                            <p className="base-font text-xs text-gray-150">{post?.createdAt}</p>
                         </div>
                         <ul>
                             <li className="flex items-center custom-bullet space-x-2">
                                 <img src={share} alt="share icon" className="w-4 h-4" />
-                                <p className="text-xs text-gray-150">{post.postShare}</p>
+                                <p className="text-xs text-gray-150">{post?.share ?? '0'}</p>
                             </li>
                         </ul>
                     </div>
                 </div>
-                <div><p className="base-font text-base leading-7 text-gray-350 mb-4">{post.postContent} </p></div>
-                <Link to="/blogs/blog-details " className="base-font-heading text-base text-orange-150">
+                <div><p className="base-font text-base leading-7 text-gray-350 mb-4 line-clamp-3">{post?.description} </p></div>
+{console.log("post =>", post)}
+
+                <Link to="/blogs/blog-details" className="base-font-heading text-base text-orange-150" state={post} >
                     View Post
                 </Link>
                 <div className="w-[78.032px] h-[0.723px] bg-orange-150"></div>
@@ -205,8 +179,8 @@ const Blogs = () => {
                         <h1 className="base-font-heading text-3xl leading-10">New Posts</h1>
 
                         <div className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
-                            {postData.map((post) => (
-                                <PostCard key={post.id} post={post} />
+                            {blogs.map((post) => (
+                                <PostCard key={post._id} post={post} />
                             ))}
                         </div>
 
@@ -230,7 +204,7 @@ const Blogs = () => {
                         <h1 className="base-font-heading text-3xl leading-10">Trending Posts</h1>
 
                         <div className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
-                            {postData.slice(0, 3).map((post) => (
+                            {blogs.slice(0, 3).map((post) => (
                                 <PostCard key={post.id} post={post} />
                             ))}
                         </div>
@@ -253,7 +227,7 @@ const Blogs = () => {
                         <h1 className="base-font-heading text-3xl leading-10">Other Posts</h1>
 
                         <div className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
-                            {postData.map((post) => (
+                            {blogs.map((post) => (
                                 <PostCard key={post.id} post={post} />
                             ))}
                         </div>
