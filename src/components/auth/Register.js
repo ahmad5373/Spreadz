@@ -26,7 +26,7 @@ const Register = () => {
             console.log("data... =>", data);
             const accessToken = data?.data?.access_token;
             console.log('gg',accessToken ? accessToken : '');
-            await login( data?.data)
+            await login(accessToken,data?.data)
             toast.success(data?.message || "user Regiseter Successfully.")
             navigate('/');
         } catch (error) {

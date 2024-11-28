@@ -20,8 +20,8 @@ const Login = () => {
         const loginPayload = { email: email, password: password }
         const { data } = await SignIn(loginPayload)
         console.log("data =>", data);
-        // const accessToken = data?.data?.access_token;
-        await login(data?.user)
+        const accessToken = data?.data?.access_token;
+        await login(accessToken,data?.user)
         toast.success(data?.message || "user LoggedIn Successfully.")
         navigate('/');
        } catch (error) {

@@ -29,8 +29,8 @@ export const AuthProvider = ({ children }) => {
         fetchUser();
     }, [navigate]);
 
-    const login = (user) => {
-        // setToken(token)
+    const login = (token,user) => {
+        setToken(token)
         setUser(user)
     };
 
