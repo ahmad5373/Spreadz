@@ -43,7 +43,7 @@ const Blogs = () => {
     const PostCard = ({ post }) => (
         <div className="flex justify-between">
             <div className="lg:w-[404px] flex flex-col">
-                <div className=" h-[303.457px] rounded-xl"><img src={post?.imageUrl} alt="post image" /></div>
+                <div className="rounded-xl"><img src={post?.imageUrl} alt="post image" className="h-[303.457px]" /></div>
                 <div><p className="base-font-heading md:text-2xl text-base my-4">{post?.title}</p></div>
                 <div>
                     <div className="flex items-center justify-between mt-2">
@@ -179,7 +179,7 @@ const Blogs = () => {
                         <h1 className="base-font-heading text-3xl leading-10">New Posts</h1>
 
                         <div className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
-                            {blogs.map((post) => (
+                            {blogs.slice(0, 6).map((post) => (
                                 <PostCard key={post._id} post={post} />
                             ))}
                         </div>
@@ -227,7 +227,7 @@ const Blogs = () => {
                         <h1 className="base-font-heading text-3xl leading-10">Other Posts</h1>
 
                         <div className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
-                            {blogs.map((post) => (
+                            {blogs.slice(0, 6).map((post) => (
                                 <PostCard key={post.id} post={post} />
                             ))}
                         </div>
