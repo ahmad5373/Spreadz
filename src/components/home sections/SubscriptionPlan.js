@@ -7,7 +7,7 @@ import Container from "../../customComponents/Container.";
 import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios";
 import { ClipLoader } from 'react-spinners';
-const stripePromise = loadStripe("pk_test_51QP5XOAMrpg8m0TRpXQwt1jClRiin4Jyt7bHTQGz1qvMMjGNiOUSfAl6vJBc509ilciTrwbEGCX5H9eXeTYFNGsO008sjMXVrp");
+const stripePromise = loadStripe("pk_live_51NldRYCerSFfKjNXMYxxpAKktLYgZs3oRgScLeQu7mnihZ4AtCLnaNlvbM4C7RdRtISPjZXDYS7INgL9q8V8R4td009Mkivej2");
 
 const SubscriptionPlans = () => {
     const [loading, setLoading] = useState(null);
