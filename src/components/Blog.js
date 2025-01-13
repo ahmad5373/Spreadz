@@ -18,8 +18,8 @@ const Blogs = () => {
     const fetchBlogs = async () => {
         setLoading(true);
         try {
-            const { data } = await getallBlog();
-            setBlogs(data?.data?.length ? data.data : []);
+            const response = await getallBlog();
+            setBlogs(response?.data?.data?.length ? response?.data.data : []);
             setLoading(false);
         } catch (error) {
             toast.error(error?.response?.data?.message || 'Something Went Wrong. Try Again');
