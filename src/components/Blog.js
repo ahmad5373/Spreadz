@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { getallBlog } from "../apiUtils/BlogApi";
 import BlogDetails from "./BlogDetails";
+import PostCard from "./PostCard";
 
 const Blogs = () => {
     const [blogs, setBlogs] = useState([]);
@@ -39,40 +40,6 @@ const Blogs = () => {
     const AllPost = () => {
         console.log("See all other posts");
     }
-
-    const PostCard = ({ post }) => (
-        <div className="flex justify-between">
-            <div className="lg:w-[404px] flex flex-col">
-                <div className="rounded-xl"><img src={post?.imageUrl} alt="post image" className="h-[303.457px]" /></div>
-                <div><p className="base-font-heading md:text-2xl text-base my-4">{post?.title}</p></div>
-                <div>
-                    <div className="flex items-center justify-between mt-2">
-                        <div className="flex items-center space-x-2">
-                            <img src={ellipse62} alt="profile circle" className="w-8 h-8" />
-                            <h4 className="font-base-heading md:text-base text-sm ">{post?.postOwner}</h4>
-                        </div>
-                        <div className="flex items-center">
-                            <div className="h-[0.723px] w-[26px] bg-black mr-2"></div>
-                            <p className="base-font text-xs text-gray-150">{post?.createdAt}</p>
-                        </div>
-                        <ul>
-                            <li className="flex items-center custom-bullet space-x-2">
-                                <img src={share} alt="share icon" className="w-4 h-4" />
-                                <p className="text-xs text-gray-150">{post?.share ?? '0'}</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div><p className="base-font text-base leading-7 text-gray-350 mb-4 line-clamp-3">{post?.description} </p></div>
-{console.log("post =>", post)}
-
-                <Link to="/blogs/blog-details" className="base-font-heading text-base text-orange-150" state={post} >
-                    View Post
-                </Link>
-                <div className="w-[78.032px] h-[0.723px] bg-orange-150"></div>
-            </div>
-        </div>
-    );
 
     return (
         <div className="bg-gray-100  pt-12 w-full">

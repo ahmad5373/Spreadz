@@ -22,6 +22,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCommentDots, faCalendar, faPaperPlane, faBookmark, faFaceAngry, faFaceMeh, faFaceGrinWide, faFaceGrinHearts, faFaceGrinStars } from '@fortawesome/free-regular-svg-icons';
 import { faShare } from '@fortawesome/free-solid-svg-icons';
 import Container from "../customComponents/Container.";
+import { useEffect, useState } from "react";
+import { getallBlog } from "../apiUtils/BlogApi";
+import { toast } from "react-toastify";
+import PostCard from "./PostCard";
 
 
 
@@ -29,6 +33,9 @@ const BlogDetails = () => {
     const { state } = useLocation();
     const post = state;
     console.log("post =>", post);
+    const [blogs, setBlogs] = useState([]);
+    const [loading, setLoading] = useState(false);
+
 
     const Follow = () => {
         console.log("Here is  Filtering the Post --->");
@@ -36,6 +43,24 @@ const BlogDetails = () => {
     const AllPost = () => {
         console.log("See all other posts");
     }
+
+    const fetchBlogs = async () => {
+        setLoading(true);
+        try {
+            const response = await getallBlog();
+            setBlogs(response?.data?.data?.length ? response?.data.data : []);
+            setLoading(false);
+        } catch (error) {
+            toast.error(error?.response?.data?.message || 'Something Went Wrong. Try Again');
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    useEffect(() => {
+        fetchBlogs();
+    }, []);
+
 
     return (
         <div className="bg-gray-100  pt-12 w-full">
@@ -213,102 +238,24 @@ const BlogDetails = () => {
                                     </button>
                                 </div>
                             </div>
-
                         </div>
 
                         <div className="flex flex-col space-y-5 mt-4 lg:m-0 lg:w-[300px]">
-
-                            {/* <div className="flex justify-between ">
-                        <div className="flex justify-between items-center space-x-2">
-                            <FontAwesomeIcon icon={faPaperPlane} size="sm" style={{ color: "#b5b5b5", }} />
-                            <p className="base-font text-sm text-gray-250">Share</p>
-                        </div>
-
-                        <div className="flex justify-between items-center space-x-2">
-                            <FontAwesomeIcon icon={faBookmark} size="sm" style={{ color: "#b5b5b5", }} />
-                            <p className="base-font text-sm text-gray-250">Marking</p>
-                        </div>
-
-                        <div className="flex justify-between items-center space-x-2">
-                            <FontAwesomeIcon icon={faCommentDots} size="sm" style={{ color: "#bfbfc0" }} />
-                            <p className="base-font text-sm text-gray-250">Comment</p>
-                        </div>
-                    </div>
-
-                    <div className="flex justify-start  space-x-2 ">
-                        <div className="flex mr-2">
-                            <img src={manImage} alt="Man With Cap" className="rounded-xl" />
-                        </div>
-
-                        <div className="flex flex-col space-y-4">
-                            <p className="base-font-heading text-sm">Louis Hoebregts</p>
-                            <Button
-                                className="py-2 pl-2  pr-3 base-font-heading text-base flex items-center justify-center bg-orange-150 text-white rounded-lg border border-orange-300"
-                                onClick={Follow}
-                                icon={PlusIcon}
-                                imgStyle="w-4 h-4 bg-white"
-                                iconPosition="left"
-                                alt="Plus icon"
-                                label="Follow"
-                            >
-                            </Button>
-                        </div>
-
-                        <div><p className="base-font text-sm text-gray-250 ml-6">27 post</p></div>
-                    </div>
-
-                    <div className="flex flex-col justify-start space-y-5">
-                        <div className="flex justify-start items-center space-x-2">
-                            <div className="h-2 w-1 our-team-circle-bg" ></div>
-                            <h2 className="base-font-heading text-base">Tag</h2>
-                        </div>
-                        <div className="flex space-x-3">
-                            <p className="base-font text-sm text-gray-250">Montenegro</p>
-                            <p className="base-font text-sm text-gray-250">Visit Croatia</p>
-                            <p className="base-font text-sm text-gray-250">Luxury Travel</p>
-                        </div>
-                        <div className="flex space-x-3">
-                            <p className="base-font text-sm text-gray-250">Travel Log</p>
-                            <p className="base-font text-sm text-gray-250">Paradise Island</p>
-                            <p className="base-font text-sm text-gray-250">Travel Info</p>
-                        </div>
-                    </div> */}
-
                             <div className="flex flex-col justify-start space-y-5">
                                 <div className="flex justify-start items-center space-x-2">
                                     <div className="h-2 w-1 our-team-circle-bg" ></div>
                                     <h2 className="base-font-heading text-base">Top Post</h2>
                                 </div>
-
-                                <div className="flex items-center space-x-2">
-                                    <img src={car} alt="car with back light" className=" rounded-lg" />
-                                    <h3 className="base-font-heading text-base w-[188px]">How to Spend the Perfect Day on Croatia’s Most Magical Island</h3>
-                                </div>
-
-
-                                <div className="flex items-center space-x-2">
-                                    <img src={animalFrogh} alt="frogh on tree" className=" rounded-lg" />
-                                    <h3 className="base-font-heading text-base w-[188px]">How to Spend the Perfect Day on Croatia’s Most Magical Island</h3>
-                                </div>
-
-
-                                <div className="flex items-center space-x-2">
-                                    <img src={girldance} alt="girl dancing" className=" rounded-lg" />
-                                    <h3 className="base-font-heading text-base w-[188px]">How to Spend the Perfect Day on Croatia’s Most Magical Island</h3>
-                                </div>
-
-
-                                <div className="flex items-center space-x-2">
-                                    <img src={food} alt="food on table" className=" rounded-lg" />
-                                    <h3 className="base-font-heading text-base w-[188px]">How to Spend the Perfect Day on Croatia’s Most Magical Island</h3>
-                                </div>
-
-
-                                <div className="flex items-center space-x-2">
-                                    <img src={girlSport} alt="girl Sport" className=" rounded-lg" />
-                                    <h3 className="base-font-heading text-base w-[188px]">How to Spend the Perfect Day on Croatia’s Most Magical Island</h3>
-                                </div>
-
+                                {blogs.slice(0, 5).map((post) => (
+                                    <div className="flex items-center space-x-2">
+                                        <img src={post?.imageUrl || waterBoat} alt="Boat in Water" className="h-16 w-20 rounded-lg" />
+                                        <h3 className="base-font-heading text-base w-[188px]">{post.description
+                                            ? post.description.length > 50
+                                                ? `${post.description.slice(0, 50)}...`
+                                                : post.description
+                                            : "How to Spend the Perfect Day on Croatia’s Most Magical Island"}</h3>
+                                    </div>
+                                ))}
                             </div>
 
                             <div className="flex justify-center  bg-blog-advertise1 h-[151.948px] w-[300px] rounded-lg">
@@ -331,6 +278,25 @@ const BlogDetails = () => {
                     <div className="flex flex-col pb-20 mt-8 bg-gray-100">
                         <h1 className="base-font-heading text-3xl leading-10">Related Posts</h1>
 
+                        <div className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
+                            {blogs.slice(2, 5).map((post) => (
+                                <PostCard key={post.id} post={post} />
+                            ))}
+                        </div>
+
+                        <div className="flex justify-center items-center">
+                            <Button
+                                className="py-2 px-6 mt-10 base-font-heading text-base flex items-center justify-center bg-white text-orange-150 rounded-lg border border-orange-300"
+                                onClick={AllPost}
+                                icon={arrowRight}
+                                imgStyle="w-5 h-5"
+                                iconPosition="right"
+                                alt="Arrow Right"
+                                label="See All"
+                            >
+                            </Button>
+                        </div>
+{/* 
                         <div className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
                             <div className="flex justify-between">
                                 <div className="lg:w-[404px] flex flex-col">
@@ -439,7 +405,7 @@ const BlogDetails = () => {
                             >
 
                             </Button>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </Container>
