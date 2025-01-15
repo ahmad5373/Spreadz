@@ -1,11 +1,14 @@
 
 import mobile from "../../assets/Mobile4.png";
 import qrScanner from "../../assets/qrScanner.png";
-import Ellipse from "../../assets/Ellipse 167.svg";
-import mobileFrame from "../../assets/mobileFrame.png";
-import mobileFram from "../../assets/mobileFram.png";
+import firstImage from "../../assets/firstImage.png";
+import secondImage from "../../assets/secondImage.png";
+import thirdImage from "../../assets/thirdImage.png";
+import fourthImage from "../../assets/fourthImage.png";
+import fifthImage from "../../assets/fifthImage.png";
+import sixthImage from "../../assets/sixthImage.png";
+import seventhImage from "../../assets/seventhImage.png";
 import ellipse from "../../assets/Ellipse 2.svg";
-import videoImage from "../../assets/videoImage.png";
 import Container from "../../customComponents/Container.";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -16,7 +19,7 @@ import { useEffect, useState } from "react";
 import { getallVideo } from "../../apiUtils/YoutubeVideoApi";
 const SpreadsWork = () => {
   const [video, setVideo] = useState([]);
-  
+
   const fetchYoutubeVideo = async () => {
     try {
       const videoData = await getallVideo();
@@ -26,11 +29,11 @@ const SpreadsWork = () => {
 
     }
   }
-  
+
   useEffect(() => {
     fetchYoutubeVideo();
   }, []);
-  
+
   return (
     <>
       <section className="bg-gray-100 py-8 md:py-12 lg:py-10 lg:bg-white">
@@ -40,7 +43,7 @@ const SpreadsWork = () => {
 
         <Container className="px-0 md:px-4 lg:px-10 xl1:px-20">
 
-          <div className="lg:hidden block mt-8">
+          <div className="mt-8">
             <Swiper
               className="space-x-4 flex justify-start"
               modules={[Autoplay]}
@@ -55,96 +58,110 @@ const SpreadsWork = () => {
               breakpoints={{
                 0: {
                   slidesPerView: 2,
-                  spaceBetween: 10,
+                  spaceBetween: 15,
                 },
-                768: {
-                  slidesPerView: 3,
+                640: {
+                  slidesPerView: 3, // Two slides for tablets
+                  spaceBetween: 15,
+                },
+                1024: {
+                  slidesPerView: 3, // Three slides for desktops
                   spaceBetween: 20,
+                },
+                1440: {
+                  slidesPerView: 3, // Adjust spacing for larger screens
+                  spaceBetween: 30,
                 },
               }}
             >
               <SwiperSlide>
-                <div className="flex flex-col items-center w-48 space-y-3">
-                  <div className="bg-orange-150 rounded-full w-6 h-6 flex items-center justify-center text-white">
+                <div className="flex flex-col items-center w-48 lg:w-[316px] space-y-3 lg:gap-4">
+                  <div className="bg-orange-150 rounded-full w-6 h-6 lg:w-12 lg:h-12 flex items-center justify-center text-white">
                     1
                   </div>
-                  <div className="flex flex-col justify-end items-center gap-12 w-36 px-5 pt-9 pb-7 bg-gray-100 rounded-sm">
-                    <img src={qrScanner} alt="QR Code Scanner" className="w-36 h-36" />
-                    <img src={Ellipse} alt="Ellipse" className="w-6 h-6" />
-                  </div>
-                  <p className="base-font leading-5 text-sm lg:text-xl text-center">
-                    Your customer scans the <span className="text-orange-150">QR code</span> to open your referral campaign.
+                  <img src={firstImage} alt="Form submission" className="w-36 lg:w-[226px] h-72 lg:h-[446px]" />
+                  <p className="base-font leading-5 lg:leading-[31px] text-sm lg:text-lg text-center md:w-full w-40">
+                    Entry into the Referral Program
                   </p>
                 </div>
               </SwiperSlide>
 
               <SwiperSlide>
-                <div className="flex flex-col items-center w-48 space-y-3">
-                  <div className="bg-orange-150 rounded-full w-6 h-6 flex items-center justify-center text-white">
+                <div className="flex flex-col items-center w-48 lg:w-[316px] space-y-3 lg:gap-4">
+                  <div className="bg-orange-150 rounded-full w-6 h-6 lg:w-12 lg:h-12 flex items-center justify-center text-white">
                     2
                   </div>
-                  <img src={mobileFram} alt="Form submission" className="w-36 h-72" />
-                  <p className="base-font leading-5 text-xs lg:text-xl text-center">
-                    Your customer reaches your <span className="text-orange-150">self-created referral campaign.</span>
+                  <img src={secondImage} alt="Form submission" className="w-36 lg:w-[226px] h-72 lg:h-[446px]" />
+                  <p className="base-font leading-5 lg:leading-[31px] text-sm lg:text-lg text-center md:w-full w-40">
+                    Participants sign up to join the referral campaign.
                   </p>
                 </div>
               </SwiperSlide>
 
               <SwiperSlide>
-                <div className="flex flex-col items-center w-48 space-y-3">
-                  <div className="bg-orange-150 rounded-full w-6 h-6 flex items-center justify-center text-white">
+                <div className="flex flex-col items-center w-48 lg:w-[316px] space-y-3 lg:gap-4">
+                  <div className="bg-orange-150 rounded-full w-6 h-6 lg:w-12 lg:h-12 flex items-center justify-center text-white">
                     3
                   </div>
-                  <img src={mobileFrame} alt="Form submission" className="w-36 h-72" />
-                  <p className="base-font leading-5 text-xs lg:text-xl text-center">
-                    Your customer enters their <span className="text-orange-150">details</span> so that you know who has just recommended you.
+                  <img src={thirdImage} alt="Form submission" className="w-36 lg:w-[226px] h-72 lg:h-[446px]" />
+                  <p className="base-font leading-5 lg:leading-[31px] text-sm lg:text-lg text-center md:w-full w-40">
+                    Referral Sharing Page - A unique link is shared via WhatsApp, Email, or Social Media.
                   </p>
                 </div>
               </SwiperSlide>
+
+              <SwiperSlide>
+                <div className="flex flex-col items-center w-48 lg:w-[316px] space-y-3 lg:gap-4">
+                  <div className="bg-orange-150 rounded-full w-6 h-6 lg:w-12 lg:h-12 flex items-center justify-center text-white">
+                    4
+                  </div>
+                  <img src={fourthImage} alt="Form submission" className="w-36 lg:w-[226px] h-72 lg:h-[446px]" />
+                  <p className="base-font leading-5 lg:leading-[31px] text-sm lg:text-lg text-center md:w-full w-40">
+                    Google Review after referral
+                  </p>
+                </div>
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <div className="flex flex-col items-center w-48 lg:w-[316px] space-y-3 lg:gap-4">
+                  <div className="bg-orange-150 rounded-full w-6 h-6 lg:w-12 lg:h-12 flex items-center justify-center text-white">
+                    5
+                  </div>
+                  <img src={fifthImage} alt="Form submission" className="w-36 lg:w-[226px] h-72 lg:h-[446px]" />
+                  <p className="base-font leading-5 lg:leading-[31px] text-sm lg:text-lg text-center md:w-full w-40">
+                    Referral Recipient View Page
+                  </p>
+                </div>
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <div className="flex flex-col items-center w-48 lg:w-[316px] space-y-3 lg:gap-4">
+                  <div className="bg-orange-150 rounded-full w-6 h-6 lg:w-12 lg:h-12 flex items-center justify-center text-white">
+                    6
+                  </div>
+                  <img src={sixthImage} alt="Form submission" className="w-36 lg:w-[226px] h-72 lg:h-[446px]" />
+                  <p className="base-font leading-5 lg:leading-[31px] text-sm lg:text-lg text-center md:w-full w-40">
+                    Conversion of
+                    New Customer
+                  </p>
+                </div>
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <div className="flex flex-col items-center w-48 lg:w-[316px] space-y-3 lg:gap-4">
+                  <div className="bg-orange-150 rounded-full w-6 h-6 lg:w-12 lg:h-12 flex items-center justify-center text-white">
+                    7
+                  </div>
+                  <img src={seventhImage} alt="Form submission" className="w-36 lg:w-[226px] h-72 lg:h-[446px]" />
+                  <p className="base-font leading-5 lg:leading-[31px] text-sm lg:text-lg text-center  md:w-full w-40">
+                    Lead overview dashboard Track your leads end-to-end encrypted and 100% yours.
+                  </p>
+                </div>
+              </SwiperSlide>
+
             </Swiper>
           </div>
 
-
-          <div className="hidden lg:flex lg:flex-row justify-between items-center lg:items-start text-center gap-12 lg:gap-20 pt-16">
-            <div className="flex flex-col items-center w-[316px]">
-              <div className="flex flex-col items-center gap-4">
-                <div className="bg-orange-150 rounded-full w-12 h-12 flex items-center justify-center text-white ">
-                  1
-                </div>
-                <div className="flex flex-col justify-end items-center gap-[132px] width-[226px] px-12 pt-16 pb-12 bg-gray-100 rounded-sm">
-                  <img src={qrScanner} alt="QR Code Scanner" className="w-36 h-36" />
-                  <img src={Ellipse} alt="Ellipse" className="w-16 h-16" />
-                </div>
-                <p className="base-font leading-[31px] lg:text-lg text-md">
-                  Your customer scans the <span className="text-orange-500">QR code</span> to open your referral campaign.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex flex-col items-center w-[316px]">
-              <div className="flex flex-col items-center gap-4">
-                <div className="bg-orange-150 rounded-full w-12 h-12 flex items-center justify-center text-white ">
-                  2
-                </div>
-                <img src={mobileFram} alt="Form submission" className=" h-[446px] w-[226px]" />
-                <p className="base-font leading-[31px] lg:text-lg text-md">
-                  Your customer reaches your <span className="text-orange-500">self-created referral campaign.</span>
-                </p>
-              </div>
-            </div>
-
-            <div className="flex flex-col items-center w-[316px]">
-              <div className="flex flex-col items-center gap-4">
-                <div className="bg-orange-150 rounded-full w-12 h-12 flex items-center justify-center text-white ">
-                  3
-                </div>
-                <img src={mobileFrame} alt="Form submission" className="h-[446px] w-[226px]" />
-                <p className="base-font leading-[31px] lg:text-lg text-md">
-                  Your customer enters their <span className="text-orange-150">details</span> so that you know who has just recommended you.
-                </p>
-              </div>
-            </div>
-          </div>
         </Container>
       </section>
 
@@ -159,18 +176,18 @@ const SpreadsWork = () => {
         <Container className='px-4 lg:px-10 xl1:px-20'>
           <div className="grid lg:grid-cols-3 max-[425px]:grid-cols-1 grid-cols-2   gap-6 mt-2 lg:mt-10">
 
-            {video.map((data, id)=> {
+            {video.map((data, id) => {
               const videoId = new URL(data?.url).searchParams.get("v")
               const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1`
               return (
                 <div key={id} className="flex flex-col ">
-              <iframe className="h-[267px] rounded-lg" src={embedUrl}>
-              </iframe>
-              <p className="base-font-heading lg:text-lg text-base mt-2">{data.title}</p>
-            </div>
-          
-            );
-          })}
+                  <iframe className="h-[267px] rounded-lg" src={embedUrl}>
+                  </iframe>
+                  <p className="base-font-heading lg:text-lg text-base mt-2">{data.title}</p>
+                </div>
+
+              );
+            })}
           </div>
         </Container>
       </section>
