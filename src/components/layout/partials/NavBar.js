@@ -1,22 +1,61 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ENG from "../../../assets/EN.png";
 import GE from "../../../assets/GE.png";
 import Logo from "../../../assets/Logo.png";
-import Language from "../../../assets/Language.png";
 import Button from '../../button/Button';
 import { Link, useNavigate } from 'react-router-dom';
 import Container from '../../../customComponents/Container.';
 import { useAuth } from '../../auth/AuthContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
+import i18next from 'i18next';
+
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const [currentLanguage, setCurrentLanguage] = useState('en');
   const { user, logout } = useAuth();
   const navigate = useNavigate();
   const handleToggleProfile = () => setIsProfileOpen(prev => !prev);
-  console.log("user =>", user);
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem('currentLanguage');
+    if (savedLanguage) {
+      setCurrentLanguage(savedLanguage);
+    }
+    setTimeout(() => {
+      const selectElementToRemove = document.querySelector(".skiptranslate");
+      if (selectElementToRemove) {
+        selectElementToRemove.style.display = 'none';
+      }
+    }, 2000);
+  }, [])
+  const switchLanguage = (language) => {
+    try {
+      console.log("language =>", language);
+      const selectElement = document.querySelector("select.goog-te-combo");
+      console.log("selectElement =>", selectElement.value);
+      if (selectElement) {
+        console.log("Switching language to:", language);
+        setTimeout(() => {
+          const selectElementToRemove = document.querySelector(".skiptranslate");
+          if (selectElementToRemove) {
+            selectElementToRemove.style.display = 'none';
+          }
+        }, 2000);
+        selectElement.value = language;
+        const changeEvent = new Event("change", { bubbles: true });
+        selectElement.dispatchEvent(changeEvent);
+        localStorage.setItem('currentLanguage', language);
+        setCurrentLanguage(language);
+      } else {
+        console.error("Google Translate select element not found.");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+
+  };
 
   const handleLinkClick = () => {
     console.log("click the link");
@@ -28,7 +67,7 @@ const NavBar = () => {
     console.log("Register button clicked");
     navigate("/register")
   }
-
+  // console.log(isLoading);
   return (
     <nav className="bg-white w-full z-10 fixed top-0 start-0 border-b border-gray-200">
       <Container className='px-4 lg:px-10 xl1:px-20'>
@@ -50,8 +89,18 @@ const NavBar = () => {
           <div className="hidden lg:flex items-center space-x-4">
             <div className="flex items-center space-x-2">
               <img src={GE} className="h-3 w-5" alt="GE" />
-              <button className="px-2 py-1">
-                <img src={Language} alt="Language" />
+              <button
+                onClick={() => {
+                  // Toggle between languages
+                  const newLanguage = currentLanguage === "en" ? "de" : "en";
+                  switchLanguage(newLanguage); // Trigger Google Translate
+                  setCurrentLanguage(newLanguage); // Update state (if any)
+                }}
+                className={`w-10 h-6 flex items-center bg-black rounded-full p-1 transition-all ${currentLanguage === "en" ? "justify-end" : "justify-start"
+                  }`}
+                aria-label="Language Toggle"
+              >
+                <span className="w-4 h-4 bg-white rounded-full"></span>
               </button>
               <img src={ENG} className="h-3 w-5" alt="EN" />
             </div>
@@ -59,21 +108,21 @@ const NavBar = () => {
               <div>
                 {/* <button onClick={handleToggleProfile} aria-expanded={isProfileOpen}> */}
                 {/* <img className='rounded-full drop sm:mr-2 w-9 h-9 object-cover' loading='lazy' src="https://images.pexels.com/photos/1499327/pexels-photo-1499327.jpeg?auto=compress&cs=tinysrgb&w=1600" alt='profile' /> */}
-                <button type="button" className="flex text-sm rounded-full md:mr-0" onClick={handleToggleProfile} aria-expanded={isProfileOpen}>                
-                    <div className='flex items-center text-sm drop-shadow-lg'>
-                <img className='rounded-full drop sm:mr-2 w-9 h-9 object-cover' src='https://images.pexels.com/photos/7289120/pexels-photo-7289120.jpeg?auto=compress&cs=tinysrgb&w=600' alt='users' />
-                  <span className='hidden sm:block'>{user.name}</span>
-                  {console.log('user',user)}
-                </div>
+                <button type="button" className="flex text-sm rounded-full md:mr-0" onClick={handleToggleProfile} aria-expanded={isProfileOpen}>
+                  <div className='flex items-center text-sm drop-shadow-lg'>
+                    <img className='rounded-full drop sm:mr-2 w-9 h-9 object-cover' src='https://images.pexels.com/photos/7289120/pexels-photo-7289120.jpeg?auto=compress&cs=tinysrgb&w=600' alt='users' />
+                    <span className='hidden sm:block'>{user.name}</span>
+                    {console.log('user', user)}
+                  </div>
                 </button>
                 {/* </button> */}
                 <div className={`z-50 ${isProfileOpen ? null : 'hidden'} absolute w-36 px-4 my-4 text-gray-950 font-medium list-none bg-white backdrop-blur-md rounded-lg`}>
                   <ul className="py-2" aria-labelledby="user-menu-button">
                     <li>
-                      <button  onClick={logout} className="block px-4 py-2 text-sm hover:bg-orange-150 hover:text-white hover:rounded-md ">
-                       <FontAwesomeIcon icon={faRightFromBracket} />
+                      <button onClick={logout} className="block px-4 py-2 text-sm hover:bg-orange-150 hover:text-white hover:rounded-md ">
+                        <FontAwesomeIcon icon={faRightFromBracket} />
                         Logout
-                        </button>
+                      </button>
                     </li>
                   </ul>
                 </div>
@@ -147,7 +196,6 @@ const NavBar = () => {
         </div>
       </Container>
     </nav>
-
   );
 }
 
