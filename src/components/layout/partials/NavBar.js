@@ -8,7 +8,6 @@ import Container from '../../../customComponents/Container.';
 import { useAuth } from '../../auth/AuthContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
-import i18next from 'i18next';
 
 
 const NavBar = () => {

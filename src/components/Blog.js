@@ -15,6 +15,9 @@ import PostCard from "./PostCard";
 const Blogs = () => {
     const [blogs, setBlogs] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [viewAllPosts, setViewAllPosts] = useState(false);
+
+
 
     const fetchBlogs = async () => {
         setLoading(true);
@@ -33,12 +36,18 @@ const Blogs = () => {
         fetchBlogs();
     }, []);
 
+    useEffect(() => {
+        setViewAllPosts(false);
+    }, [blogs]);
+
     const Filter = () => {
         console.log("Here is  Filtering the Post --->");
     }
 
     const AllPost = () => {
         console.log("See all other posts");
+        setViewAllPosts(true);
+
     }
 
     return (
@@ -146,23 +155,32 @@ const Blogs = () => {
                         <h1 className="base-font-heading text-3xl leading-10">New Posts</h1>
 
                         <div className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
-                            {blogs.slice(0, 6).map((post) => (
+                            {/* {blogs.slice(0, 6).map((post) => (
                                 <PostCard key={post._id} post={post} />
-                            ))}
+                            ))} */}
+                            {viewAllPosts
+                                ? blogs.map((post) => (
+                                    <PostCard key={post.id} post={post} />
+                                ))
+                                : blogs.slice(0, 4).map((post) => (
+                                    <PostCard key={post.id} post={post} />
+                                ))
+                            }
                         </div>
 
-                        <div className="flex justify-center items-center">
-                            <Button
-                                className="py-2 px-6 mt-10 base-font-heading text-base flex items-center justify-center bg-white text-orange-150 rounded-lg border border-orange-300"
-                                onClick={AllPost}
-                                icon={arrowRight}
-                                imgStyle="w-5 h-5"
-                                iconPosition="right"
-                                alt="Arrow Right"
-                                label="See All"
-                            >
-                            </Button>
-                        </div>
+                        {!viewAllPosts && (
+                            <div className="flex justify-center items-center">
+                                <Button
+                                    className="py-2 px-6 mt-10 base-font-heading text-base flex items-center justify-center bg-white text-orange-150 rounded-lg border border-orange-300"
+                                    onClick={AllPost}
+                                    icon={arrowRight}
+                                    imgStyle="w-5 h-5"
+                                    iconPosition="right"
+                                    alt="Arrow Right"
+                                    label="See All"
+                                />
+                            </div>
+                        )}
                     </div>
 
 
@@ -171,6 +189,34 @@ const Blogs = () => {
                         <h1 className="base-font-heading text-3xl leading-10">Trending Posts</h1>
 
                         <div className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
+                            {/* {blogs.slice(0, 6).map((post) => (
+                                <PostCard key={post._id} post={post} />
+                            ))} */}
+                            {viewAllPosts
+                                ? blogs.map((post) => (
+                                    <PostCard key={post.id} post={post} />
+                                ))
+                                : blogs.slice(0, 3).map((post) => (
+                                    <PostCard key={post.id} post={post} />
+                                ))
+                            }
+                        </div>
+
+                        {!viewAllPosts && (
+                            <div className="flex justify-center items-center">
+                                <Button
+                                    className="py-2 px-6 mt-10 base-font-heading text-base flex items-center justify-center bg-white text-orange-150 rounded-lg border border-orange-300"
+                                    onClick={AllPost}
+                                    icon={arrowRight}
+                                    imgStyle="w-5 h-5"
+                                    iconPosition="right"
+                                    alt="Arrow Right"
+                                    label="See All"
+                                />
+                            </div>
+                        )}
+
+                        {/* <div className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
                             {blogs.slice(0, 3).map((post) => (
                                 <PostCard key={post.id} post={post} />
                             ))}
@@ -187,13 +233,41 @@ const Blogs = () => {
                                 label="See All"
                             >
                             </Button>
-                        </div>
+                        </div> */}
                     </div>
 
                     <div className="flex flex-col  mb-8">
                         <h1 className="base-font-heading text-3xl leading-10">Other Posts</h1>
 
                         <div className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
+                            {/* {blogs.slice(0, 6).map((post) => (
+                                <PostCard key={post._id} post={post} />
+                            ))} */}
+                            {viewAllPosts
+                                ? blogs.map((post) => (
+                                    <PostCard key={post.id} post={post} />
+                                ))
+                                : blogs.slice(0, 4).map((post) => (
+                                    <PostCard key={post.id} post={post} />
+                                ))
+                            }
+                        </div>
+
+                        {!viewAllPosts && (
+                            <div className="flex justify-center items-center">
+                                <Button
+                                    className="py-2 px-6 mt-10 base-font-heading text-base flex items-center justify-center bg-white text-orange-150 rounded-lg border border-orange-300"
+                                    onClick={AllPost}
+                                    icon={arrowRight}
+                                    imgStyle="w-5 h-5"
+                                    iconPosition="right"
+                                    alt="Arrow Right"
+                                    label="See All"
+                                />
+                            </div>
+                        )}
+
+                        {/* <div className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
                             {blogs.slice(0, 6).map((post) => (
                                 <PostCard key={post.id} post={post} />
                             ))}
@@ -211,7 +285,7 @@ const Blogs = () => {
                                 label="See All"
                             >
                             </Button>
-                        </div>
+                        </div> */}
                     </div>
 
                 </div>
