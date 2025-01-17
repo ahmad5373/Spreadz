@@ -82,18 +82,18 @@ const BlogDetails = () => {
                             </div>
 
                             <div className="py-8">
-                                <h1 className="base-font-heading text-xl pb-8">{post?.title}</h1>
+                                <h1 className="base-font-heading text-xl pb-8">{post?.subTitle}</h1>
                                 <p className="text-base leading-7 ">{post?.description}</p>
                             </div>
 
-                            <img src={post?.imageUrl} alt="Boats" className="h-[410.26px] rounded-lg " />
+                            {/* <img src={post?.imageUrl} alt="Boats" className="h-[410.26px] rounded-lg " /> */}
 
-                            <div className="pb-8">
+                            {/* <div className="pb-8">
                                 <h1 className="base-font-heading text-xl py-8 capitalize">Not how long, but how well you have lived is the main thing.</h1>
                                 <p className="text-base leading-7 ">When you are ready to indulge your sense of excitement, check out the range of water- sports opportunities at the resort’s on-site water-sports center. Want to leave your stress on the water? The resort has kayaks, paddleboards, or the low-key pedal boats. Snorkeling equipment is available as well, so you can experience the ever-changing undersea environment.
                                     Not only do visitors to a bed and breakfast get a unique perspective on the place they are visiting, they have options for special packages not available in other hotel settings. Bed and breakfasts can partner easily with local businesses for a smoothly organized and highly personalized vacation experience. The Fife and Drum Inn offers options such as the Historic Triangle Package that includes three nights at the Inn, breakfasts, and admissions to historic Williamsburg, Jamestown, and Yorktown. Bed and breakfasts also lend themselves to romance.</p>
                                 <p className="text-base leading-7">Part of the charm of a bed and breakfast is the uniqueness; art, décor, and food are integrated to create a complete experience. For example, the Fife and Drum retains the colonial feel of the area in all its guest rooms. Special features include antique furnishings, elegant four poster beds in some guest rooms, as well folk art and artifacts from the restoration period of the historic area available for guests to enjoy.</p>
-                            </div>
+                            </div> */}
 
                             <div className="flex justify-start items-center space-x-2 pb-5">
                                 <div className="h-2 w-1 bg-red-150" ></div>
