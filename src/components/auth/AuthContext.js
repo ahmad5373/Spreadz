@@ -15,10 +15,12 @@ export const AuthProvider = ({ children }) => {
     const fetchUser = async () => {
         const token = getToken('jwtToken');
         try {
-            const decoded = jwtDecode(token);
+            if(token){
+                const decoded = jwtDecode(token);
             const userResponse = await getSingleUser(decoded?.user?._id, token);
             setUser(userResponse?.data?.data);
-            setLoading(false);
+        }
+        setLoading(false);
         } catch (error) {
             console.log("error.. =>", error);
         }
