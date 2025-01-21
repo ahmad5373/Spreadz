@@ -4,13 +4,12 @@ import share from "../assets/Group 237605.svg";
 import ellipse62 from "../assets/Ellipse 162.svg";
 import arrowRight from "../assets/arrowRight.svg";
 import Button from "./button/Button";
-import { Link } from "react-router-dom";
 import Container from "../customComponents/Container.";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { getallBlog } from "../apiUtils/BlogApi";
-import BlogDetails from "./BlogDetails";
 import PostCard from "./PostCard";
+import { ClipLoader } from "react-spinners";
 
 const Blogs = () => {
     const [blogs, setBlogs] = useState([]);
@@ -152,19 +151,19 @@ const Blogs = () => {
                     </div>
 
                     <div className="flex flex-col mt-8 mb-8">
-                        <h1 className="base-font-heading text-3xl leading-10">New Posts</h1>
+                        <h1 className="base-font-heading text-3xl leading-10">{viewAllPosts ? 'All Posts' : 'New Posts'}</h1>
 
                         <div className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
-                            {/* {blogs.slice(0, 6).map((post) => (
-                                <PostCard key={post._id} post={post} />
-                            ))} */}
-                            {viewAllPosts
-                                ? blogs.map((post) => (
-                                    <PostCard key={post.id} post={post} />
-                                ))
-                                : blogs.slice(0, 4).map((post) => (
-                                    <PostCard key={post.id} post={post} />
-                                ))
+                            {loading ? (
+                                <ClipLoader loading={loading} height={12} width={5} radius={5} margin={2} aria-label="Loading Spinner" color='black' />
+                            ) :
+                                viewAllPosts
+                                    ? blogs.map((post) => (
+                                        <PostCard key={post.id} post={post} />
+                                    ))
+                                    : blogs.slice(0, 4).map((post) => (
+                                        <PostCard key={post.id} post={post} />
+                                    ))
                             }
                         </div>
 
@@ -180,29 +179,23 @@ const Blogs = () => {
                                     label="See All"
                                 />
                             </div>
-                        )}
+                        )} 
                     </div>
 
-
-
+                    {!viewAllPosts && (
+                        <>
                     <div className="flex flex-col mt-4 mb-8">
                         <h1 className="base-font-heading text-3xl leading-10">Trending Posts</h1>
-
                         <div className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
-                            {/* {blogs.slice(0, 6).map((post) => (
-                                <PostCard key={post._id} post={post} />
-                            ))} */}
-                            {viewAllPosts
-                                ? blogs.map((post) => (
-                                    <PostCard key={post.id} post={post} />
-                                ))
-                                : blogs.slice(0, 3).map((post) => (
+                            {loading ? (
+
+                                <ClipLoader loading={loading} height={12} width={5} radius={5} margin={2} aria-label="Loading Spinner" color='black' />
+                            ) :  blogs.slice(0, 3).map((post) => (
                                     <PostCard key={post.id} post={post} />
                                 ))
                             }
                         </div>
-
-                        {!viewAllPosts && (
+                     
                             <div className="flex justify-center items-center">
                                 <Button
                                     className="py-2 px-6 mt-10 base-font-heading text-base flex items-center justify-center bg-white text-orange-150 rounded-lg border border-orange-300"
@@ -214,46 +207,21 @@ const Blogs = () => {
                                     label="See All"
                                 />
                             </div>
-                        )}
-
-                        {/* <div className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
-                            {blogs.slice(0, 3).map((post) => (
-                                <PostCard key={post.id} post={post} />
-                            ))}
-                        </div>
-
-                        <div className="flex justify-center items-center">
-                            <Button
-                                className="py-2 px-6 mt-10 base-font-heading text-base flex items-center justify-center bg-white text-orange-150 rounded-lg border border-orange-300"
-                                onClick={AllPost}
-                                icon={arrowRight}
-                                imgStyle="w-5 h-5"
-                                iconPosition="right"
-                                alt="Arrow Right"
-                                label="See All"
-                            >
-                            </Button>
-                        </div> */}
                     </div>
+
 
                     <div className="flex flex-col  mb-8">
                         <h1 className="base-font-heading text-3xl leading-10">Other Posts</h1>
 
                         <div className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
-                            {/* {blogs.slice(0, 6).map((post) => (
-                                <PostCard key={post._id} post={post} />
-                            ))} */}
-                            {viewAllPosts
-                                ? blogs.map((post) => (
-                                    <PostCard key={post.id} post={post} />
-                                ))
-                                : blogs.slice(0, 4).map((post) => (
+                            {loading ? (
+                                <ClipLoader loading={loading} height={12} width={5} radius={5} margin={2} aria-label="Loading Spinner" color='black' />
+                            ) : blogs.slice(0, 4).map((post) => (
                                     <PostCard key={post.id} post={post} />
                                 ))
                             }
                         </div>
-
-                        {!viewAllPosts && (
+                       
                             <div className="flex justify-center items-center">
                                 <Button
                                     className="py-2 px-6 mt-10 base-font-heading text-base flex items-center justify-center bg-white text-orange-150 rounded-lg border border-orange-300"
@@ -265,28 +233,9 @@ const Blogs = () => {
                                     label="See All"
                                 />
                             </div>
-                        )}
-
-                        {/* <div className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
-                            {blogs.slice(0, 6).map((post) => (
-                                <PostCard key={post.id} post={post} />
-                            ))}
-                        </div>
-
-                        <div className="flex justify-center items-center">
-
-                            <Button
-                                className="py-2 px-6 mt-10 base-font-heading text-base flex items-center justify-center bg-white text-orange-150 rounded-lg border border-orange-300"
-                                onClick={AllPost}
-                                icon={arrowRight}
-                                imgStyle="w-5 h-5"
-                                iconPosition="right"
-                                alt="Arrow Right"
-                                label="See All"
-                            >
-                            </Button>
-                        </div> */}
                     </div>
+                    </>
+                        )}
 
                 </div>
             </Container>

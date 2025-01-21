@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 const PostCard = ({ post }) => {
     const formatDate = (dateString) => {
         const date = new Date(dateString);
-
         const year = date.getFullYear();
         const month = date.toLocaleString('en-US', { month: 'long' });
         const day = date.getDate();
@@ -14,7 +13,7 @@ const PostCard = ({ post }) => {
     return (
         <div className="flex justify-between">
             <div className="lg:w-[404px] flex flex-col">
-                <div className="rounded-xl"><img src={post?.imageUrl} alt="post image" className="h-[303.457px]" /></div>
+                <div className="rounded-xl"><img src={post?.imageUrl} alt="post " className="h-[303.457px] w-96" /></div>
                 <div><p className="base-font-heading md:text-2xl text-base my-4">{post?.title}</p></div>
                 <div>
                     <div className="flex items-center justify-between mt-2">

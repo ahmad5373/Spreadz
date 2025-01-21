@@ -1,26 +1,15 @@
-import animalFrogh from "../assets/animalFrogh.png";
-import car from "../assets/car.png";
-import girldance from "../assets/girldance.png";
-import food from "../assets/food.png";
-import girlSport from "../assets/girlSport.png";
-import share from "../assets/Group 237605.svg";
-import ellipse62 from "../assets/Ellipse 162.svg";
+
 import arrowRight from "../assets/arrowRight.svg";
 import manImage from "../assets/man.png";
 import waterBoat from "../assets/water.png";
-import boats from "../assets/boats.png";
-import girlSmall from "../assets/girlSmall.png";
 import girlcurly from "../assets/girlcurly.png";
-import manchair from "../assets/manchair.png";
-import girlt from "../assets/girlt.png";
-import PlusIcon from "../assets/tabler_plus.svg";
+
 
 import Button from "./button/Button";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCommentDots, faCalendar, faPaperPlane, faBookmark, faFaceAngry, faFaceMeh, faFaceGrinWide, faFaceGrinHearts, faFaceGrinStars } from '@fortawesome/free-regular-svg-icons';
-import { faShare } from '@fortawesome/free-solid-svg-icons';
+import { faCommentDots, faCalendar, faFaceAngry, faFaceMeh, faFaceGrinWide, faFaceGrinHearts, faFaceGrinStars } from '@fortawesome/free-regular-svg-icons';
 import Container from "../customComponents/Container.";
 import { useEffect, useState } from "react";
 import { addComment, getallBlog, getSingleBlog } from "../apiUtils/BlogApi";
@@ -28,6 +17,7 @@ import { toast } from "react-toastify";
 import PostCard from "./PostCard";
 import { jwtDecode } from "jwt-decode";
 import { getToken } from "./auth/AuthCheck";
+import { ClipLoader } from "react-spinners";
 
 
 
@@ -37,6 +27,7 @@ const BlogDetails = () => {
     const [blogs, setBlogs] = useState([]);
     const [loading, setLoading] = useState(false);
     const [decoded, setDecoded] = useState(false);
+    const [viewAllPosts, setViewAllPosts] = useState(false);
     const [formData, setFormData] = useState({
         name: "",
         website: "",
@@ -62,21 +53,15 @@ const BlogDetails = () => {
 
     const formatDate = (dateString) => {
         const date = new Date(dateString);
-
         const year = date.getFullYear();
         const month = date.toLocaleString('en-US', { month: 'long' });
         const day = date.getDate();
-
         return `${year} ${month} ${day}`;
     };
 
 
-    const Follow = () => {
-        console.log("Here is  Filtering the Post --->");
-    }
-
     const AllPost = () => {
-        console.log("See all other posts");
+        setViewAllPosts(true);
     }
 
     const fetchPost = async () => {
@@ -95,7 +80,6 @@ const BlogDetails = () => {
         e.preventDefault();
         const { name, website, email, comment } = formData;
 
-        // Check for required fields
         if (!name || !website || !email || !comment) {
             toast.error("Please fill in all fields.");
             return;
@@ -104,7 +88,7 @@ const BlogDetails = () => {
             toast.error("Please first login.");
             return;
         }
-
+        
         const payload = {
             content: comment,
             website: website,
@@ -140,8 +124,12 @@ const BlogDetails = () => {
     };
 
     useEffect(() => {
+        if (state) {
+            setPost(state);
+        }
+        setViewAllPosts(false);
         fetchBlogs();
-    }, []);
+    }, [state]);
 
 
     return (
@@ -154,13 +142,13 @@ const BlogDetails = () => {
                         <div className="flex flex-col space-y-2 xl1:w-[900px] lg:w-[850px] md:w-[700px]">
                             <div><p className="base-font-heading text-3xl leading-10">{post?.title}</p></div>
                             <div className="">
-                                <img src={post?.imageUrl || waterBoat} alt="Boat in Water" className="h-[504.805px] rounded-lg" />
+                                <img src={post?.imageUrl || waterBoat} alt="Boat in Water" className="h-[504.805px] w-full rounded-lg" />
                             </div>
                             <div className="flex items-center">
                                 <FontAwesomeIcon icon={faCalendar} size="sm" style={{ color: "#b2b2b3", paddingLeft: "4px" }} />
-                                <p className="base-font text-base text-gray-250 ml-2 mr-16 ">{post.createdAt}</p>
+                                <p className="base-font text-base text-gray-250 ml-2 mr-16 ">{formatDate(post?.createdAt)}</p>
                                 <FontAwesomeIcon icon={faCommentDots} size="sm" style={{ color: "#bfbfc0" }} />
-                                <p className="base-font text-base text-gray-250 ml-2">{post?.comment || '35'}</p>
+                                <p className="base-font text-base text-gray-250 ml-2">{post.comments.length || '0'}</p>
                             </div>
 
                             <div className="py-8">
@@ -187,11 +175,6 @@ const BlogDetails = () => {
                                                     </div>
                                                 </div>
                                             </div>
-
-                                            <button className="flex justify-end items-center py-2 pr-4 pl-4 space-x-2 bg-gray-200 rounded-xl">
-                                                <FontAwesomeIcon icon={faShare} size="sm" style={{ color: "#b5b5b5", }} />
-                                                <p className="base-font-heading text-base text-gray-250 ">Reply</p>
-                                            </button>
                                         </div>
 
                                         <div className="px-4 pt-3">
@@ -319,7 +302,10 @@ const BlogDetails = () => {
                                     <div className="h-2 w-1 our-team-circle-bg" ></div>
                                     <h2 className="base-font-heading text-base">Top Post</h2>
                                 </div>
-                                {blogs.slice(0, 5).map((post) => (
+                                {loading &&
+                                    <ClipLoader loading={loading} height={12} width={5} radius={5} margin={2} aria-label="Loading Spinner" color='black' />
+                                }
+                                {!loading && blogs.slice(0, 5).map((post) => (
                                     <div className="flex items-center space-x-2">
                                         <img src={post?.imageUrl || waterBoat} alt="Boat in Water" className="h-16 w-20 rounded-lg" />
                                         <h3 className="base-font-heading text-base w-[188px]">{post.description
@@ -352,13 +338,20 @@ const BlogDetails = () => {
                         <h1 className="base-font-heading text-3xl leading-10">Related Posts</h1>
 
                         <div className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
-                            {blogs.slice(2, 5).map((post) => (
-                                <PostCard key={post.id} post={post} />
-                            ))}
+                            {loading ? (
+                                <ClipLoader loading={loading} height={12} width={5} radius={5} margin={2} aria-label="Loading Spinner" color='black' />
+                            ) :
+                                viewAllPosts
+                                    ? blogs.map((post) => (
+                                        <PostCard key={post.id} post={post} />
+                                    ))
+                                    : blogs.slice(2, 5).map((post) => (
+                                        <PostCard key={post.id} post={post} />
+                                    ))
+                            }
                         </div>
-
                         <div className="flex justify-center items-center">
-                            <Button
+                           {!viewAllPosts && ( <Button
                                 className="py-2 px-6 mt-10 base-font-heading text-base flex items-center justify-center bg-white text-orange-150 rounded-lg border border-orange-300"
                                 onClick={AllPost}
                                 icon={arrowRight}
@@ -367,7 +360,7 @@ const BlogDetails = () => {
                                 alt="Arrow Right"
                                 label="See All"
                             >
-                            </Button>
+                            </Button>)}
                         </div>
                     </div>
                 </div>
