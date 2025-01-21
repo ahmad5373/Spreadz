@@ -3,14 +3,20 @@ import tutorial from "../../assets/Tutorial.svg";
 import blogs from "../../assets/Blog.svg";
 import Button from "../button/Button";
 import Container from "../../customComponents/Container.";
+import { useNavigate } from "react-router-dom";
 
 
 const Academic = () => {
+    const navigate = useNavigate();
 
     const ReserveSeat = () => {
         console.log("Seat is reserving......");
     }
-    
+    const exploreBlog = () => {
+        console.log("Seat is reserving......");
+        navigate('/blogs')
+    }
+
     return (
         <section className="bg-orange-150 ">
             <Container className="px-4 lg:px-10 xl1:px-20">
@@ -50,7 +56,7 @@ const Academic = () => {
                             </p>
                             <Button
                                 className="w-1/2 py-2 bg-white base-font-heading text-sm rounded-lg text-orange-150"
-                                onClick={ReserveSeat}
+                                onClick={exploreBlog}
                                 label="Explore Blogs"
                             />
                         </div>

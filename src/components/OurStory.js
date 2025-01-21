@@ -6,7 +6,6 @@ import Container from "../customComponents/Container.";
 
 const OurStory = () => {
 
-
     return (
         <div className="flex flex-col pt-12 w-full">
             <div className="h-16 bg-gray-100"></div>

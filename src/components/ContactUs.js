@@ -26,6 +26,9 @@ const ContactUs = () => {
     const LeaveMessage = async (e) => {
         e.preventDefault();
         console.log("Leave Message clicked for contact");
+        if(!name || !email || message) {
+            return toast.error("Please fill information correctly.")
+        }
         setLoading(true)
         const userData = { name: name, email: email, phone: phone, message: message };
         try {
@@ -75,6 +78,7 @@ const ContactUs = () => {
                             type="text"
                             placeholder="Your Name"
                             value={name}
+                            required
                             onChange={(e) => setName(e.target.value)}
                             className="p-2 bg-gray-100  border-b-2 border-gray-200 base-font lg:text-lg text-md placeholder-black w-full md:w-1/3"
                         />
@@ -99,6 +103,7 @@ const ContactUs = () => {
                             type="text"
                             placeholder="Message"
                             value={message}
+                            required
                             onChange={(e) => setMessage(e.target.value)}
                             className="p-2 bg-gray-100 border-b-2 border-gray-200 base-font lg:text-lg text-md placeholder-black w-full"
                         />

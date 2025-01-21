@@ -1,6 +1,5 @@
 
 import mobile from "../../assets/Mobile4.png";
-import qrScanner from "../../assets/qrScanner.png";
 import firstImage from "../../assets/firstImage.png";
 import secondImage from "../../assets/secondImage.png";
 import thirdImage from "../../assets/thirdImage.png";
@@ -181,7 +180,7 @@ const SpreadsWork = () => {
               const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1`
               return (
                 <div key={id} className="flex flex-col ">
-                  <iframe className="h-[267px] rounded-lg" src={embedUrl}>
+                  <iframe className="h-[267px] rounded-lg" src={embedUrl} title="embeded url ">
                   </iframe>
                   <p className="base-font-heading lg:text-lg text-base mt-2">{data.title}</p>
                 </div>
