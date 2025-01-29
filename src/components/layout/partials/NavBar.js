@@ -8,50 +8,65 @@ import Container from '../../../customComponents/Container.';
 import { useAuth } from '../../auth/AuthContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
+import { useTranslation } from 'react-i18next';
+import '../../../i18n';
 
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
-  const [currentLanguage, setCurrentLanguage] = useState('en');
   const { user, logout } = useAuth();
   const navigate = useNavigate();
+  const { t , i18n} = useTranslation();
+  
+  const storedLanguage = localStorage.getItem('language') || 'de';
+  const [currentLanguage, setCurrentLanguage] = useState(storedLanguage);
+  console.log(currentLanguage, "current language")
+const changeLanguage = (language) => {
+  setCurrentLanguage(language)
+  localStorage.setItem('language', language)
+  i18n.changeLanguage(language)
+}
   const handleToggleProfile = () => setIsProfileOpen(prev => !prev);
   useEffect(() => {
-    const savedLanguage = localStorage.getItem('currentLanguage');
-    if (savedLanguage) {
-      setCurrentLanguage(savedLanguage);
+    if(!localStorage.getItem('language')){
+      localStorage.setItem('language', 'de')
     }
-    setTimeout(() => {
-      const selectElementToRemove = document.querySelector(".skiptranslate");
-      if (selectElementToRemove) {
-        selectElementToRemove.style.display = 'none';
-      }
-    }, 2000);
-  }, [])
-  const switchLanguage = (language) => {
-    try {
-      const selectElement = document.querySelector("select.goog-te-combo");
-      if (selectElement) {
-        setTimeout(() => {
-          const selectElementToRemove = document.querySelector(".skiptranslate");
-          if (selectElementToRemove) {
-            selectElementToRemove.style.display = 'none';
-          }
-        }, 2000);
-        selectElement.value = language;
-        const changeEvent = new Event("change", { bubbles: true });
-        selectElement.dispatchEvent(changeEvent);
-        localStorage.setItem('currentLanguage', language);
-        setCurrentLanguage(language);
-      } else {
-        console.error("Google Translate select element not found.");
-      }
-    } catch (error) {
-      console.log(error);
-    }
+    i18n.changeLanguage(currentLanguage);
+    // const savedLanguage = localStorage.getItem('currentLanguage');
+    // if (savedLanguage) {
+    //   setCurrentLanguage(savedLanguage);
+    // }
+    // setTimeout(() => {
+    //   const selectElementToRemove = document.querySelector(".skiptranslate");
+    //   if (selectElementToRemove) {
+    //     selectElementToRemove.style.display = 'none';
+    //   }
+    // }, 2000);
+  }, [currentLanguage, i18n])
+  // const switchLanguage = (language) => {
+  //   try {
+  //     const selectElement = document.querySelector("select.goog-te-combo");
+  //     if (selectElement) {
+  //       setTimeout(() => {
+  //         const selectElementToRemove = document.querySelector(".skiptranslate");
+  //         if (selectElementToRemove) {
+  //           selectElementToRemove.style.display = 'none';
+  //         }
+  //       }, 2000);
+  //       selectElement.value = language;
+  //       const changeEvent = new Event("change", { bubbles: true });
+  //       selectElement.dispatchEvent(changeEvent);
+  //       localStorage.setItem('currentLanguage', language);
+  //       setCurrentLanguage(language);
+  //     } else {
+  //       console.error("Google Translate select element not found.");
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
 
-  };
+  // };
 
   const handleLinkClick = () => {
     setIsMenuOpen(false);
@@ -71,11 +86,11 @@ const NavBar = () => {
           </Link>
 
           <div className="hidden lg:flex space-x-4">
-            <Link to="/about-us" className=" hover:text-orange-500 base-font  xl1:text-sm lg:text-xs " onClick={handleLinkClick} >About Us</Link>
-            <Link to="/our-story" className=" hover:text-orange-500 base-font xl1:text-sm lg:text-xs ">Our Story</Link>
-            <Link to="/pricing" className=" hover:text-orange-500 base-font xl1:text-sm lg:text-xs ">Plan & Pricing</Link>
-            <Link to="/blogs" className=" hover:text-orange-500 base-font xl1:text-sm lg:text-xs ">Blogs</Link>
-            <Link to="/contact-us" className=" hover:text-orange-500 base-font xl1:text-sm lg:text-xs ">Contact Us</Link>
+            <Link to="/about-us" className=" hover:text-orange-500 base-font  xl1:text-sm lg:text-xs " onClick={handleLinkClick} >{t('AboutUs')}</Link>
+            <Link to="/our-story" className=" hover:text-orange-500 base-font xl1:text-sm lg:text-xs ">{t('OurStory')}</Link>
+            <Link to="/pricing" className=" hover:text-orange-500 base-font xl1:text-sm lg:text-xs ">{t('PlanPricing')}</Link>
+            <Link to="/blogs" className=" hover:text-orange-500 base-font xl1:text-sm lg:text-xs ">{t('Blogs')}</Link>
+            <Link to="/contact-us" className=" hover:text-orange-500 base-font xl1:text-sm lg:text-xs ">{t('ContactUs')}</Link>
           </div>
 
           <div className="hidden lg:flex items-center space-x-4">
@@ -84,8 +99,7 @@ const NavBar = () => {
               <button
                 onClick={() => {
                   const newLanguage = currentLanguage === "en" ? "de" : "en";
-                  switchLanguage(newLanguage);
-                  setCurrentLanguage(newLanguage);
+                  changeLanguage(newLanguage);
                 }}
                 className={`w-10 h-6 flex items-center bg-black rounded-full p-1 transition-all ${currentLanguage === "en" ? "justify-end" : "justify-start"
                   }`}
@@ -118,11 +132,11 @@ const NavBar = () => {
             {!user &&
               <>
 
-                <Link to="/login" className="text-orange-150 hover:text-orange-600 font-medium">Login</Link>
+                <Link to="/login" className="text-orange-150 hover:text-orange-600 font-medium">{t('Login')}</Link>
                 <Button
                   className="text-white bg-orange-150 hover:bg-orange-400 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2"
                   onClick={registerSubmit}
-                  label="Register"
+                  label={t('Register')}
                 />
               </>
             }
@@ -150,7 +164,7 @@ const NavBar = () => {
                 <button
                   onClick={() => {
                     const newLanguage = currentLanguage === "en" ? "de" : "en";
-                    switchLanguage(newLanguage);
+                    changeLanguage(newLanguage);
                     setCurrentLanguage(newLanguage);
                   }}
                   className={`w-8 h-4 flex items-center bg-black rounded-full p-1 transition-all ${currentLanguage === "en" ? "justify-end" : "justify-start"
@@ -166,19 +180,19 @@ const NavBar = () => {
                 to="/login"
                 className="text-sm font-medium text-white bg-orange-150 hover:bg-orange-400 px-4 py-2 rounded-lg"
               >
-                Login
+                {t('Login')}
               </Link>
             </div>
           </div>
 
           <div className={`${isMenuOpen ? 'block' : 'hidden'} lg:hidden w-full`} id="navbar-sticky">
             <ul className="flex flex-col p-4 m t-4 border border-gray-100 rounded-lg bg-gray-50 ">
-              <li><Link to="/" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100" onClick={handleLinkClick}>Home</Link></li>
-              <li><Link to="/about-us" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100" onClick={handleLinkClick}>About Us</Link></li>
-              <li><Link to="/our-story" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100" onClick={handleLinkClick}>Our Story</Link></li>
-              <li><Link to="/pricing" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100" onClick={handleLinkClick}>Plan & Pricing</Link></li>
-              <li><Link to="/blogs" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100" onClick={handleLinkClick}>Blogs</Link></li>
-              <li><Link to="/contact-us" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100" onClick={handleLinkClick}>Contact Us</Link></li>
+              <li><Link to="/" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100" onClick={handleLinkClick}>{t('Home')}</Link></li>
+              <li><Link to="/about-us" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100" onClick={handleLinkClick}>{t('AboutUs')}</Link></li>
+              <li><Link to="/our-story" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100" onClick={handleLinkClick}>{t('OurStory')}</Link></li>
+              <li><Link to="/pricing" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100" onClick={handleLinkClick}>{t('PlanPricing')}</Link></li>
+              <li><Link to="/blogs" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100" onClick={handleLinkClick}>{t('Blog')}</Link></li>
+              <li><Link to="/contact-us" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100" onClick={handleLinkClick}>{t('ContactUs')}</Link></li>
             </ul>
           </div>
         </div>

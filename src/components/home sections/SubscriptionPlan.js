@@ -7,12 +7,13 @@ import Container from "../../customComponents/Container.";
 import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios";
 import { ClipLoader } from 'react-spinners';
+import { useTranslation } from "react-i18next";
 const stripePromise = loadStripe("pk_live_51NldRYCerSFfKjNXMYxxpAKktLYgZs3oRgScLeQu7mnihZ4AtCLnaNlvbM4C7RdRtISPjZXDYS7INgL9q8V8R4td009Mkivej2");
 
 const SubscriptionPlans = () => {
     const [loading, setLoading] = useState(null);
     const [billingCycles, setBillingCycles] = useState(new Array(3).fill("monthly"));
-
+    const { t } = useTranslation();
     const SelectPlan = async (planTitle, billingCycle, index) => {
         setLoading(index);
         try {
@@ -41,57 +42,61 @@ const SubscriptionPlans = () => {
 
     const plans = [
         {
-            title: "Basic",
+            title: t("Basic"),
             monthlyPrice: "CHF 69.0",
             yearlyPrice: "CHF 690",
-            description: "Ideal for individuals who need quick access to basic features.",
+            description: t("BasicDesc"),
             features: [
-                "Can be cancelled at any time on a monthly basis",
-                "1 live action",
-                "Live tracking",
-                "Collect up to 5000 leads per year",
-                "1 Link Google Business Account",
-                "Telephone support",
-                "With Spreadz branding",
-                "Create teams to collaborate on designs",
+                t("cancelAnytime"),
+                t("livePromotions", { count: 1 }),
+                t("liveTrackings"),
+                t("collectLeads", { count: 5000 }),
+                t("googleAccount"),
+                t("support"),
+                t("withoutBranding"),
+                t("colorCustomization")
             ],
             buttonColor: "bg-orange-150 text-white hover:bg-orange-400",
             textColor: "text-gray-800",
             backgroundColor: "bg-gray-100",
         },
         {
-            title: "Pro",
+            title: t("Pro"),
             monthlyPrice: "CHF 99.0",
             yearlyPrice: "CHF 990",
             recommended: true,
-            description: "Ideal for individuals who need quick access to basic features.",
+            description: t("ProDesc"),
 
             features: [
-                "Can be cancelled at any time on a monthly basis",
-                "+3 live promotions",
-                "+3 live trackings",
-                "+Collect up to 10,000 leads per year",
-                "1 Link Google Business Account",
-                "Video Upload Feature",
-                "Telephone support  + Video Call Support + Without Spreadz branding +  Color Scheme Customization",
-            ],
+            t("cancelAnytime"),
+            t("livePromotions", { count: 3 }),
+            t("liveTrackings", { count: 3 }),
+            t("collectLeads", { count: 10000 }),
+            t("googleAccount"),
+            t("videoUpload"),
+            t("supportVideo"),
+            t("withoutBranding"),
+            t("colorCustomization")
+        ],
             buttonColor: "bg-white text-orange-500 hover:bg-white",
             textColor: "text-white",
             backgroundColor: "bg-orange-150",
         },
         {
-            title: "Excellence",
+            title: t("Excellence"),
             monthlyPrice: "CHF 169.0",
             yearlyPrice: "CHF 1690",
-            description: "Ideal for individuals who need quick access to basic features.",
+            description: t("ExcellenceDesc"),
             features: [
-                "Can be cancelled at any time on a monthly basis",
-                "+10 live promotions",
-                "+10 live trackings",
-                "+Collect unlimited leads",
-                "1 Link Google Business Account",
-                "Video Upload Feature",
-                "Telephone support  +Video Call Support + Without Spreadz branding +  Color Scheme Customization",
+                t("cancelAnytime"),
+                t("livePromotions", { count: 10 }),
+                t("liveTrackings", { count: 10 }),
+                t("unlimitedLeads"),
+                t("googleAccount"),
+                t("videoUpload"),
+                t("supportVideo"),
+                t("withoutBranding"),
+                t("colorCustomization")
             ],
             buttonColor: "bg-orange-150 text-white over:bg-orange-400",
             textColor: "text-gray-800",
@@ -115,8 +120,8 @@ const SubscriptionPlans = () => {
     return (
         <div className="bg-gray-100 lg:bg-white mt-4">
             <div className="text-center my-8">
-                <h1 className="base-font-heading text-2xl lg:text-[40px] leading-[58.4px]">Subscriptions and Prices</h1>
-                <p className="base-font text-md lg:text-2xl mt-2">Choose a plan that's right for you</p>
+                <h1 className="base-font-heading text-2xl lg:text-[40px] leading-[58.4px]">{t('Subscriptions&Prices')}</h1>
+                <p className="base-font text-md lg:text-2xl mt-2">{t('ChoosePlan')}</p>
             </div>
 
             <Container className="px-4 lg:px-10 xl1:px-20">
@@ -143,7 +148,7 @@ const SubscriptionPlans = () => {
                                     {plan.title}
                                 </h2>
                                 <div className="flex justify-center items-center space-x-4 mb-4">
-                                    <span className="base-font-heading text-sm">Yearly</span>
+                                    <span className="base-font-heading text-sm">{t("yearly")}</span>
                                     <div
                                         className={`w-8 h-4 rounded-full cursor-pointer relative transition-colors duration-300 
                            ${plan.title === "Pro" ? "bg-white" : "bg-gray-200"}`}
@@ -159,7 +164,7 @@ const SubscriptionPlans = () => {
 
                             <h2
                                 className={`base-font xl1:text-base lg:text-sm leading-7 mb-4 
-                         ${plan.title === "Pro" ? "text-white" : "text-gray-150"}`}
+                         ${plan.title === t("Pro") ? "text-white" : "text-gray-150"}`}
                             >
                                 {plan.description}
                             </h2>
@@ -168,7 +173,7 @@ const SubscriptionPlans = () => {
                                 <div className="base-font-heading xl1:text-[40px] lg:text-4xl text-3xl">
                                     {billingCycles[index] === "yearly" ? plan.yearlyPrice : plan.monthlyPrice}
                                 </div>
-                                <span className={`base-font text-base ${plan.title === "Pro" ? "text-white" : "text-gray-150"}`}>
+                                <span className={`base-font text-base ${plan.title === t("Pro") ? "text-white" : "text-gray-150"}`}>
                                     /{billingCycles[index]}
                                 </span>
                             </div>
@@ -210,7 +215,7 @@ const SubscriptionPlans = () => {
                                             color={index === 1 ? "orange" : "white"}
                                         />
                                     ) : (
-                                        "Select"
+                                        t("Select")
                                     )
                                 }
                             />

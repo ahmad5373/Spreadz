@@ -16,9 +16,10 @@ import 'swiper/css/pagination';
 import { Autoplay } from 'swiper/modules';
 import { useEffect, useState } from "react";
 import { getallVideo } from "../../apiUtils/YoutubeVideoApi";
+import { useTranslation } from "react-i18next";
 const SpreadsWork = () => {
   const [video, setVideo] = useState([]);
-
+  const { t } = useTranslation();
   const fetchYoutubeVideo = async () => {
     try {
       const videoData = await getallVideo();
@@ -37,7 +38,7 @@ const SpreadsWork = () => {
     <>
       <section className="bg-gray-100 py-8 md:py-12 lg:py-10 lg:bg-white">
         <h2 className="flex justify-center base-font-heading text-3xl lg:text-[40px] lg:leading-[58.4px]">
-          How <span className="text-orange-150 mx-2">Spreadz</span> Works?
+          {t('How')} <span className="text-orange-150 mx-2">Spreadz</span> {t('Works') } ?
         </h2>
 
         <Container className="px-0 md:px-4 lg:px-10 xl1:px-20">
@@ -80,7 +81,7 @@ const SpreadsWork = () => {
                   </div>
                   <img src={firstImage} alt="Form submission" className="w-36 lg:w-[226px] h-72 lg:h-[446px]" />
                   <p className="base-font leading-5 lg:leading-[31px] text-sm lg:text-lg text-center md:w-full w-40">
-                    Entry into the Referral Program
+                    {t('EntryRefferal')}
                   </p>
                 </div>
               </SwiperSlide>
@@ -92,7 +93,7 @@ const SpreadsWork = () => {
                   </div>
                   <img src={secondImage} alt="Form submission" className="w-36 lg:w-[226px] h-72 lg:h-[446px]" />
                   <p className="base-font leading-5 lg:leading-[31px] text-sm lg:text-lg text-center md:w-full w-40">
-                    Participants sign up to join the referral campaign.
+                    {t('ParticipantRefferal')}
                   </p>
                 </div>
               </SwiperSlide>
@@ -104,7 +105,7 @@ const SpreadsWork = () => {
                   </div>
                   <img src={thirdImage} alt="Form submission" className="w-36 lg:w-[226px] h-72 lg:h-[446px]" />
                   <p className="base-font leading-5 lg:leading-[31px] text-sm lg:text-lg text-center md:w-full w-40">
-                    Referral Sharing Page - A unique link is shared via WhatsApp, Email, or Social Media.
+                    {t('ReferralSharingPage')}
                   </p>
                 </div>
               </SwiperSlide>
@@ -116,7 +117,7 @@ const SpreadsWork = () => {
                   </div>
                   <img src={fourthImage} alt="Form submission" className="w-36 lg:w-[226px] h-72 lg:h-[446px]" />
                   <p className="base-font leading-5 lg:leading-[31px] text-sm lg:text-lg text-center md:w-full w-40">
-                    Google Review after referral
+                    {t('GoogleReviewReferral')}
                   </p>
                 </div>
               </SwiperSlide>
@@ -128,7 +129,7 @@ const SpreadsWork = () => {
                   </div>
                   <img src={fifthImage} alt="Form submission" className="w-36 lg:w-[226px] h-72 lg:h-[446px]" />
                   <p className="base-font leading-5 lg:leading-[31px] text-sm lg:text-lg text-center md:w-full w-40">
-                    Referral Recipient View Page
+                    {t('ReferralRecipientViewPage')}
                   </p>
                 </div>
               </SwiperSlide>
@@ -140,8 +141,7 @@ const SpreadsWork = () => {
                   </div>
                   <img src={sixthImage} alt="Form submission" className="w-36 lg:w-[226px] h-72 lg:h-[446px]" />
                   <p className="base-font leading-5 lg:leading-[31px] text-sm lg:text-lg text-center md:w-full w-40">
-                    Conversion of
-                    New Customer
+                    {t('ConversionNewCustomer')}
                   </p>
                 </div>
               </SwiperSlide>
@@ -153,7 +153,7 @@ const SpreadsWork = () => {
                   </div>
                   <img src={seventhImage} alt="Form submission" className="w-36 lg:w-[226px] h-72 lg:h-[446px]" />
                   <p className="base-font leading-5 lg:leading-[31px] text-sm lg:text-lg text-center  md:w-full w-40">
-                    Lead overview dashboard Track your leads end-to-end encrypted and 100% yours.
+                  {t('TrackYourLead')}
                   </p>
                 </div>
               </SwiperSlide>
@@ -168,7 +168,7 @@ const SpreadsWork = () => {
       <section className="bg-gray-100 py-8 md:py-12 lg:py-10 lg:bg-white">
         <div className="flex justify-center items-center px-4  bg-gray-100 ">
           <h2 className="base-font-heading  text-2xl lg:text-[40px] md:leading-[58.4px] lg:pt-20 pt-4 pb-8 ">
-            <span className="text-orange-150 mr-2">Spreadz</span> Explained in Videos
+            <span className="text-orange-150 mr-2">Spreadz</span> {t('ExplainedInVideos')}
           </h2>
         </div>
 
@@ -195,7 +195,7 @@ const SpreadsWork = () => {
       <section className="bg-gray-100  lg:bg-white">
         <div className="flex justify-center lg:items-center px-4  bg-gray-100">
           <h2 className="base-font-heading text-xl lg:text-[40px] leading-[58.4px] lg:pt-20 pt-4 pb-8">
-            How does <span className="text-orange-150 lg:mx-2">Spreadz</span> advance your business?
+            {t('How does')}<span className="text-orange-150 lg:mx-2">Spreadz</span>{t('AdvanceYourBusiness')}?
           </h2>
         </div>
 
@@ -203,10 +203,10 @@ const SpreadsWork = () => {
           <div className="flex flex-col lg:flex-row justify-between py-6 ">
             <div className="flex flex-col items-start gap-[32px] lg:w-[841px]">
               <h1 className="base-font-heading lg:text-3xl text-lg leading-10 text-orange-150">
-                More new customers
+                {t('MoreNewCustomers')}
               </h1>
               <p className="base-font lg:text-xl text-lg leading-[31px] lg:w-10/12">
-                In today's world, digital customer acquisition is booming. Unfortunately, however, the entire competition also romps around in it. It is particularly difficult for smaller companies to assert themselves against the 'big players'. With Spreadz, customers advertise for customers in a simple, uncomplicated and unobtrusive way. Since customers share the advertising digitally with friends and acquaintances, they quickly achieve a very large reach. The advertising looks familiar, as it comes from a well-known person, and has a positive influence on the purchase decision. Since the referrer is only rewarded when a purchase or business transaction occurs, the company only pays when it actually benefits from it. Thus, Spreadz is a win-win-win system: the referrer wins a premium, the company gains a new customer, and the new customer benefits from an offer.
+    {t('TodayWorlds')}
               </p>
             </div>
 

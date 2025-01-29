@@ -4,11 +4,11 @@ import samson from "../../assets/Simson.svg";
 import Button from "../button/Button";
 import doubleArrow from "../../assets/doubleArrow.png";
 import Container from "../../customComponents/Container.";
+import { useTranslation } from "react-i18next";
 
 
 const Hero = () => {
-
-
+    const {t} = useTranslation();
     const StartTrail = () => {
         console.log("free trail started....");
     }
@@ -20,18 +20,17 @@ const Hero = () => {
 
                         <div className="lg:m-0 mt-8 lg:text-left lg:w-[694px]">
                             <h1 className="base-font-heading md:text-[40px] md:leading-[58.4px] text-2xl leading-none  text-gray-900 ">
-                                Get Recommended Digitally and win more <span className="text-orange-500">Leads</span>
+                                {t('Recommended')} <span className="text-orange-500">{t('Leads')}</span>
                             </h1>
                             <div className="hidden lg:block w-24 h-24"></div>
                             <p className="text-gray-450 text-base base-font  leading-[33px] lg:text-2xl">
-                                Spreadz allows you to easily create referral campaigns and automatically turn your customers into your promoters - no IT skills required.
-                                <p>Collect referrals in the digital age - effortlessly and within seconds, gain more leads, customers, and increased revenue.
-                                    Your customers can rate you on Google AND recommend you in one step.</p>
+                               {t('SpreadzAllow')}
+                                <p>{t('CollectRefferal')}</p>
                             </p>
                             <Button
                                 className="base-font-heading bg-orange-150 text-xl text-white mt-6 px-11 py-2.5 rounded-lg transition duration-300 md:w-auto"
                                 onClick={StartTrail}
-                                label="Start 7 Days Free Trial"
+                                label={t('Trial')}
                             >
                             </Button>
                         </div>
@@ -46,10 +45,10 @@ const Hero = () => {
                             <div className="absolute bg-orange-150 top-[5.3rem] right-44  max-[375px]:right-24 text-white lg:px-3 px-2 py-2 text-xs md:w-[17rem] w-48 md:top-[7.4rem] md:right-96 md:text-sm shadow-md lg:text-base hero-card-top  lg:top-[7.5rem] lg:right-64" style={{ borderRadius: '25px 25px 0 25px' }}>
                                 <div className="flex items-center space-x-3 mb-2">
                                     <img src={samson} alt="Samson" className=" md:w-8 w-6"></img>
-                                    <span className="base-font-heading md:text-sm text-[9.968px]" >Simon Thompson</span>
+                                    <span className="base-font-heading md:text-sm text-[9.968px]" >{t('Thomas')}</span>
                                 </div>
                                 <p className="base-font md:text-xs text-[8.544px] md:leading-[17px] leading-3">
-                                    Its been an awesome experience working on spreadz, got leads sooner than I expected
+                                    {t('Quote')}
                                 </p>
                             </div>
 
@@ -57,10 +56,10 @@ const Hero = () => {
 
                                 <div className="flex items-center space-x-3 mb-2">
                                     <img src={kathy} alt="Kathy" className="md:w-8 w-6"></img>
-                                    <span className="base-font-heading md:text-sm text-[9.968px]  ">Kathy Pusberg</span>
+                                    <span className="base-font-heading md:text-sm text-[9.968px]  ">{t('Kathy')}</span>
                                 </div>
                                 <p className="base-font md:text-xs text-[8.544px] md:leading-[17px] leading-3">
-                                    Its been an awesome experience working on spreadz, got leads sooner than I expected
+                                {t('Quote')}
                                 </p>
                             </div>
                         </div>
@@ -72,11 +71,11 @@ const Hero = () => {
                 <Container className='px-4 lg:px-10 xl1:px-20'>
                     <div className="xl1:text-left">
                         <h2 className="flex justify-center base-font-heading text-[40px] leading-[58.4px] mb-4">
-                            What is <span className="text-orange-150 ml-2">Spreadz?</span>
+                        {t('WhatIs')} <span className="text-orange-150 ml-2">Spreadz?</span>
                         </h2>
                         <div className="flex flex-col-reverse lg:flex-row lg:justify-between items-center">
                             <p className="mt-8 text-gray-450 w-full lg:w-[700px] lg:mx-0 text-base base-font  leading-[33px] lg:text-2xl">
-                                Spreadz is an online referral marketing solution. It enables companies/service providers to easily motivate customers to leave positive Google reviews and make recommendations. Customers can make recommendations to their contacts via a QR code or link, which automatically generates leads that are easy to follow-up.
+                            {t('MarketingSolution')}
                             </p>
                             <div><img src={doubleArrow} alt="Double arrow" className="w-80 h-64"></img></div>
                         </div>
