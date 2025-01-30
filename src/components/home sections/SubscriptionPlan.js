@@ -132,9 +132,9 @@ const SubscriptionPlans = () => {
                             className={`lg:relative  lg:w-[362.67px] px-4 py-8 
                         rounded-lg shadow-lg hover:shadow-xl transition-shadow
                         ${plan.backgroundColor} ${plan.textColor} 
-                        ${plan.title === "Pro" ? "lg:h-auto" : "lg:h-auto"}`}
+                        ${plan.title === t("Pro") ? "lg:h-auto" : "lg:h-auto"}`}
                         >
-                            {plan.title === "Pro" && (
+                            {plan.title === t("Pro") && (
                                 <div className="hidden lg:block absolute custom-bottom-lg custom-bottom-xl1 right-[-44px]">
                                     <img
                                         src={group}
@@ -189,7 +189,7 @@ const SubscriptionPlans = () => {
                                     <li key={idx} className="flex items-center space-x-4">
                                         <div
                                             className={`p-0.5 w-5 h-5 rounded-full flex items-center justify-center shrink-0 
-                  ${plan.title === "Pro" ? "bg-white" : "bg-orange-250"}`}
+                  ${plan.title === t("Pro") ? "bg-white" : "bg-orange-250"}`}
                                         >
                                             {(proFeatures.includes(feature) || excellenceFeatures.includes(feature)) ? (
                                                 <img src={PlusIcon} alt="Plus Icon" className="h-4 w-4" />

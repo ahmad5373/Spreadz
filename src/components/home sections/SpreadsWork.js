@@ -1,5 +1,5 @@
 
-import mobile from "../../assets/Mobile4.png";
+import mobile from "../../assets/morenewcustomers.PNG";
 import firstImage from "../../assets/firstImage.png";
 import secondImage from "../../assets/secondImage.png";
 import thirdImage from "../../assets/thirdImage.png";
@@ -214,7 +214,7 @@ const SpreadsWork = () => {
               <img
                 src={mobile}
                 alt="Phone showing testimonials"
-                className=" "
+                className="h-[403px] w-52"
               />
 
             </div>

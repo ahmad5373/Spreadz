@@ -4,8 +4,10 @@ import { ClipLoader } from 'react-spinners';
 import { createUser, SignIn } from '../../apiUtils/UserApi';
 import { toast } from 'react-toastify';
 import { useAuth } from './AuthContext';
+import { useTranslation } from 'react-i18next';
 
 const Register = () => {
+    const { t } = useTranslation();
     const [name, setName] = useState("");
     const [phoneNo, setPhoneNo] = useState("");
     const [gender, setGender] = useState("");
@@ -43,12 +45,12 @@ const Register = () => {
                 <div className="md:w-[1130px] space-y-10 w-full flex flex-col justify-center items-center bg-white rounded-2xl px-12 py-10">
 
                     <div className="lg:w-[498px] w-full flex flex-col items-center gap-3 lg:pb-8 p-2">
-                        <h3 className="text-3xl base-font-heading">Create Account</h3>
-                        <p className="text-sm base-font text-gray-800 mt-2">Provide your credentials to create your account</p>
+                        <h3 className="text-3xl base-font-heading">{t("Register_Title")}</h3>
+                        <p className="text-sm base-font text-gray-800 mt-2">{t("Register_Subtitle")}</p>
                     </div>
                     <div className='w-full flex flex-col space-y-4'>
                         <div className='flex flex-col space-y-2'>
-                            <label htmlFor="text" className="base-font text-base text-gray-450">Full Name</label>
+                            <label htmlFor="text" className="base-font text-base text-gray-450">{t("Label_FullName")}</label>
                             <input
                                 type="text"
                                 name="name"
@@ -56,11 +58,29 @@ const Register = () => {
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
                                 className="outline-none focus:ring-1 base-font text-base placeholder:base-font rounded-xl focus:ring-orange-150 focus:border-orange-250 w-full pl-7 py-5 bg-gray-100"
-                                placeholder="Enter your full name"
+                                placeholder={t("Placeholder_FullName")}
                                 required
                             />
                         </div>
                         <div className='flex flex-col space-y-2'>
+              <label htmlFor="gender" className="base-font text-base text-gray-450">{t("Label_Gender")}</label>
+              <div className="flex items-center space-x-4">
+                {["Male", "Female", "Other"].map((g) => (
+                  <label key={g} className="flex items-center space-x-2">
+                    <input
+                      type="radio"
+                      name="gender"
+                      value={g}
+                      checked={gender === g}
+                      onChange={(e) => setGender(e.target.value)}
+                      className="focus:ring-orange-150 focus:ring-1 text-orange-150 rounded-full"
+                    />
+                    <span className="base-font text-gray-700">{t(`Gender_${g}`)}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+                        {/* <div className='flex flex-col space-y-2'>
                             <label htmlFor="gender" className="base-font text-base text-gray-450">Gender</label>
                             <div className="flex items-center space-x-4">
                                 <label className="flex items-center space-x-2">
@@ -97,9 +117,9 @@ const Register = () => {
                                     <span className="base-font text-gray-700">Other</span>
                                 </label>
                             </div>
-                        </div>
+                        </div> */}
                         <div className='flex flex-col space-y-2'>
-                            <label htmlFor="number" className="base-font text-base text-gray-450">Phone Number</label>
+                            <label htmlFor="number" className="base-font text-base text-gray-450">{t("Label_Phone")}</label>
                             <input
                                 type="number"
                                 name="phone"
@@ -107,12 +127,12 @@ const Register = () => {
                                 value={phoneNo}
                                 onChange={(e) => setPhoneNo(e.target.value)}
                                 className="outline-none focus:ring-1 base-font text-base placeholder:base-font rounded-xl focus:ring-orange-150 focus:border-orange-250 w-full pl-7 py-5 bg-gray-100"
-                                placeholder="Enter Phone Number"
+                                placeholder={t("Placeholder_Phone")}
                                 required
                             />
                         </div>
                         <div className='flex flex-col space-y-2'>
-                            <label htmlFor="email" className="base-font text-base text-gray-450">E-mail Address</label>
+                            <label htmlFor="email" className="base-font text-base text-gray-450">{t("Label_Email")}</label>
                             <input
                                 type="email"
                                 name="email"
@@ -120,12 +140,12 @@ const Register = () => {
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 className="outline-none focus:ring-1 base-font text-base placeholder:base-font rounded-xl focus:ring-orange-150 focus:border-orange-250 w-full pl-7 py-5 bg-gray-100"
-                                placeholder="Enter your e-mail"
+                                placeholder={t("Placeholder_Email")}
                                 required
                             />
                         </div>
                         <div>
-                            <label htmlFor="password" className="base-font text-base text-gray-450">Password</label>
+                            <label htmlFor="password" className="base-font text-base text-gray-450">{t("Label_Password")}</label>
                             <div className='r'>
                                 <input
                                     type="password"
@@ -133,7 +153,7 @@ const Register = () => {
                                     id="password"
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
-                                    placeholder="Enter password"
+                                    placeholder={t("Placeholder_Password")}
                                     className="outline-none focus:ring-1 base-font text-base placeholder:base-font rounded-xl focus:ring-orange-150 focus:border-orange-250 w-full pl-7 py-5 bg-gray-100"
                                     required
                                 />
@@ -142,8 +162,8 @@ const Register = () => {
                     </div>
                     <div className='md:w-96 w-full flex flex-col space-y-4'>
                         <div className='flex space-x-3'>
-                            <p className='base-font text-lg text-gray-600'>Already have an account?</p>
-                            <Link to={'/login'} className='base-font-heading text-lg text-orange-150'>Log In</Link>
+                            <p className='base-font text-lg text-gray-600'>{t("Register_AlreadyHaveAccount")}</p>
+                            <Link to={'/login'} className='base-font-heading text-lg text-orange-150'>{t("Register_Login")}</Link>
                         </div>
                         {loading ? (
                             <button className="md:w-80 w-full bg-orange-150 px-5 rounded-lg">
@@ -154,7 +174,7 @@ const Register = () => {
                                 type='submit'
                                 className="md:w-80 w-full py-3 flex items-center justify-center text-white bg-orange-150 base-font-heading text-xl rounded-xl"
                             >
-                                Create Account
+                               {t("Button_Register")}
                             </button>
                         )}
                     </div>

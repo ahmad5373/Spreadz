@@ -1,8 +1,10 @@
 import share from "../assets/Group 237605.svg";
 import ellipse62 from "../assets/Ellipse 162.svg";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const PostCard = ({ post }) => {
+    const { t } = useTranslation();
     const formatDate = (dateString) => {
         const date = new Date(dateString);
         const year = date.getFullYear();
@@ -35,7 +37,7 @@ const PostCard = ({ post }) => {
                 </div>
                 <div><p className="base-font text-base leading-7 text-gray-350 mb-4 line-clamp-3">{post?.description} </p></div>
                 <Link to="/blogs/blog-details" className="base-font-heading text-base text-orange-150" state={post} >
-                    View Post
+                  {t('ViewPost')}
                 </Link>
                 <div className="w-[78.032px] h-[0.723px] bg-orange-150"></div>
             </div>

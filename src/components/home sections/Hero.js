@@ -20,7 +20,7 @@ const Hero = () => {
 
                         <div className="lg:m-0 mt-8 lg:text-left lg:w-[694px]">
                             <h1 className="base-font-heading md:text-[40px] md:leading-[58.4px] text-2xl leading-none  text-gray-900 ">
-                                {t('Recommended')} <span className="text-orange-500">{t('Leads')}</span>
+                                {t('RecommendDigitally')} <span className="text-orange-500">{t('Leads')}</span>
                             </h1>
                             <div className="hidden lg:block w-24 h-24"></div>
                             <p className="text-gray-450 text-base base-font  leading-[33px] lg:text-2xl">

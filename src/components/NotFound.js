@@ -1,6 +1,8 @@
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 const NotFound = () => {
+  const { t } = useTranslation();
   return (
     <div className="bg-gray-100 lg:pt-16 md:pt-32 pt-16  pb-6 flex flex-col justify-center items-center">
       <svg
@@ -54,14 +56,14 @@ const NotFound = () => {
       <div className="tracking-widest mt-4 text-center">
         <span className="text-gray-500 text-6xl block">4 0 4</span>
         <span className="text-gray-500 text-xl">
-          Sorry, We couldn't find what you are looking for!
+          {t("NotFound")}
         </span>
       </div>
       <Link
         to="/"
         className="bg-orange-150 base-font-heading text-white text-xl px-6 py-1 rounded-md mt-6 hover:shadow-md"
       >
-        Go back
+        {t('GoBack')}
       </Link>
     </div>
   );
