@@ -35,7 +35,7 @@ const Hero = () => {
                             </Button>
                         </div>
 
-                        <div className="relative flex  justify-center lg:justify-start lg-flex-center items-center lg:w-96 lg:shrink-0">
+                        <div className="relative flex h-full justify-center lg:justify-start lg-flex-center items-center lg:w-96 lg:shrink-0">
                             <img
                                 src={mobile}
                                 alt="Phone showing testimonials"

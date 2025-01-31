@@ -13,7 +13,7 @@ const stripePromise = loadStripe("pk_live_51NldRYCerSFfKjNXMYxxpAKktLYgZs3oRgScL
 const SubscriptionPlans = () => {
     const [loading, setLoading] = useState(null);
     const [billingCycles, setBillingCycles] = useState(new Array(3).fill("monthly"));
-    const { t } = useTranslation();
+    const { t , i18n } = useTranslation();
     const SelectPlan = async (planTitle, billingCycle, index) => {
         setLoading(index);
         try {
@@ -132,10 +132,14 @@ const SubscriptionPlans = () => {
                             className={`lg:relative  lg:w-[362.67px] px-4 py-8 
                         rounded-lg shadow-lg hover:shadow-xl transition-shadow
                         ${plan.backgroundColor} ${plan.textColor} 
-                        ${plan.title === t("Pro") ? "lg:h-auto" : "lg:h-auto"}`}
+                        `
+                    }
                         >
                             {plan.title === t("Pro") && (
-                                <div className="hidden lg:block absolute custom-bottom-lg custom-bottom-xl1 right-[-44px]">
+                                <div className={`hidden lg:block absolute right-[-44px] ${
+                                    i18n.language === 'de' ? 'custom-bottom-xl1-de custom-bottom-lg-de' : 'custom-bottom-xl1-en custom-bottom-lg-en'
+                                }`}
+                                >
                                     <img
                                         src={group}
                                         alt="Pro Icon"

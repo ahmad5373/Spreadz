@@ -35,8 +35,8 @@ const Footer = () => {
               </h3>
               <ul className="space-y-1 text-base text-black base-font">
                 <li><Link to="/" className="text-base text-black base-font">{t("Home")}</Link></li>
-                <li><Link to="/about-us" className="text-base text-black base-font">{t("About_Us")}</Link></li>
-                <li><Link to="/contact-us" className="text-base text-black base-font">{t("Contact_Us")}</Link></li>
+                <li><Link to="/about-us" className="text-base text-black base-font">{t("AboutUs")}</Link></li>
+                <li><Link to="/contact-us" className="text-base text-black base-font">{t("ContactUs")}</Link></li>
                 <li><Link to="/blogs" className="text-base text-black base-font">{t("Blogs")}</Link></li>
                 <li><Link to="/tutorials" className="text-base text-black base-font">{t("Tutorials")}</Link></li>
                 <li><Link to="/resource-library" className="text-base text-black base-font">{t("Resource_Library")}</Link></li>

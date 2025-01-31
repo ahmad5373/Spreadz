@@ -16,6 +16,7 @@ import Layout from './components/layout/RootLayout';
 import Homepage from './components/HomePage';
 import { AuthProvider } from './components/auth/AuthContext';
 import Register from './components/auth/Register';
+import TermsAndConditions from './components/Terms&Condition';
 
 
 const App = () => {
@@ -33,6 +34,7 @@ const App = () => {
           <Route path="/blogs" exact element={<Blogs />} />
           <Route path="/blogs/blog-details" exact element={<BlogDetails />} />
           <Route path="/contact-us" exact element={<ContactUs />} />
+          <Route path="/terms&Condition" exact element={<TermsAndConditions />} />
           <Route path="/success" exact element={<SuccessPage />} />
           <Route path="/cancel" exact element={<FailedPage />} />
           <Route path="*" element={<NotFound />} />

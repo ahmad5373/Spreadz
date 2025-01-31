@@ -61,7 +61,6 @@ code {
   font-weight: 600;
 }
 
-
 .bg-left {
   background-image: url("../src//assets/Rectangle3131.png");
   background-size: cover;
@@ -111,12 +110,6 @@ code {
 }
 
 @media (min-width: 1024px) and (max-width: 1140px) {
-  .custom-bottom-lg {
-    bottom: 740px;
-  }
-}
-
-@media (min-width: 1024px) and (max-width: 1140px) {
   .custom-our-story-quote {
     margin-left: 0 !important;
   }
@@ -128,16 +121,26 @@ code {
   }
 }
 
-
 @media (min-width: 1024px) and (max-width: 1140px) {
-  .nav-icon-md{
+  .nav-icon-md {
     width: 7rem;
   }
 }
 
+.custom-bottom-lg-de {
+  bottom: 704px;
+}
+
+.custom-bottom-lg-en {
+  bottom: 734px;
+}
+
 @media (min-width: 1140px) {
-  .custom-bottom-xl1 {
-    bottom: 690px;
+  .custom-bottom-xl1-de {
+    bottom: 635px;
+  }
+  .custom-bottom-xl1-en {
+    bottom: 683px;
   }
 }
 
@@ -167,7 +170,7 @@ code {
 
 @media (min-width: 1024px) and (max-width: 1140px) {
   .lg-flex-center {
-   justify-content: center;
+    justify-content: center;
   }
 }
 
@@ -182,7 +185,6 @@ code {
     flex-direction: column;
   }
 }
-
 
 .custom-bullet::before {
   content: "•"; /* Custom bullet symbol */

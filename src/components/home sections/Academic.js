@@ -5,13 +5,23 @@ import Button from "../button/Button";
 import Container from "../../customComponents/Container.";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-
+import TutorialsPdfFile from '../../assets/EN_Spreadz_GuideC .pdf' 
 const Academic = () => {
     const navigate = useNavigate();
     const { t } = useTranslation();
 
     const ReserveSeat = () => {
         console.log("Seat is reserving......");
+    }
+    
+    const GoToTutorials = () => {
+        const link = document.createElement('a');
+        link.href = TutorialsPdfFile;
+        link.download = 'SpreadzTutorials.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
     }
 
     const exploreBlog = () => {
@@ -50,7 +60,7 @@ const Academic = () => {
                             </p>
                             <Button
                                 className="w-1/2 lg:w-8/12 py-2 bg-white base-font-heading text-sm rounded-lg text-orange-150"
-                                onClick={ReserveSeat}
+                                onClick={GoToTutorials}
                                 label={t('Tutorial_Button')}
                             />
                         </div>
