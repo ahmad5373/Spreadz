@@ -38,8 +38,8 @@ const Footer = () => {
                 <li><Link to="/about-us" className="text-base text-black base-font">{t("AboutUs")}</Link></li>
                 <li><Link to="/contact-us" className="text-base text-black base-font">{t("ContactUs")}</Link></li>
                 <li><Link to="/blogs" className="text-base text-black base-font">{t("Blogs")}</Link></li>
-                <li><Link to="/tutorials" className="text-base text-black base-font">{t("Tutorials")}</Link></li>
-                <li><Link to="/resource-library" className="text-base text-black base-font">{t("Resource_Library")}</Link></li>
+                {/* <li><Link to="/tutorials" className="text-base text-black base-font">{t("Tutorials")}</Link></li>
+                <li><Link to="/resource-library" className="text-base text-black base-font">{t("Resource_Library")}</Link></li> */}
               </ul>
             </div>
 
