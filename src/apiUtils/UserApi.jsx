@@ -82,3 +82,8 @@ export const deleteTask = async (id, token) => {
         },
     });
 };
+
+
+export const addRequestGuide = async (data) => {
+    return await api.post('guides/add-request-guide', data);
+};
