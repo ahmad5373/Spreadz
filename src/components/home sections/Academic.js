@@ -100,7 +100,7 @@ const Academic = () => {
                                 {t('Blog_Description')}
                             </p>
                             <Button
-                                className="w-1/2 py-2 bg-white base-font-heading text-sm rounded-lg text-orange-150"
+                                className="w-1/2 lg:lg:w-3/5 py-2 bg-white base-font-heading text-sm rounded-lg text-orange-150"
                                 onClick={exploreBlog}
                                 label={t('Blog_Button')}
                             />
