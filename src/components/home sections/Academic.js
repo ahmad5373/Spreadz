@@ -84,19 +84,19 @@ const Academic = () => {
                                 {t('Tutorial_Description')}
                             </p>
                             <Button
-                                className="w-1/2 lg:w-8/12 py-2 bg-white base-font-heading text-sm rounded-lg text-orange-150"
+                                className="w-1/2 lg:w-4/5 py-2 bg-white base-font-heading text-sm rounded-lg text-orange-150"
                                 onClick={() => setShowModal(true)}
                                 label={loading ? 'Processing...' :t('Tutorial_Button')}
                             />
                         </div>
 
                         {/* Blogs Card */}
-                        <div className="flex flex-col items-center text-center gap-6 lg:w-80">
+                        <div className="flex flex-col items-center text-center gap-6 lg:w-52">
                             <img src={blogs} alt={t('Alt_Blogs')} className="h-24 w-20" />
                             <h2 className="base-font-heading text-3xl leading-[41.3px] text-white">
                                 {t('Blog_Title')}
                             </h2>
-                            <p className="base-font text-sm leading-7 text-white">
+                            <p className="base-font text-sm leading-7 text-white mb-7">
                                 {t('Blog_Description')}
                             </p>
                             <Button
